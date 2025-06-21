@@ -101,7 +101,7 @@ func fetchEventsForAllContracts(ctx context.Context, db *gorm.DB, provider *rpc.
 func fetchEventsForContract(ctx context.Context, db *gorm.DB, provider *rpc.Provider, contractName, addressString string, fromBlock, toBlock uint64) error {
 	//fmt.Println("---------------------------------")
 
-	cleanName := strings.ToLower(strings.TrimPrefix(contractName, "CONTRACT_"))
+	cleanName := strings.ToLower(contractName)
 	log.Infof("[%s] Fetching events for address %s", cleanName, addressString)
 
 	address, err := utils.HexToFelt(addressString)

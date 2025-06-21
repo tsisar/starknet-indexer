@@ -17,7 +17,7 @@ func main() {
 	var contractNames []string
 
 	for name, addr := range contracts {
-		cleanName := strings.ToLower(strings.TrimPrefix(name, "CONTRACT_"))
+		cleanName := strings.ToLower(name)
 		contractNames = append(contractNames, cleanName)
 
 		abiPath := filepath.Join("abi", cleanName+".json")
