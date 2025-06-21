@@ -1,0 +1,106 @@
+# === Input types ===
+input PositionWhereInput {
+  id: String
+  id_not: String
+  id_in: [String!]
+  id_not_in: [String!]
+  positionAddress: String
+  positionAddress_not: String
+  positionAddress_in: [String!]
+  positionAddress_not_in: [String!]
+  userAddress: String
+  userAddress_not: String
+  userAddress_in: [String!]
+  userAddress_not_in: [String!]
+  walletAddress: String
+  walletAddress_not: String
+  walletAddress_in: [String!]
+  walletAddress_not_in: [String!]
+  collateralPool: String
+  collateralPool_not: String
+  collateralPool_in: [String!]
+  collateralPool_not_in: [String!]
+  collateralPoolName: String
+  collateralPoolName_not: String
+  collateralPoolName_in: [String!]
+  collateralPoolName_not_in: [String!]
+  positionId: String
+  positionId_not: String
+  positionId_in: [String!]
+  positionId_not_in: [String!]
+  lockedCollateral: String
+  lockedCollateral_not: String
+  lockedCollateral_in: [String!]
+  lockedCollateral_not_in: [String!]
+  debtValue: String
+  debtValue_not: String
+  debtValue_in: [String!]
+  debtValue_not_in: [String!]
+  debtShare: String
+  debtShare_not: String
+  debtShare_in: [String!]
+  debtShare_not_in: [String!]
+  safetyBuffer: String
+  safetyBuffer_not: String
+  safetyBuffer_in: [String!]
+  safetyBuffer_not_in: [String!]
+  safetyBufferInPercent: String
+  safetyBufferInPercent_not: String
+  safetyBufferInPercent_in: [String!]
+  safetyBufferInPercent_not_in: [String!]
+  tvl: String
+  tvl_not: String
+  tvl_in: [String!]
+  tvl_not_in: [String!]
+  positionStatus: PositionStatus
+  positionStatus_not: PositionStatus
+  positionStatus_in: [PositionStatus!]
+  positionStatus_not_in: [PositionStatus!]
+  liquidationCount: String
+  liquidationCount_not: String
+  liquidationCount_in: [String!]
+  liquidationCount_not_in: [String!]
+  blockNumber: String
+  blockNumber_not: String
+  blockNumber_in: [String!]
+  blockNumber_not_in: [String!]
+  blockTimestamp: String
+  blockTimestamp_not: String
+  blockTimestamp_in: [String!]
+  blockTimestamp_not_in: [String!]
+  transaction: String
+  transaction_not: String
+  transaction_in: [String!]
+  transaction_not_in: [String!]
+  pool: PoolWhereInput
+  pool_not: PoolWhereInput
+  pool_in: [PoolWhereInput!]
+  pool_not_in: [PoolWhereInput!]
+}
+# === Enums ===
+enum PositionOrderField {
+  id
+  positionAddress
+  userAddress
+  walletAddress
+  collateralPool
+  collateralPoolName
+  positionId
+  lockedCollateral
+  debtValue
+  debtShare
+  safetyBuffer
+  safetyBufferInPercent
+  tvl
+  positionStatus
+  liquidationCount
+  blockNumber
+  blockTimestamp
+  transaction
+  pool
+}
+
+input PositionOrderBy {
+  field: PositionOrderField!
+  direction: OrderDirection!
+}

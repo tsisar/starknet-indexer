@@ -1,0 +1,11 @@
+# === Enums ===
+enum {{.Name}}OrderField {
+{{- range .Fields}}
+  {{.Name}}
+{{- end}}
+}
+
+input {{.Name}}OrderBy {
+  field: {{.Name}}OrderField!
+  direction: OrderDirection!
+}

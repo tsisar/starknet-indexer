@@ -1,0 +1,24 @@
+# === Query ===
+type Query {
+  _meta: Meta!
+  user(id: ID): User!
+  users(where: UserWhereInput, orderBy: UserOrderBy, first: Int, skip: Int): [User!]!
+  pool(id: ID): Pool!
+  pools(where: PoolWhereInput, orderBy: PoolOrderBy, first: Int, skip: Int): [Pool!]!
+  protocolStat(id: ID): ProtocolStat!
+  protocolStats(where: ProtocolStatWhereInput, orderBy: ProtocolStatOrderBy, first: Int, skip: Int): [ProtocolStat!]!
+  position(id: ID): Position!
+  positions(where: PositionWhereInput, orderBy: PositionOrderBy, first: Int, skip: Int): [Position!]!
+  positionActivity(id: ID): PositionActivity!
+  positionActivities(where: PositionActivityWhereInput, orderBy: PositionActivityOrderBy, first: Int, skip: Int): [PositionActivity!]!
+  swapEvent(id: ID): SwapEvent!
+  swapEvents(where: SwapEventWhereInput, orderBy: SwapEventOrderBy, first: Int, skip: Int): [SwapEvent!]!
+  stableSwapStat(id: ID): StableSwapStat!
+  stableSwapStats(where: StableSwapStatWhereInput, orderBy: StableSwapStatOrderBy, first: Int, skip: Int): [StableSwapStat!]!
+}
+
+# === Enums ===
+enum OrderDirection {
+  asc
+  desc
+}

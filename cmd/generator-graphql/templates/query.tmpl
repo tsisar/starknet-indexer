@@ -1,0 +1,14 @@
+# === Query ===
+type Query {
+  _meta: Meta!
+{{- range .Types}}
+  {{lower .Name}}(id: ID): {{.Name}}!
+  {{lower .Name}}s(where: {{.Name}}WhereInput, orderBy: {{.Name}}OrderBy, first: Int, skip: Int): [{{.Name}}!]!
+{{- end}}
+}
+
+# === Enums ===
+enum OrderDirection {
+  asc
+  desc
+}

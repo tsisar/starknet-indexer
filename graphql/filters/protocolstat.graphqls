@@ -1,0 +1,26 @@
+# === Input types ===
+input ProtocolStatWhereInput {
+  id: String
+  id_not: String
+  id_in: [String!]
+  id_not_in: [String!]
+  totalSupply: String
+  totalSupply_not: String
+  totalSupply_in: [String!]
+  totalSupply_not_in: [String!]
+  tvl: String
+  tvl_not: String
+  tvl_in: [String!]
+  tvl_not_in: [String!]
+}
+# === Enums ===
+enum ProtocolStatOrderField {
+  id
+  totalSupply
+  tvl
+}
+
+input ProtocolStatOrderBy {
+  field: ProtocolStatOrderField!
+  direction: OrderDirection!
+}

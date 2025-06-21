@@ -1,0 +1,56 @@
+# === Input types ===
+input SwapEventWhereInput {
+  id: String
+  id_not: String
+  id_in: [String!]
+  id_not_in: [String!]
+  fee: String
+  fee_not: String
+  fee_in: [String!]
+  fee_not_in: [String!]
+  owner: String
+  owner_not: String
+  owner_in: [String!]
+  owner_not_in: [String!]
+  value: String
+  value_not: String
+  value_in: [String!]
+  value_not_in: [String!]
+  isStablecoinToTokenSwap: Boolean
+  isStablecoinToTokenSwap_not: Boolean
+  isStablecoinToTokenSwap_in: [Boolean!]
+  isStablecoinToTokenSwap_not_in: [Boolean!]
+  isTokenToStablecoinSwap: Boolean
+  isTokenToStablecoinSwap_not: Boolean
+  isTokenToStablecoinSwap_in: [Boolean!]
+  isTokenToStablecoinSwap_not_in: [Boolean!]
+  blockNumber: String
+  blockNumber_not: String
+  blockNumber_in: [String!]
+  blockNumber_not_in: [String!]
+  blockTimestamp: String
+  blockTimestamp_not: String
+  blockTimestamp_in: [String!]
+  blockTimestamp_not_in: [String!]
+  transaction: String
+  transaction_not: String
+  transaction_in: [String!]
+  transaction_not_in: [String!]
+}
+# === Enums ===
+enum SwapEventOrderField {
+  id
+  fee
+  owner
+  value
+  isStablecoinToTokenSwap
+  isTokenToStablecoinSwap
+  blockNumber
+  blockTimestamp
+  transaction
+}
+
+input SwapEventOrderBy {
+  field: SwapEventOrderField!
+  direction: OrderDirection!
+}

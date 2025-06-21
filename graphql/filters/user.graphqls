@@ -1,0 +1,26 @@
+# === Input types ===
+input UserWhereInput {
+  id: String
+  id_not: String
+  id_in: [String!]
+  id_not_in: [String!]
+  address: String
+  address_not: String
+  address_in: [String!]
+  address_not_in: [String!]
+  activePositionsCount: String
+  activePositionsCount_not: String
+  activePositionsCount_in: [String!]
+  activePositionsCount_not_in: [String!]
+}
+# === Enums ===
+enum UserOrderField {
+  id
+  address
+  activePositionsCount
+}
+
+input UserOrderBy {
+  field: UserOrderField!
+  direction: OrderDirection!
+}

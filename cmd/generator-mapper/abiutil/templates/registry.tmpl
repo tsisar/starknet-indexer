@@ -1,0 +1,11 @@
+package registry
+
+import (
+	"github.com/Tsisar/starknet-indexer/generated/subgraph/{{.PackageName}}"
+)
+
+var {{ toCamelCase .PackageName }}Registry = map[string]EventMapper{
+{{- range .Events}}
+	"{{.EventName}}": makeMapper[{{.PackageName}}.{{.StructName}}](nil),
+{{- end}}
+}

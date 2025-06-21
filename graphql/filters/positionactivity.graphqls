@@ -1,0 +1,51 @@
+# === Input types ===
+input PositionActivityWhereInput {
+  id: String
+  id_not: String
+  id_in: [String!]
+  id_not_in: [String!]
+  position: PositionWhereInput
+  position_not: PositionWhereInput
+  position_in: [PositionWhereInput!]
+  position_not_in: [PositionWhereInput!]
+  activityState: PositionActivityState
+  activityState_not: PositionActivityState
+  activityState_in: [PositionActivityState!]
+  activityState_not_in: [PositionActivityState!]
+  collateralAmount: String
+  collateralAmount_not: String
+  collateralAmount_in: [String!]
+  collateralAmount_not_in: [String!]
+  debtAmount: String
+  debtAmount_not: String
+  debtAmount_in: [String!]
+  debtAmount_not_in: [String!]
+  blockNumber: String
+  blockNumber_not: String
+  blockNumber_in: [String!]
+  blockNumber_not_in: [String!]
+  blockTimestamp: String
+  blockTimestamp_not: String
+  blockTimestamp_in: [String!]
+  blockTimestamp_not_in: [String!]
+  transaction: String
+  transaction_not: String
+  transaction_in: [String!]
+  transaction_not_in: [String!]
+}
+# === Enums ===
+enum PositionActivityOrderField {
+  id
+  position
+  activityState
+  collateralAmount
+  debtAmount
+  blockNumber
+  blockTimestamp
+  transaction
+}
+
+input PositionActivityOrderBy {
+  field: PositionActivityOrderField!
+  direction: OrderDirection!
+}

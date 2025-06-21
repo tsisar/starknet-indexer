@@ -1,0 +1,86 @@
+# === Input types ===
+input PoolWhereInput {
+  id: String
+  id_not: String
+  id_in: [String!]
+  id_not_in: [String!]
+  poolName: String
+  poolName_not: String
+  poolName_in: [String!]
+  poolName_not_in: [String!]
+  debtCeiling: String
+  debtCeiling_not: String
+  debtCeiling_in: [String!]
+  debtCeiling_not_in: [String!]
+  liquidationRatio: String
+  liquidationRatio_not: String
+  liquidationRatio_in: [String!]
+  liquidationRatio_not_in: [String!]
+  stabilityFeeRate: String
+  stabilityFeeRate_not: String
+  stabilityFeeRate_in: [String!]
+  stabilityFeeRate_not_in: [String!]
+  tokenAdapterAddress: String
+  tokenAdapterAddress_not: String
+  tokenAdapterAddress_in: [String!]
+  tokenAdapterAddress_not_in: [String!]
+  lockedCollateral: String
+  lockedCollateral_not: String
+  lockedCollateral_in: [String!]
+  lockedCollateral_not_in: [String!]
+  collateralPrice: String
+  collateralPrice_not: String
+  collateralPrice_in: [String!]
+  collateralPrice_not_in: [String!]
+  collateralLastPrice: String
+  collateralLastPrice_not: String
+  collateralLastPrice_in: [String!]
+  collateralLastPrice_not_in: [String!]
+  priceWithSafetyMargin: String
+  priceWithSafetyMargin_not: String
+  priceWithSafetyMargin_in: [String!]
+  priceWithSafetyMargin_not_in: [String!]
+  rawPrice: String
+  rawPrice_not: String
+  rawPrice_in: [String!]
+  rawPrice_not_in: [String!]
+  debtAccumulatedRate: String
+  debtAccumulatedRate_not: String
+  debtAccumulatedRate_in: [String!]
+  debtAccumulatedRate_not_in: [String!]
+  totalBorrowed: String
+  totalBorrowed_not: String
+  totalBorrowed_in: [String!]
+  totalBorrowed_not_in: [String!]
+  totalAvailable: String
+  totalAvailable_not: String
+  totalAvailable_in: [String!]
+  totalAvailable_not_in: [String!]
+  tvl: String
+  tvl_not: String
+  tvl_in: [String!]
+  tvl_not_in: [String!]
+}
+# === Enums ===
+enum PoolOrderField {
+  id
+  poolName
+  debtCeiling
+  liquidationRatio
+  stabilityFeeRate
+  tokenAdapterAddress
+  lockedCollateral
+  collateralPrice
+  collateralLastPrice
+  priceWithSafetyMargin
+  rawPrice
+  debtAccumulatedRate
+  totalBorrowed
+  totalAvailable
+  tvl
+}
+
+input PoolOrderBy {
+  field: PoolOrderField!
+  direction: OrderDirection!
+}

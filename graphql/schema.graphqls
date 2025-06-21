@@ -1,0 +1,119 @@
+schema {
+    query: Query
+}
+
+# === ENUM ===
+enum PositionStatus {
+    safe
+    unsafe
+    closed
+}
+
+enum PositionActivityState {
+    created
+    topup
+    repay
+    liquidation
+    closed
+}
+
+type Block {
+    hash: String!
+    number: String!
+    parentHash: String!
+    timestamp: String!
+}
+
+type Meta {
+    block: Block!
+    deployment: String!
+    hasIndexingErrors: String!
+}
+
+# === Types ===
+type User {
+    id: String!
+    address: String!
+    activePositionsCount: String!
+}
+
+type Pool {
+    id: String!
+    poolName: String!
+    debtCeiling: String!
+    liquidationRatio: String!
+    stabilityFeeRate: String!
+    tokenAdapterAddress: String!
+    lockedCollateral: String!
+    collateralPrice: String!
+    collateralLastPrice: String!
+    priceWithSafetyMargin: String!
+    rawPrice: String!
+    debtAccumulatedRate: String!
+    totalBorrowed: String!
+    totalAvailable: String!
+    tvl: String!
+    positions: [Position!]!
+}
+
+type ProtocolStat {
+    id: String!
+    totalSupply: String!
+    tvl: String!
+    pools: [String!]!
+}
+
+type Position {
+    id: String!
+    positionAddress: String!
+    userAddress: String!
+    walletAddress: String!
+    collateralPool: String!
+    collateralPoolName: String!
+    positionId: String!
+    lockedCollateral: String!
+    debtValue: String!
+    debtShare: String!
+    safetyBuffer: String!
+    safetyBufferInPercent: String!
+    tvl: String!
+    positionStatus: PositionStatus!
+    liquidationCount: String!
+    blockNumber: String!
+    blockTimestamp: String!
+    transaction: String!
+    pool: Pool!
+    activity: [PositionActivity!]!
+}
+
+type PositionActivity {
+    id: String!
+    position: Position!
+    activityState: PositionActivityState!
+    collateralAmount: String!
+    debtAmount: String!
+    blockNumber: String!
+    blockTimestamp: String!
+    transaction: String!
+}
+
+type SwapEvent {
+    id: String!
+    fee: String!
+    owner: String!
+    value: String!
+    isStablecoinToTokenSwap: Boolean!
+    isTokenToStablecoinSwap: Boolean!
+    blockNumber: String!
+    blockTimestamp: String!
+    transaction: String!
+}
+
+type StableSwapStat {
+    id: String!
+    totalTokenToStablecoinSwapEvents: String!
+    totalStablecoinToTokenSwapEvents: String!
+    remainingDailySwapAmount: String!
+    tokenToStablecoinTotalSwapValue: String!
+    stablecoinToTokenTotalSwapValue: String!
+}

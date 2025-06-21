@@ -1,0 +1,41 @@
+# === Input types ===
+input StableSwapStatWhereInput {
+  id: String
+  id_not: String
+  id_in: [String!]
+  id_not_in: [String!]
+  totalTokenToStablecoinSwapEvents: String
+  totalTokenToStablecoinSwapEvents_not: String
+  totalTokenToStablecoinSwapEvents_in: [String!]
+  totalTokenToStablecoinSwapEvents_not_in: [String!]
+  totalStablecoinToTokenSwapEvents: String
+  totalStablecoinToTokenSwapEvents_not: String
+  totalStablecoinToTokenSwapEvents_in: [String!]
+  totalStablecoinToTokenSwapEvents_not_in: [String!]
+  remainingDailySwapAmount: String
+  remainingDailySwapAmount_not: String
+  remainingDailySwapAmount_in: [String!]
+  remainingDailySwapAmount_not_in: [String!]
+  tokenToStablecoinTotalSwapValue: String
+  tokenToStablecoinTotalSwapValue_not: String
+  tokenToStablecoinTotalSwapValue_in: [String!]
+  tokenToStablecoinTotalSwapValue_not_in: [String!]
+  stablecoinToTokenTotalSwapValue: String
+  stablecoinToTokenTotalSwapValue_not: String
+  stablecoinToTokenTotalSwapValue_in: [String!]
+  stablecoinToTokenTotalSwapValue_not_in: [String!]
+}
+# === Enums ===
+enum StableSwapStatOrderField {
+  id
+  totalTokenToStablecoinSwapEvents
+  totalStablecoinToTokenSwapEvents
+  remainingDailySwapAmount
+  tokenToStablecoinTotalSwapValue
+  stablecoinToTokenTotalSwapValue
+}
+
+input StableSwapStatOrderBy {
+  field: StableSwapStatOrderField!
+  direction: OrderDirection!
+}

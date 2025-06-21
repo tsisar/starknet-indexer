@@ -1,0 +1,16 @@
+# === Input types ===
+input {{.Name}}WhereInput {
+{{- range .Fields}}
+{{- if isScalar .Type }}
+  {{ .Name }}: {{ baseType .Type }}
+  {{ .Name }}_not: {{ baseType .Type }}
+  {{ .Name }}_in: [{{ baseType .Type }}!]
+  {{ .Name }}_not_in: [{{ baseType .Type }}!]
+{{- else }}
+  {{ .Name }}: {{ .Type }}WhereInput
+  {{ .Name }}_not: {{ .Type }}WhereInput
+  {{ .Name }}_in: [{{ .Type }}WhereInput!]
+  {{ .Name }}_not_in: [{{ .Type }}WhereInput!]
+{{- end}}
+{{- end}}
+}
