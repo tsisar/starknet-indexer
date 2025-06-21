@@ -3,23 +3,15 @@ package main
 import (
 	"bufio"
 	"bytes"
-	_ "embed"
 	"fmt"
 	"os"
 	"path/filepath"
 	"regexp"
 	"strings"
 	"text/template"
+
+	"github.com/tsisar/starknet-indexer/internal/templates"
 )
-
-//go:embed templates/where.tmpl
-var whereTmpl string
-
-//go:embed templates/order.tmpl
-var orderTmpl string
-
-//go:embed templates/query.tmpl
-var queryTmpl string
 
 type Field struct {
 	Name string
@@ -128,6 +120,8 @@ func isScalar(t string, enums map[string]bool) bool {
 }
 
 func main() {
+	loader := templates.NewLoader("cmd/generator-graphql/templates")
+
 	types, enums, err := parseSchema("graphql/schema.graphqls")
 	if err != nil {
 		panic(err)
@@ -139,18 +133,15 @@ func main() {
 		enumMap[e.Name] = true
 	}
 
-	whereTpl := template.Must(template.New("where").
-		Funcs(template.FuncMap{
-			"baseType": baseType,
-			"isScalar": func(t string) bool { return isScalar(t, enumMap) },
-		}).
-		Parse(whereTmpl))
+	funcMap := template.FuncMap{
+		"baseType": baseType,
+		"isScalar": func(t string) bool { return isScalar(t, enumMap) },
+		"lower":    toLowerCamelCase,
+	}
 
-	orderTpl := template.Must(template.New("order").Parse(orderTmpl))
-
-	queryTpl := template.Must(template.New("query").
-		Funcs(template.FuncMap{"lower": toLowerCamelCase}).
-		Parse(queryTmpl))
+	whereTpl := loader.LoadTemplateWithFuncs("where", "where.tmpl", funcMap)
+	orderTpl := loader.LoadTemplateWithFuncs("order", "order.tmpl", funcMap)
+	queryTpl := loader.LoadTemplateWithFuncs("query", "query.tmpl", funcMap)
 
 	for _, t := range types {
 		if skipTypes[t.Name] {
@@ -198,7 +189,9 @@ func main() {
 
 func toLowerCamelCase(s string) string {
 	if s == "" {
-		return ""
+		return s
 	}
-	return strings.ToLower(s[:1]) + s[1:]
+	r := []rune(s)
+	r[0] = []rune(strings.ToLower(string(r[0])))[0]
+	return string(r)
 }

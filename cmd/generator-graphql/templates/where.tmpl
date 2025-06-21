@@ -1,16 +1,24 @@
 # === Input types ===
 input {{.Name}}WhereInput {
-{{- range .Fields}}
-{{- if isScalar .Type }}
-  {{ .Name }}: {{ baseType .Type }}
-  {{ .Name }}_not: {{ baseType .Type }}
-  {{ .Name }}_in: [{{ baseType .Type }}!]
-  {{ .Name }}_not_in: [{{ baseType .Type }}!]
-{{- else }}
-  {{ .Name }}: {{ .Type }}WhereInput
-  {{ .Name }}_not: {{ .Type }}WhereInput
-  {{ .Name }}_in: [{{ .Type }}WhereInput!]
-  {{ .Name }}_not_in: [{{ .Type }}WhereInput!]
-{{- end}}
-{{- end}}
+	{{- range .Fields}}
+	{{- if isScalar .Type }}
+		{{.Name}}: {{baseType .Type}}
+		{{.Name}}_not: {{baseType .Type}}
+		{{.Name}}_in: [{{baseType .Type}}!]
+		{{.Name}}_not_in: [{{baseType .Type}}!]
+	{{- else }}
+		{{.Name}}: {{.Type}}WhereInput
+		{{.Name}}_not: {{.Type}}WhereInput
+		{{.Name}}_in: [{{.Type}}WhereInput!]
+		{{.Name}}_not_in: [{{.Type}}WhereInput!]
+	{{- end}}
+	{{if eq .Type "String"}}
+	{{.Name}}_contains: {{baseType .Type}}
+	{{.Name}}_not_contains: {{baseType .Type}}
+	{{.Name}}_starts_with: {{baseType .Type}}
+	{{.Name}}_not_starts_with: {{baseType .Type}}
+	{{.Name}}_ends_with: {{baseType .Type}}
+	{{.Name}}_not_ends_with: {{baseType .Type}}
+	{{end}}
+	{{end}}
 }
