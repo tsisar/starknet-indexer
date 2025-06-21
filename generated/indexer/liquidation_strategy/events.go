@@ -3,7 +3,7 @@
 package liquidation_strategy
 
 import (
-	"github.com/Tsisar/starknet-indexer/internal/types"
+	"github.com/tsisar/starknet-indexer/internal/types"
 )
 
 type PausedData struct {

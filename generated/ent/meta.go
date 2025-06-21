@@ -8,8 +8,8 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/Tsisar/starknet-indexer/generated/ent/block"
-	"github.com/Tsisar/starknet-indexer/generated/ent/meta"
+	"github.com/tsisar/starknet-indexer/generated/ent/block"
+	"github.com/tsisar/starknet-indexer/generated/ent/meta"
 )
 
 // Meta is the model entity for the Meta schema.

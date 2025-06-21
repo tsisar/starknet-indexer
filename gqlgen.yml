@@ -30,16 +30,16 @@ models:
     model:
       - github.com/99designs/gqlgen/graphql.Int64
   Pool:
-    model: github.com/Tsisar/starknet-indexer/generated/ent.Pool
+    model: github.com/tsisar/starknet-indexer/generated/ent.Pool
   User:
-    model: github.com/Tsisar/starknet-indexer/generated/ent.User
+    model: github.com/tsisar/starknet-indexer/generated/ent.User
   Position:
-    model: github.com/Tsisar/starknet-indexer/generated/ent.Position
+    model: github.com/tsisar/starknet-indexer/generated/ent.Position
   SwapEvent:
-    model: github.com/Tsisar/starknet-indexer/generated/ent.SwapEvent
+    model: github.com/tsisar/starknet-indexer/generated/ent.SwapEvent
   StableSwapStat:
-    model: github.com/Tsisar/starknet-indexer/generated/ent.StableSwapStat
+    model: github.com/tsisar/starknet-indexer/generated/ent.StableSwapStat
   ProtocolStat:
-    model: github.com/Tsisar/starknet-indexer/generated/ent.ProtocolStat
+    model: github.com/tsisar/starknet-indexer/generated/ent.ProtocolStat
   PositionActivity:
-    model: github.com/Tsisar/starknet-indexer/generated/ent.PositionActivity
+    model: github.com/tsisar/starknet-indexer/generated/ent.PositionActivity

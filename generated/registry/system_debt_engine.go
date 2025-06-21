@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/system_debt_engine"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/system_debt_engine"
 )
 
 var SystemDebtEngineRegistry = map[string]EventMapper{

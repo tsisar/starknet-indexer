@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/collateral_adapter_wbtc"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/collateral_adapter_wbtc"
 )
 
 var CollateralAdapterWbtcRegistry = map[string]EventMapper{

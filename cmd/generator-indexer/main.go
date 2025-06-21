@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/Tsisar/extended-log-go/log"
-	"github.com/Tsisar/starknet-indexer/cmd/generator-indexer/abiutil"
-	"github.com/Tsisar/starknet-indexer/internal/config"
+	"github.com/tsisar/extended-log-go/log"
+	"github.com/tsisar/starknet-indexer/cmd/generator-indexer/abiutil"
+	"github.com/tsisar/starknet-indexer/internal/config"
 	"os"
 	"path/filepath"
 	"strings"

@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/liquidation_engine"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/liquidation_engine"
 )
 
 var LiquidationEngineRegistry = map[string]EventMapper{

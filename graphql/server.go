@@ -2,14 +2,12 @@ package graphql
 
 import (
 	"context"
-	"fmt"
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/99designs/gqlgen/graphql/handler/transport"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/Tsisar/extended-log-go/log"
-	"github.com/Tsisar/starknet-indexer/generated/ent"
-	"github.com/Tsisar/starknet-indexer/internal/config"
 	"github.com/gorilla/websocket"
+	"github.com/tsisar/extended-log-go/log"
+	"github.com/tsisar/starknet-indexer/generated/ent"
 	"github.com/vektah/gqlparser/v2/ast"
 	"github.com/vektah/gqlparser/v2/gqlerror"
 	"gorm.io/gorm"
@@ -28,11 +26,6 @@ func Start(_ context.Context, db *gorm.DB, client *ent.Client) error {
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = defaultPort
-	}
-
-	queryPath := "/query"
-	if config.App.IndexerName != "" {
-		queryPath = fmt.Sprintf("/%s/query", config.App.IndexerName)
 	}
 
 	schema := NewExecutableSchema(Config{Resolvers: &Resolver{
@@ -71,16 +64,16 @@ func Start(_ context.Context, db *gorm.DB, client *ent.Client) error {
 	// === GraphQL IDEs ===
 	http.Handle("/", playground.Handler(
 		"GraphiQL Playground",
-		queryPath,
+		"/query",
 		playground.WithGraphiqlEnablePluginExplorer(true),
 	))
 	http.Handle("/apollo", playground.ApolloSandboxHandler(
 		"Apollo Sandbox",
-		queryPath,
+		"/query",
 	))
-	http.Handle(queryPath+"/altair", playground.AltairHandler(
+	http.Handle("/altair", playground.AltairHandler(
 		"Altair GraphQL",
-		queryPath,
+		"/query",
 		map[string]any{},
 	))
 
@@ -90,7 +83,7 @@ func Start(_ context.Context, db *gorm.DB, client *ent.Client) error {
 	log.Debugf("GraphQL server ready at:\n"+
 		"- http://localhost:%s%s/		 (GraphiQL with Explorer)\n"+
 		"- http://localhost:%s%s/apollo  (Apollo Sandbox)\n"+
-		"- http://localhost:%s%s/altair  (Altair)\n", port, queryPath, port, queryPath, port, queryPath)
+		"- http://localhost:%s%s/altair  (Altair)\n", port, "/query", port, "/query", port, "/query")
 
 	return http.ListenAndServe(":"+port, nil)
 }

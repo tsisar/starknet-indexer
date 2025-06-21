@@ -2,7 +2,7 @@ package model
 
 import (
 	"context"
-	"github.com/Tsisar/starknet-indexer/internal/storage/generic"
+	"github.com/tsisar/starknet-indexer/internal/storage/generic"
 	"gorm.io/datatypes"
 	"gorm.io/gorm"
 	"time"

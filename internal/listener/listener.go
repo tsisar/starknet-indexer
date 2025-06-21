@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/NethermindEth/starknet.go/rpc"
-	"github.com/Tsisar/extended-log-go/log"
+	"github.com/tsisar/extended-log-go/log"
 )
 
 func StartBlockPolling(

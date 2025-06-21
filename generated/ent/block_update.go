@@ -10,8 +10,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/Tsisar/starknet-indexer/generated/ent/block"
-	"github.com/Tsisar/starknet-indexer/generated/ent/predicate"
+	"github.com/tsisar/starknet-indexer/generated/ent/block"
+	"github.com/tsisar/starknet-indexer/generated/ent/predicate"
 )
 
 // BlockUpdate is the builder for updating Block entities.

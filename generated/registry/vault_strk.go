@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/vault_strk"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/vault_strk"
 )
 
 var VaultStrkRegistry = map[string]EventMapper{

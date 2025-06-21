@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/treasury"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/treasury"
 )
 
 var TreasuryRegistry = map[string]EventMapper{

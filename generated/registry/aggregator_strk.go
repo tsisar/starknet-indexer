@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/aggregator_strk"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/aggregator_strk"
 )
 
 var AggregatorStrkRegistry = map[string]EventMapper{

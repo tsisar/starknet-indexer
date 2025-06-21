@@ -5,12 +5,12 @@ package enttest
 import (
 	"context"
 
-	"github.com/Tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/generated/ent"
 	// required by schema hooks.
-	_ "github.com/Tsisar/starknet-indexer/generated/ent/runtime"
+	_ "github.com/tsisar/starknet-indexer/generated/ent/runtime"
 
 	"entgo.io/ent/dialect/sql/schema"
-	"github.com/Tsisar/starknet-indexer/generated/ent/migrate"
+	"github.com/tsisar/starknet-indexer/generated/ent/migrate"
 )
 
 type (

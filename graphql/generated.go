@@ -14,8 +14,8 @@ import (
 
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/99designs/gqlgen/graphql/introspection"
-	"github.com/Tsisar/starknet-indexer/generated/ent"
-	"github.com/Tsisar/starknet-indexer/graphql/model"
+	"github.com/tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/graphql/model"
 	gqlparser "github.com/vektah/gqlparser/v2"
 	"github.com/vektah/gqlparser/v2/ast"
 )

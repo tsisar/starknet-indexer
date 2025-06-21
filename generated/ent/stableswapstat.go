@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/Tsisar/starknet-indexer/generated/ent/stableswapstat"
+	"github.com/tsisar/starknet-indexer/generated/ent/stableswapstat"
 )
 
 // StableSwapStat is the model entity for the StableSwapStat schema.

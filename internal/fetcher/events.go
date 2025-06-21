@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/NethermindEth/juno/core/felt"
 	"github.com/NethermindEth/starknet.go/rpc"
-	"github.com/Tsisar/extended-log-go/log"
+	"github.com/tsisar/extended-log-go/log"
 )
 
 const ChunkSize = 1000 // Default chunk size for fetching events

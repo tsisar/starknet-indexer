@@ -3,17 +3,17 @@ package contract
 import (
 	"context"
 	"github.com/NethermindEth/starknet.go/utils"
-	"github.com/Tsisar/extended-log-go/log"
-	"github.com/Tsisar/starknet-indexer/internal/config"
-	helper "github.com/Tsisar/starknet-indexer/internal/stablecoin/utils"
+	"github.com/tsisar/extended-log-go/log"
+	"github.com/tsisar/starknet-indexer/internal/config"
+	helper "github.com/tsisar/starknet-indexer/internal/stablecoin/utils"
 	"math/big"
 )
 
 func FetchDebtAccumulatedRate(ctx context.Context, poolId string) *big.Float {
 	log.Infof("Fetching debt accumulated rate for pool ID: %s", poolId)
 
-	contractAddress := config.App.Contracts["CONTRACT_COLLATERAL_POOL_CONFIG"]
-	log.Debugf("Using CONTRACT_COLLATERAL_POOL_CONFIG address: %s", contractAddress)
+	contractAddress := config.App.Contracts["COLLATERAL_POOL_CONFIG"]
+	log.Debugf("Using COLLATERAL_POOL_CONFIG address: %s", contractAddress)
 
 	feltPoolId, err := utils.HexToFelt(poolId)
 	if err != nil {

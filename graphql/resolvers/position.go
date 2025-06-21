@@ -1,9 +1,9 @@
 package resolvers
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/ent"
-	"github.com/Tsisar/starknet-indexer/generated/ent/position"
-	"github.com/Tsisar/starknet-indexer/graphql/model"
+	"github.com/tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/generated/ent/position"
+	"github.com/tsisar/starknet-indexer/graphql/model"
 )
 
 func ApplyPositionWhereInput(query *ent.PositionQuery, where *model.PositionWhereInput) *ent.PositionQuery {

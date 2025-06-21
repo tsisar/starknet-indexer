@@ -1,7 +1,7 @@
 package graphql
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/generated/ent"
 	"gorm.io/gorm"
 )
 

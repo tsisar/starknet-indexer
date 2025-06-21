@@ -1,8 +1,8 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/collateral_pool_config"
-	"github.com/Tsisar/starknet-indexer/internal/stablecoin"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/collateral_pool_config"
+	"github.com/tsisar/starknet-indexer/internal/stablecoin"
 )
 
 var CollateralPoolConfigRegistry = map[string]EventMapper{

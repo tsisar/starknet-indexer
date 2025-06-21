@@ -1,0 +1,22 @@
+{
+  "network": "starknet",
+  "indexer": "vault",
+  "contracts": {
+    "FACTORY": {
+      "name": "Factory",
+      "address": "0x3f01a0b8343a33772ba9f88c9b7b32424f1345cc6aede44337b98ff1737617b"
+    },
+    "VAULT": {
+      "name": "Vault",
+      "address": "0x0bdd40c5f026c5fd42cf6a7ad1257268913a6add7c6c67e146cd7dbe74ab4c3"
+    },
+    "DETF_STRATEGY": {
+      "name": "DETF Strategy",
+      "address": "0x44dc76879494235193418562fb4be33c570d80cb0780c1a0305bd3d796b7c89"
+    },
+    "ACCOUNTANT": {
+      "name": "Accountant",
+      "address": "0x69cd994bdf78a487f02ac945d23cb01b95479ad6e9965da3c4f62d45587f49"
+    }
+  }
+}

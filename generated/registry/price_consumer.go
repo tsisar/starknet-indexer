@@ -1,8 +1,8 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/price_consumer"
-	"github.com/Tsisar/starknet-indexer/internal/stablecoin"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/price_consumer"
+	"github.com/tsisar/starknet-indexer/internal/stablecoin"
 )
 
 var PriceConsumerRegistry = map[string]EventMapper{

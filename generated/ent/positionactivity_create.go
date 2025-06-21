@@ -9,8 +9,8 @@ import (
 
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/Tsisar/starknet-indexer/generated/ent/position"
-	"github.com/Tsisar/starknet-indexer/generated/ent/positionactivity"
+	"github.com/tsisar/starknet-indexer/generated/ent/position"
+	"github.com/tsisar/starknet-indexer/generated/ent/positionactivity"
 )
 
 // PositionActivityCreate is the builder for creating a PositionActivity entity.

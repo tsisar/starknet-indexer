@@ -4,7 +4,7 @@ package collateral_pool_config
 import (
 	"fmt"
 	"github.com/NethermindEth/juno/core/felt"
-	"github.com/Tsisar/starknet-indexer/internal/types"
+	"github.com/tsisar/starknet-indexer/internal/types"
 )
 
 func DecodeLogSetPriceWithSafetyMargin(keys, data []*felt.Felt) (interface{}, error) {

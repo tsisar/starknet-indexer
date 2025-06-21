@@ -1,8 +1,8 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/liquidation_strategy"
-	"github.com/Tsisar/starknet-indexer/internal/stablecoin"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/liquidation_strategy"
+	"github.com/tsisar/starknet-indexer/internal/stablecoin"
 )
 
 var LiquidationStrategyRegistry = map[string]EventMapper{

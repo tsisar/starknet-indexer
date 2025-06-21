@@ -4,7 +4,7 @@ package system_debt_engine
 import (
 	"fmt"
 	"github.com/NethermindEth/juno/core/felt"
-	"github.com/Tsisar/starknet-indexer/internal/types"
+	"github.com/tsisar/starknet-indexer/internal/types"
 )
 
 func DecodePaused(keys, data []*felt.Felt) (interface{}, error) {

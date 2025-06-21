@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/splyce_price_oracle_strk"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/splyce_price_oracle_strk"
 )
 
 var SplycePriceOracleStrkRegistry = map[string]EventMapper{

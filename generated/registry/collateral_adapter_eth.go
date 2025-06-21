@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/collateral_adapter_eth"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/collateral_adapter_eth"
 )
 
 var CollateralAdapterEthRegistry = map[string]EventMapper{

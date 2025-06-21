@@ -6,7 +6,7 @@ import (
 
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"
-	"github.com/Tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/generated/ent"
 )
 
 func InitEnt(ctx context.Context) (*ent.Client, error) {

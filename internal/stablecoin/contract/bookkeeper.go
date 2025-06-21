@@ -3,8 +3,8 @@ package contract
 import (
 	"context"
 	"github.com/NethermindEth/starknet.go/utils"
-	"github.com/Tsisar/extended-log-go/log"
-	"github.com/Tsisar/starknet-indexer/internal/config"
+	"github.com/tsisar/extended-log-go/log"
+	"github.com/tsisar/starknet-indexer/internal/config"
 	"math/big"
 )
 
@@ -16,8 +16,8 @@ type PositionResult struct {
 func GetPositionResult(ctx context.Context, poolId string, positionAddress string) PositionResult {
 	log.Infof("Getting position result for pool ID: %s, position address: %s", poolId, positionAddress)
 
-	contractAddress := config.App.Contracts["CONTRACT_BOOKKEEPER"]
-	log.Debugf("Using CONTRACT_BOOKKEEPER address: %s", contractAddress)
+	contractAddress := config.App.Contracts["BOOKKEEPER"]
+	log.Debugf("Using BOOKKEEPER address: %s", contractAddress)
 
 	feltPoolId, err := utils.HexToFelt(poolId)
 	if err != nil {

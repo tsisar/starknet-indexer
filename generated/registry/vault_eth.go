@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/vault_eth"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/vault_eth"
 )
 
 var VaultEthRegistry = map[string]EventMapper{

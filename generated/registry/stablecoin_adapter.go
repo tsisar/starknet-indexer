@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/stablecoin_adapter"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/stablecoin_adapter"
 )
 
 var StablecoinAdapterRegistry = map[string]EventMapper{

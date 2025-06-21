@@ -9,7 +9,7 @@ import (
 
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/Tsisar/starknet-indexer/generated/ent/protocolstat"
+	"github.com/tsisar/starknet-indexer/generated/ent/protocolstat"
 )
 
 // ProtocolStatCreate is the builder for creating a ProtocolStat entity.

@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/stability_fee_collector"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/stability_fee_collector"
 )
 
 var StabilityFeeCollectorRegistry = map[string]EventMapper{

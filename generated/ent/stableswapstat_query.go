@@ -11,8 +11,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/Tsisar/starknet-indexer/generated/ent/predicate"
-	"github.com/Tsisar/starknet-indexer/generated/ent/stableswapstat"
+	"github.com/tsisar/starknet-indexer/generated/ent/predicate"
+	"github.com/tsisar/starknet-indexer/generated/ent/stableswapstat"
 )
 
 // StableSwapStatQuery is the builder for querying StableSwapStat entities.

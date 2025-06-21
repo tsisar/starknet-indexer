@@ -2,7 +2,7 @@ package storage
 
 import (
 	"fmt"
-	"github.com/Tsisar/starknet-indexer/internal/storage/model"
+	"github.com/tsisar/starknet-indexer/internal/storage/model"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/aggregator_wbtc"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/aggregator_wbtc"
 )
 
 var AggregatorWbtcRegistry = map[string]EventMapper{

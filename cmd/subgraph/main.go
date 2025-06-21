@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/Tsisar/starknet-indexer/generated/ent"
-	"github.com/Tsisar/starknet-indexer/graphql"
-	"github.com/Tsisar/starknet-indexer/internal/mapper"
+	"github.com/tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/graphql"
+	"github.com/tsisar/starknet-indexer/internal/mapper"
 	"os"
 	"os/signal"
 	"strconv"
@@ -13,11 +13,11 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/Tsisar/extended-log-go/log"
-	"github.com/Tsisar/starknet-indexer/internal/storage"
-	"github.com/Tsisar/starknet-indexer/internal/storage/model"
-	"github.com/Tsisar/starknet-indexer/internal/trigger"
 	"github.com/lib/pq"
+	"github.com/tsisar/extended-log-go/log"
+	"github.com/tsisar/starknet-indexer/internal/storage"
+	"github.com/tsisar/starknet-indexer/internal/storage/model"
+	"github.com/tsisar/starknet-indexer/internal/trigger"
 	"gorm.io/gorm"
 )
 

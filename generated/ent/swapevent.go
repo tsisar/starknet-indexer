@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/Tsisar/starknet-indexer/generated/ent/swapevent"
+	"github.com/tsisar/starknet-indexer/generated/ent/swapevent"
 )
 
 // SwapEvent is the model entity for the SwapEvent schema.

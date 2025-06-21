@@ -40,7 +40,7 @@ A high-performance indexer for Starknet stablecoin protocol, built with Go. This
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Tsisar/starknet-indexer.git
+git clone https://github.com/tsisar/starknet-indexer.git
 cd starknet-indexer
 ```
 

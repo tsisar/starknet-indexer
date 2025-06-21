@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/wallet_factory"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/wallet_factory"
 )
 
 var WalletFactoryRegistry = map[string]EventMapper{

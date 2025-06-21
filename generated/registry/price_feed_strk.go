@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/price_feed_strk"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/price_feed_strk"
 )
 
 var PriceFeedStrkRegistry = map[string]EventMapper{

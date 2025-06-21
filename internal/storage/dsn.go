@@ -2,7 +2,7 @@ package storage
 
 import (
 	"fmt"
-	"github.com/Tsisar/starknet-indexer/internal/config"
+	"github.com/tsisar/starknet-indexer/internal/config"
 )
 
 func DSNFromConfig() string {

@@ -3,10 +3,10 @@ package mapper
 import (
 	"context"
 	"encoding/json"
-	"github.com/Tsisar/extended-log-go/log"
-	"github.com/Tsisar/starknet-indexer/generated/ent"
-	"github.com/Tsisar/starknet-indexer/generated/registry"
-	"github.com/Tsisar/starknet-indexer/internal/storage/model"
+	"github.com/tsisar/extended-log-go/log"
+	"github.com/tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/generated/registry"
+	"github.com/tsisar/starknet-indexer/internal/storage/model"
 )
 
 func MapEvents(ctx context.Context, client *ent.Client, event model.Event) error {

@@ -10,16 +10,16 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/Tsisar/starknet-indexer/generated/ent/block"
-	"github.com/Tsisar/starknet-indexer/generated/ent/meta"
-	"github.com/Tsisar/starknet-indexer/generated/ent/pool"
-	"github.com/Tsisar/starknet-indexer/generated/ent/position"
-	"github.com/Tsisar/starknet-indexer/generated/ent/positionactivity"
-	"github.com/Tsisar/starknet-indexer/generated/ent/predicate"
-	"github.com/Tsisar/starknet-indexer/generated/ent/protocolstat"
-	"github.com/Tsisar/starknet-indexer/generated/ent/stableswapstat"
-	"github.com/Tsisar/starknet-indexer/generated/ent/swapevent"
-	"github.com/Tsisar/starknet-indexer/generated/ent/user"
+	"github.com/tsisar/starknet-indexer/generated/ent/block"
+	"github.com/tsisar/starknet-indexer/generated/ent/meta"
+	"github.com/tsisar/starknet-indexer/generated/ent/pool"
+	"github.com/tsisar/starknet-indexer/generated/ent/position"
+	"github.com/tsisar/starknet-indexer/generated/ent/positionactivity"
+	"github.com/tsisar/starknet-indexer/generated/ent/predicate"
+	"github.com/tsisar/starknet-indexer/generated/ent/protocolstat"
+	"github.com/tsisar/starknet-indexer/generated/ent/stableswapstat"
+	"github.com/tsisar/starknet-indexer/generated/ent/swapevent"
+	"github.com/tsisar/starknet-indexer/generated/ent/user"
 )
 
 const (

@@ -1,8 +1,8 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/position_manager"
-	"github.com/Tsisar/starknet-indexer/internal/stablecoin"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/position_manager"
+	"github.com/tsisar/starknet-indexer/internal/stablecoin"
 )
 
 var PositionManagerRegistry = map[string]EventMapper{

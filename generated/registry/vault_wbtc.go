@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/vault_wbtc"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/vault_wbtc"
 )
 
 var VaultWbtcRegistry = map[string]EventMapper{

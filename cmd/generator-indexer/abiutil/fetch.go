@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/Tsisar/extended-log-go/log"
+	"github.com/tsisar/extended-log-go/log"
 	"io"
 	"net/http"
 	"os"

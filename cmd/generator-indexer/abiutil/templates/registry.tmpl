@@ -3,9 +3,9 @@
 package {{.Package}}
 
 import (
-    "github.com/Tsisar/starknet-indexer/internal/types"
+    "github.com/tsisar/starknet-indexer/internal/types"
 {{- range .Contracts}}
-    "github.com/Tsisar/starknet-indexer/generated/indexer/{{.}}"
+    "github.com/tsisar/starknet-indexer/generated/indexer/{{.}}"
 {{- end}}
 )
 

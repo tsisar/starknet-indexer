@@ -3,12 +3,12 @@ package stablecoin
 import (
 	"context"
 	"encoding/json"
-	"github.com/Tsisar/extended-log-go/log"
-	"github.com/Tsisar/starknet-indexer/generated/ent"
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/collateral_pool_config"
-	"github.com/Tsisar/starknet-indexer/internal/stablecoin/contract"
-	"github.com/Tsisar/starknet-indexer/internal/stablecoin/utils"
-	"github.com/Tsisar/starknet-indexer/internal/storage/model"
+	"github.com/tsisar/extended-log-go/log"
+	"github.com/tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/collateral_pool_config"
+	"github.com/tsisar/starknet-indexer/internal/stablecoin/contract"
+	"github.com/tsisar/starknet-indexer/internal/stablecoin/utils"
+	"github.com/tsisar/starknet-indexer/internal/storage/model"
 )
 
 func HandleLogInitCollateralPoolId(ctx context.Context, client *ent.Client, event collateral_pool_config.LogInitCollateralPoolId, transaction model.Transaction) error {

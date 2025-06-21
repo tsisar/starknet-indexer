@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/admin_controls"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/admin_controls"
 )
 
 var AdminControlsRegistry = map[string]EventMapper{

@@ -4,7 +4,7 @@ package vault_wbtc
 import (
 	"fmt"
 	"github.com/NethermindEth/juno/core/felt"
-	"github.com/Tsisar/starknet-indexer/internal/types"
+	"github.com/tsisar/starknet-indexer/internal/types"
 )
 
 func DecodeDeposit(keys, data []*felt.Felt) (interface{}, error) {

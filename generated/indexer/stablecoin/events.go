@@ -3,7 +3,7 @@
 package stablecoin
 
 import (
-	"github.com/Tsisar/starknet-indexer/internal/types"
+	"github.com/tsisar/starknet-indexer/internal/types"
 )
 
 type TransferKey struct {

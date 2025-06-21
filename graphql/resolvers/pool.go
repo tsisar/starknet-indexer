@@ -1,9 +1,9 @@
 package resolvers
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/ent"
-	"github.com/Tsisar/starknet-indexer/generated/ent/pool"
-	"github.com/Tsisar/starknet-indexer/graphql/model"
+	"github.com/tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/generated/ent/pool"
+	"github.com/tsisar/starknet-indexer/graphql/model"
 )
 
 func ApplyPoolWhereInput(query *ent.PoolQuery, where *model.PoolWhereInput) *ent.PoolQuery {

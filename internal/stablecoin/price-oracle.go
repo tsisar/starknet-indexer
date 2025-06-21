@@ -2,14 +2,14 @@ package stablecoin
 
 import (
 	"context"
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/price_consumer"
-	"github.com/Tsisar/starknet-indexer/internal/stablecoin/contract"
-	"github.com/Tsisar/starknet-indexer/internal/stablecoin/utils"
-	"github.com/Tsisar/starknet-indexer/internal/storage/model"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/price_consumer"
+	"github.com/tsisar/starknet-indexer/internal/stablecoin/contract"
+	"github.com/tsisar/starknet-indexer/internal/stablecoin/utils"
+	"github.com/tsisar/starknet-indexer/internal/storage/model"
 	"math/big"
 
-	"github.com/Tsisar/extended-log-go/log"
-	"github.com/Tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/extended-log-go/log"
+	"github.com/tsisar/starknet-indexer/generated/ent"
 )
 
 func PriceUpdateHandler(ctx context.Context, client *ent.Client, event price_consumer.LogSetPrice, transaction model.Transaction) error {

@@ -3,7 +3,7 @@ package types
 import (
 	"encoding/json"
 	"github.com/NethermindEth/juno/core/felt"
-	"github.com/Tsisar/starknet-indexer/internal/utils"
+	"github.com/tsisar/starknet-indexer/internal/utils"
 )
 
 type Address struct {

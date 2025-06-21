@@ -3,7 +3,7 @@
 package stability_fee_collector
 
 import (
-	"github.com/Tsisar/starknet-indexer/internal/types"
+	"github.com/tsisar/starknet-indexer/internal/types"
 )
 
 type PausedData struct {

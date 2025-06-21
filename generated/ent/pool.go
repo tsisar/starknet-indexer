@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/Tsisar/starknet-indexer/generated/ent/pool"
+	"github.com/tsisar/starknet-indexer/generated/ent/pool"
 )
 
 // Pool is the model entity for the Pool schema.

@@ -8,8 +8,8 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/Tsisar/starknet-indexer/generated/ent/pool"
-	"github.com/Tsisar/starknet-indexer/generated/ent/position"
+	"github.com/tsisar/starknet-indexer/generated/ent/pool"
+	"github.com/tsisar/starknet-indexer/generated/ent/position"
 )
 
 // Position is the model entity for the Position schema.

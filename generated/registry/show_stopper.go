@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/show_stopper"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/show_stopper"
 )
 
 var ShowStopperRegistry = map[string]EventMapper{

@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/access_control_config"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/access_control_config"
 )
 
 var AccessControlConfigRegistry = map[string]EventMapper{

@@ -6,9 +6,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/Tsisar/extended-log-go/log"
-	"github.com/Tsisar/starknet-indexer/generated/ent"
-	"github.com/Tsisar/starknet-indexer/internal/storage/model"
+	"github.com/tsisar/extended-log-go/log"
+	"github.com/tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/internal/storage/model"
 )
 
 type EventMapper func(ctx context.Context, client *ent.Client, event model.Event) error

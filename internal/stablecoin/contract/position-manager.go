@@ -2,17 +2,17 @@ package contract
 
 import (
 	"context"
-	"github.com/Tsisar/extended-log-go/log"
-	"github.com/Tsisar/starknet-indexer/internal/config"
-	"github.com/Tsisar/starknet-indexer/internal/utils"
+	"github.com/tsisar/extended-log-go/log"
+	"github.com/tsisar/starknet-indexer/internal/config"
+	"github.com/tsisar/starknet-indexer/internal/utils"
 	"math/big"
 )
 
 func GetCollateralPools(ctx context.Context, positionID *big.Int) string {
 	log.Infof("Geting collateral pools for position ID: %d", positionID)
 
-	contractAddress := config.App.Contracts["CONTRACT_POSITION_MANAGER"]
-	log.Debugf("Using CONTRACT_COLLATERAL_POOL_CONFIG address: %s", contractAddress)
+	contractAddress := config.App.Contracts["POSITION_MANAGER"]
+	log.Debugf("Using COLLATERAL_POOL_CONFIG address: %s", contractAddress)
 
 	low, high := bigIntToFeltU256(positionID)
 
@@ -33,8 +33,8 @@ func GetCollateralPools(ctx context.Context, positionID *big.Int) string {
 func GetPositionAddress(ctx context.Context, positionID *big.Int) string {
 	log.Infof("Geting position address: %d", positionID)
 
-	contractAddress := config.App.Contracts["CONTRACT_POSITION_MANAGER"]
-	log.Debugf("Using CONTRACT_COLLATERAL_POOL_CONFIG address: %s", contractAddress)
+	contractAddress := config.App.Contracts["POSITION_MANAGER"]
+	log.Debugf("Using POSITION_MANAGER address: %s", contractAddress)
 
 	low, high := bigIntToFeltU256(positionID)
 

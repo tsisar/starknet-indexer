@@ -4,7 +4,7 @@ package stableswapstat
 
 import (
 	"entgo.io/ent/dialect/sql"
-	"github.com/Tsisar/starknet-indexer/generated/ent/predicate"
+	"github.com/tsisar/starknet-indexer/generated/ent/predicate"
 )
 
 // ID filters vertices based on their ID field.

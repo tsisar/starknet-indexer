@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/Tsisar/extended-log-go/log"
+	"github.com/tsisar/extended-log-go/log"
 	"os"
 	"strconv"
 	"strings"

@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/factory"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/factory"
 )
 
 var FactoryRegistry = map[string]EventMapper{

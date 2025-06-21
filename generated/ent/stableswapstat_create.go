@@ -9,7 +9,7 @@ import (
 
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/Tsisar/starknet-indexer/generated/ent/stableswapstat"
+	"github.com/tsisar/starknet-indexer/generated/ent/stableswapstat"
 )
 
 // StableSwapStatCreate is the builder for creating a StableSwapStat entity.

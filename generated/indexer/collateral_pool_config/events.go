@@ -3,7 +3,7 @@
 package collateral_pool_config
 
 import (
-	"github.com/Tsisar/starknet-indexer/internal/types"
+	"github.com/tsisar/starknet-indexer/internal/types"
 )
 
 type LogSetPriceWithSafetyMarginKey struct {

@@ -1,9 +1,9 @@
 package resolvers
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/ent"
-	"github.com/Tsisar/starknet-indexer/generated/ent/positionactivity"
-	"github.com/Tsisar/starknet-indexer/graphql/model"
+	"github.com/tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/generated/ent/positionactivity"
+	"github.com/tsisar/starknet-indexer/graphql/model"
 )
 
 func ApplyPositionActivityWhereInput(query *ent.PositionActivityQuery, where *model.PositionActivityWhereInput) *ent.PositionActivityQuery {

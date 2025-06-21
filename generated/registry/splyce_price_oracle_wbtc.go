@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/subgraph/splyce_price_oracle_wbtc"
+	"github.com/tsisar/starknet-indexer/generated/subgraph/splyce_price_oracle_wbtc"
 )
 
 var SplycePriceOracleWbtcRegistry = map[string]EventMapper{

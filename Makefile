@@ -62,15 +62,15 @@ test:
 
 generate-indexer:
 	@echo "Generating core code..."
-	@go run github.com/Tsisar/starknet-indexer/cmd/generator-indexer
+	@go run github.com/tsisar/starknet-indexer/cmd/generator-indexer
 
 generate-filters:
 	@echo "Generating filter code..."
-	@go run github.com/Tsisar/starknet-indexer/cmd/generator-graphql
+	@go run github.com/tsisar/starknet-indexer/cmd/generator-graphql
 
 generate-ent:
 	@echo "Generating ent code..."
-	@go run github.com/Tsisar/starknet-indexer/cmd/generator-ent
+	@go run github.com/tsisar/starknet-indexer/cmd/generator-ent
 	@ent generate ./generated/ent/schema
 
 generate-gqlgen:
@@ -79,7 +79,7 @@ generate-gqlgen:
 
 generate-mapper:
 	@echo "Generating mapper code..."
-	@go run github.com/Tsisar/starknet-indexer/cmd/generator-mapper
+	@go run github.com/tsisar/starknet-indexer/cmd/generator-mapper
 
 generate: generate-indexer generate-mapper generate-filters generate-ent generate-gqlgen
 	@echo "All generators executed successfully"

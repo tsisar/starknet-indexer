@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/Tsisar/starknet-indexer/generated/ent/user"
+	"github.com/tsisar/starknet-indexer/generated/ent/user"
 )
 
 // User is the model entity for the User schema.

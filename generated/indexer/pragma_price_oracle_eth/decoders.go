@@ -2,7 +2,7 @@
 package pragma_price_oracle_eth
 
 import (
-	"github.com/Tsisar/starknet-indexer/internal/types"
+	"github.com/tsisar/starknet-indexer/internal/types"
 )
 
 var Decoders = map[string]types.EventDecoderWithMeta{}

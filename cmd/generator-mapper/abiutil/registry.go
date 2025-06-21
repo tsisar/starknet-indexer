@@ -3,7 +3,7 @@ package abiutil
 import (
 	"bytes"
 	_ "embed"
-	"github.com/Tsisar/starknet-indexer/internal/utils"
+	"github.com/tsisar/starknet-indexer/internal/utils"
 	"text/template"
 )
 

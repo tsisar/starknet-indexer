@@ -1,4 +1,4 @@
-module github.com/Tsisar/starknet-indexer
+module github.com/tsisar/starknet-indexer
 
 go 1.24.2
 
@@ -7,7 +7,7 @@ require (
 	github.com/99designs/gqlgen v0.17.74
 	github.com/NethermindEth/juno v0.14.0
 	github.com/NethermindEth/starknet.go v0.12.0
-	github.com/Tsisar/extended-log-go v1.0.5
+	github.com/tsisar/extended-log-go v1.0.6
 	github.com/gorilla/websocket v1.5.3
 	github.com/joho/godotenv v1.5.1
 	github.com/lib/pq v1.10.9

@@ -9,11 +9,11 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/Tsisar/starknet-indexer/generated/ent"
-	"github.com/Tsisar/starknet-indexer/generated/ent/pool"
-	"github.com/Tsisar/starknet-indexer/generated/ent/position"
-	"github.com/Tsisar/starknet-indexer/generated/ent/positionactivity"
-	"github.com/Tsisar/starknet-indexer/graphql/model"
+	"github.com/tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/generated/ent/pool"
+	"github.com/tsisar/starknet-indexer/generated/ent/position"
+	"github.com/tsisar/starknet-indexer/generated/ent/positionactivity"
+	"github.com/tsisar/starknet-indexer/graphql/model"
 )
 
 // Positions is the resolver for the positions field.

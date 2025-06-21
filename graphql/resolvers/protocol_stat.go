@@ -1,9 +1,9 @@
 package resolvers
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/ent"
-	"github.com/Tsisar/starknet-indexer/generated/ent/protocolstat"
-	"github.com/Tsisar/starknet-indexer/graphql/model"
+	"github.com/tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/generated/ent/protocolstat"
+	"github.com/tsisar/starknet-indexer/graphql/model"
 )
 
 func ApplyProtocolStatWhereInput(query *ent.ProtocolStatQuery, where *model.ProtocolStatWhereInput) *ent.ProtocolStatQuery {

@@ -9,7 +9,7 @@ import (
 
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/Tsisar/starknet-indexer/generated/ent/user"
+	"github.com/tsisar/starknet-indexer/generated/ent/user"
 )
 
 // UserCreate is the builder for creating a User entity.

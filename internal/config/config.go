@@ -1,11 +1,9 @@
 package config
 
 import (
-	"github.com/Tsisar/extended-log-go/log"
-	"github.com/Tsisar/starknet-indexer/internal/utils"
 	"github.com/joho/godotenv"
+	"github.com/tsisar/extended-log-go/log"
 	"os"
-	"strings"
 )
 
 var App *config
@@ -70,24 +68,4 @@ func loadConfig() (*config, error) {
 			Port:    getString("METRICS_PORT", "8040"),
 		},
 	}, nil
-}
-
-func loadContractAddressesFromEnv() map[string]string {
-	contracts := make(map[string]string)
-
-	for _, env := range os.Environ() {
-		parts := strings.SplitN(env, "=", 2)
-		if len(parts) != 2 {
-			continue
-		}
-		key := parts[0]
-		value := parts[1]
-
-		if strings.HasPrefix(key, "CONTRACT_") && value != "" {
-			normalized := utils.NormalizeStarkNetAddress(value)
-			contracts[key] = normalized
-		}
-	}
-
-	return contracts
 }

@@ -1,9 +1,9 @@
 package resolvers
 
 import (
-	"github.com/Tsisar/starknet-indexer/generated/ent"
-	"github.com/Tsisar/starknet-indexer/generated/ent/user"
-	"github.com/Tsisar/starknet-indexer/graphql/model"
+	"github.com/tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/generated/ent/user"
+	"github.com/tsisar/starknet-indexer/graphql/model"
 )
 
 func ApplyUserWhereInput(query *ent.UserQuery, where *model.UserWhereInput) *ent.UserQuery {

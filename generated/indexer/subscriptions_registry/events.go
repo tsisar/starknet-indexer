@@ -3,7 +3,7 @@
 package subscriptions_registry
 
 import (
-	"github.com/Tsisar/starknet-indexer/internal/types"
+	"github.com/tsisar/starknet-indexer/internal/types"
 )
 
 type LogSubscribedKey struct {
