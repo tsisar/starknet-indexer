@@ -2,6 +2,7 @@ package resolvers
 
 import (
 	"github.com/tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/generated/ent/pool"
 	"github.com/tsisar/starknet-indexer/generated/ent/position"
 	"github.com/tsisar/starknet-indexer/graphql/model"
 )
@@ -234,6 +235,34 @@ func ApplyPositionWhereInput(query *ent.PositionQuery, where *model.PositionWher
 	}
 	if where.TransactionNotIn != nil {
 		query = query.Where(position.TransactionNotIn(where.TransactionNotIn...))
+	}
+
+	// Handle nested pool filters
+	if where.Pool != nil {
+		if where.Pool.PoolName != nil {
+			query = query.Where(position.HasPoolWith(pool.PoolNameEQ(*where.Pool.PoolName)))
+		}
+		if where.Pool.PoolNameNot != nil {
+			query = query.Where(position.HasPoolWith(pool.PoolNameNEQ(*where.Pool.PoolNameNot)))
+		}
+		if where.Pool.PoolNameIn != nil {
+			query = query.Where(position.HasPoolWith(pool.PoolNameIn(where.Pool.PoolNameIn...)))
+		}
+		if where.Pool.PoolNameNotIn != nil {
+			query = query.Where(position.HasPoolWith(pool.PoolNameNotIn(where.Pool.PoolNameNotIn...)))
+		}
+		if where.Pool.ID != nil {
+			query = query.Where(position.HasPoolWith(pool.IDEQ(*where.Pool.ID)))
+		}
+		if where.Pool.IDNot != nil {
+			query = query.Where(position.HasPoolWith(pool.IDNEQ(*where.Pool.IDNot)))
+		}
+		if where.Pool.IDIn != nil {
+			query = query.Where(position.HasPoolWith(pool.IDIn(where.Pool.IDIn...)))
+		}
+		if where.Pool.IDNotIn != nil {
+			query = query.Where(position.HasPoolWith(pool.IDNotIn(where.Pool.IDNotIn...)))
+		}
 	}
 
 	return query
