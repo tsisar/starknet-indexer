@@ -8,6 +8,7 @@ TARGETARCH   ?= amd64
 CGO_ENABLED  ?= 0
 
 # Default component name (subgraph, indexer)
+TAG_SUFFIX   := ""
 COMPONENT := subgraph
 BIN_DIR   := bin
 BIN_PATH  := $(BIN_DIR)/$(COMPONENT)
@@ -112,14 +113,14 @@ image:
 	@docker buildx build \
 		--platform $(TARGETOS)/$(TARGETARCH) \
 		--build-arg BIN_PATH=$(BIN_PATH) \
-		--tag $(REGISTRY)/$(APP):$(VERSION) \
+		--tag $(REGISTRY)/$(APP):$(VERSION)$(TAG_SUFFIX) \
 		--load .
 
 push:
 	@echo "Pushing image to registry..."
-	@docker push $(REGISTRY)/$(APP):$(VERSION)
-	@docker tag $(REGISTRY)/$(APP):$(VERSION) $(REGISTRY)/$(APP):latest
-	@docker push $(REGISTRY)/$(APP):latest
+	@docker push $(REGISTRY)/$(APP):$(VERSION)$(TAG_SUFFIX)
+	@docker tag $(REGISTRY)/$(APP):$(VERSION)$(TAG_SUFFIX) $(REGISTRY)/$(APP):latest$(TAG_SUFFIX)
+	@docker push $(REGISTRY)/$(APP):latest$(TAG_SUFFIX)
 
 # ==============================
 # Utilities
