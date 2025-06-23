@@ -1,29 +1,13 @@
-# Stage 1: Build the Go application with cross-compilation
-FROM --platform=$BUILDPLATFORM golang:1.24.2-alpine AS builder
-
-ARG TARGETOS
-ARG TARGETARCH
-ARG COMPONENT
-
-RUN apk add --no-cache gcc musl-dev
-
-WORKDIR /app
-
-COPY go.mod go.sum ./
-RUN go mod download
-
-COPY . .
-
-RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -ldflags="-s -w" -o /app/app ./cmd/${COMPONENT}
-
-# Stage 2: Minimal runtime image
+# Minimal runtime image
 FROM alpine:latest
+
+ARG BIN_PATH=bin/indexer
 
 RUN apk --no-cache add ca-certificates tzdata
 
-WORKDIR /root/
+WORKDIR /app
 
-COPY --from=builder /app/app .
+COPY ${BIN_PATH} /app/app
 
 EXPOSE 8040
 EXPOSE 8080
