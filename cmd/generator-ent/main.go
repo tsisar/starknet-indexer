@@ -9,54 +9,19 @@ import (
 	"text/template"
 	"unicode"
 
+	"github.com/tsisar/starknet-indexer/internal/templates"
 	"github.com/vektah/gqlparser/v2"
 	"github.com/vektah/gqlparser/v2/ast"
 )
 
 const outDir = "generated/ent/schema"
 
-var schemaTmpl = template.Must(template.New("schema").Parse(`
-package schema
-
-import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
-	{{- if .HasEdges }}
-	"entgo.io/ent/schema/edge"
-	{{- end }}
-)
-
-type {{.Name}} struct {
-	ent.Schema
-}
-
-func ({{.Name}}) Fields() []ent.Field {
-	return []ent.Field{
-		{{range .Fields}}{{.}},
-		{{end}}
-	}
-}
-
-{{ if .HasEdges }}
-func ({{.Name}}) Edges() []ent.Edge {
-	return []ent.Edge{
-		{{range .Edges}}{{.}},
-		{{end}}
-	}
-}
-{{ end }}
-`))
-
-var enumTmpl = template.Must(template.New("enum").Parse(`
-package schema
-
-import "entgo.io/ent/schema/field"
-
-var {{.Name}}Enum = field.Enum("{{.FieldName}}").
-	Values({{range $i, $v := .Values}}{{if $i}}, {{end}}"{{$v}}"{{end}})
-`))
-
 func main() {
+	loader := templates.NewLoader("cmd/generator-ent/templates")
+
+	schemaTmpl := loader.LoadTemplate("schema", "schema.tmpl")
+	enumTmpl := loader.LoadTemplate("enum", "enum.tmpl")
+
 	var sources []*ast.Source
 
 	mainSchema, err := os.ReadFile("graphql/schema.graphqls")
@@ -100,7 +65,7 @@ func main() {
 		if strings.HasPrefix(name, "__") {
 			continue
 		}
-		generateEnum(name, e)
+		generateEnum(name, e, enumTmpl)
 	}
 
 	for typeName, t := range schema.Types {
@@ -182,7 +147,7 @@ func unwrapType(t *ast.Type) *ast.Type {
 	return t
 }
 
-func generateEnum(name string, e *ast.Definition) {
+func generateEnum(name string, e *ast.Definition, enumTmpl *template.Template) {
 	values := []string{}
 	for _, v := range e.EnumValues {
 		values = append(values, v.Name)

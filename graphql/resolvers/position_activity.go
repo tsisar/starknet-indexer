@@ -2,6 +2,7 @@ package resolvers
 
 import (
 	"github.com/tsisar/starknet-indexer/generated/ent"
+	"github.com/tsisar/starknet-indexer/generated/ent/position"
 	"github.com/tsisar/starknet-indexer/generated/ent/positionactivity"
 	"github.com/tsisar/starknet-indexer/graphql/model"
 )
@@ -102,6 +103,66 @@ func ApplyPositionActivityWhereInput(query *ent.PositionActivityQuery, where *mo
 	}
 	if where.TransactionNotIn != nil {
 		query = query.Where(positionactivity.TransactionNotIn(where.TransactionNotIn...))
+	}
+
+	// Handle nested position filters
+	if where.Position != nil {
+		if where.Position.ID != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.IDEQ(*where.Position.ID)))
+		}
+		if where.Position.IDNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.IDNEQ(*where.Position.IDNot)))
+		}
+		if where.Position.IDIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.IDIn(where.Position.IDIn...)))
+		}
+		if where.Position.IDNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.IDNotIn(where.Position.IDNotIn...)))
+		}
+		if where.Position.PositionAddress != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.PositionAddressEQ(*where.Position.PositionAddress)))
+		}
+		if where.Position.PositionAddressNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.PositionAddressNEQ(*where.Position.PositionAddressNot)))
+		}
+		if where.Position.PositionAddressIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.PositionAddressIn(where.Position.PositionAddressIn...)))
+		}
+		if where.Position.PositionAddressNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.PositionAddressNotIn(where.Position.PositionAddressNotIn...)))
+		}
+		if where.Position.UserAddress != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.UserAddressEQ(*where.Position.UserAddress)))
+		}
+		if where.Position.UserAddressNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.UserAddressNEQ(*where.Position.UserAddressNot)))
+		}
+		if where.Position.UserAddressIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.UserAddressIn(where.Position.UserAddressIn...)))
+		}
+		if where.Position.UserAddressNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.UserAddressNotIn(where.Position.UserAddressNotIn...)))
+		}
+		if where.Position.PositionStatus != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.PositionStatusEQ(string(*where.Position.PositionStatus))))
+		}
+		if where.Position.PositionStatusNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.PositionStatusNEQ(string(*where.Position.PositionStatusNot))))
+		}
+		if where.Position.PositionStatusIn != nil {
+			statuses := make([]string, len(where.Position.PositionStatusIn))
+			for i, status := range where.Position.PositionStatusIn {
+				statuses[i] = string(status)
+			}
+			query = query.Where(positionactivity.HasPositionWith(position.PositionStatusIn(statuses...)))
+		}
+		if where.Position.PositionStatusNotIn != nil {
+			statuses := make([]string, len(where.Position.PositionStatusNotIn))
+			for i, status := range where.Position.PositionStatusNotIn {
+				statuses[i] = string(status)
+			}
+			query = query.Where(positionactivity.HasPositionWith(position.PositionStatusNotIn(statuses...)))
+		}
 	}
 
 	return query

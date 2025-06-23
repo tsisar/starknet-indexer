@@ -1132,7 +1132,7 @@ func (ec *executionContext) field_Query_pools_argsWhere(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("where"))
 	if tmp, ok := rawArgs["where"]; ok {
-		return ec.unmarshalOPoolWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInput(ctx, tmp)
+		return ec.unmarshalOPoolWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInput(ctx, tmp)
 	}
 
 	var zeroVal *model.PoolWhereInput
@@ -1150,7 +1150,7 @@ func (ec *executionContext) field_Query_pools_argsOrderBy(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("orderBy"))
 	if tmp, ok := rawArgs["orderBy"]; ok {
-		return ec.unmarshalOPoolOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolOrderBy(ctx, tmp)
+		return ec.unmarshalOPoolOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolOrderBy(ctx, tmp)
 	}
 
 	var zeroVal *model.PoolOrderBy
@@ -1229,7 +1229,7 @@ func (ec *executionContext) field_Query_positionActivities_argsWhere(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("where"))
 	if tmp, ok := rawArgs["where"]; ok {
-		return ec.unmarshalOPositionActivityWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityWhereInput(ctx, tmp)
+		return ec.unmarshalOPositionActivityWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityWhereInput(ctx, tmp)
 	}
 
 	var zeroVal *model.PositionActivityWhereInput
@@ -1247,7 +1247,7 @@ func (ec *executionContext) field_Query_positionActivities_argsOrderBy(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("orderBy"))
 	if tmp, ok := rawArgs["orderBy"]; ok {
-		return ec.unmarshalOPositionActivityOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityOrderBy(ctx, tmp)
+		return ec.unmarshalOPositionActivityOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityOrderBy(ctx, tmp)
 	}
 
 	var zeroVal *model.PositionActivityOrderBy
@@ -1382,7 +1382,7 @@ func (ec *executionContext) field_Query_positions_argsWhere(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("where"))
 	if tmp, ok := rawArgs["where"]; ok {
-		return ec.unmarshalOPositionWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInput(ctx, tmp)
+		return ec.unmarshalOPositionWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInput(ctx, tmp)
 	}
 
 	var zeroVal *model.PositionWhereInput
@@ -1400,7 +1400,7 @@ func (ec *executionContext) field_Query_positions_argsOrderBy(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("orderBy"))
 	if tmp, ok := rawArgs["orderBy"]; ok {
-		return ec.unmarshalOPositionOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionOrderBy(ctx, tmp)
+		return ec.unmarshalOPositionOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionOrderBy(ctx, tmp)
 	}
 
 	var zeroVal *model.PositionOrderBy
@@ -1507,7 +1507,7 @@ func (ec *executionContext) field_Query_protocolStats_argsWhere(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("where"))
 	if tmp, ok := rawArgs["where"]; ok {
-		return ec.unmarshalOProtocolStatWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatWhereInput(ctx, tmp)
+		return ec.unmarshalOProtocolStatWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatWhereInput(ctx, tmp)
 	}
 
 	var zeroVal *model.ProtocolStatWhereInput
@@ -1525,7 +1525,7 @@ func (ec *executionContext) field_Query_protocolStats_argsOrderBy(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("orderBy"))
 	if tmp, ok := rawArgs["orderBy"]; ok {
-		return ec.unmarshalOProtocolStatOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatOrderBy(ctx, tmp)
+		return ec.unmarshalOProtocolStatOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatOrderBy(ctx, tmp)
 	}
 
 	var zeroVal *model.ProtocolStatOrderBy
@@ -1632,7 +1632,7 @@ func (ec *executionContext) field_Query_stableSwapStats_argsWhere(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("where"))
 	if tmp, ok := rawArgs["where"]; ok {
-		return ec.unmarshalOStableSwapStatWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatWhereInput(ctx, tmp)
+		return ec.unmarshalOStableSwapStatWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatWhereInput(ctx, tmp)
 	}
 
 	var zeroVal *model.StableSwapStatWhereInput
@@ -1650,7 +1650,7 @@ func (ec *executionContext) field_Query_stableSwapStats_argsOrderBy(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("orderBy"))
 	if tmp, ok := rawArgs["orderBy"]; ok {
-		return ec.unmarshalOStableSwapStatOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatOrderBy(ctx, tmp)
+		return ec.unmarshalOStableSwapStatOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatOrderBy(ctx, tmp)
 	}
 
 	var zeroVal *model.StableSwapStatOrderBy
@@ -1757,7 +1757,7 @@ func (ec *executionContext) field_Query_swapEvents_argsWhere(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("where"))
 	if tmp, ok := rawArgs["where"]; ok {
-		return ec.unmarshalOSwapEventWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventWhereInput(ctx, tmp)
+		return ec.unmarshalOSwapEventWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventWhereInput(ctx, tmp)
 	}
 
 	var zeroVal *model.SwapEventWhereInput
@@ -1775,7 +1775,7 @@ func (ec *executionContext) field_Query_swapEvents_argsOrderBy(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("orderBy"))
 	if tmp, ok := rawArgs["orderBy"]; ok {
-		return ec.unmarshalOSwapEventOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventOrderBy(ctx, tmp)
+		return ec.unmarshalOSwapEventOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventOrderBy(ctx, tmp)
 	}
 
 	var zeroVal *model.SwapEventOrderBy
@@ -1882,7 +1882,7 @@ func (ec *executionContext) field_Query_users_argsWhere(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("where"))
 	if tmp, ok := rawArgs["where"]; ok {
-		return ec.unmarshalOUserWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserWhereInput(ctx, tmp)
+		return ec.unmarshalOUserWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserWhereInput(ctx, tmp)
 	}
 
 	var zeroVal *model.UserWhereInput
@@ -1900,7 +1900,7 @@ func (ec *executionContext) field_Query_users_argsOrderBy(
 
 	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("orderBy"))
 	if tmp, ok := rawArgs["orderBy"]; ok {
-		return ec.unmarshalOUserOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserOrderBy(ctx, tmp)
+		return ec.unmarshalOUserOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserOrderBy(ctx, tmp)
 	}
 
 	var zeroVal *model.UserOrderBy
@@ -2267,7 +2267,7 @@ func (ec *executionContext) _Meta_block(ctx context.Context, field graphql.Colle
 	}
 	res := resTmp.(*model.Block)
 	fc.Result = res
-	return ec.marshalNBlock2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐBlock(ctx, field.Selections, res)
+	return ec.marshalNBlock2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐBlock(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Meta_block(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -3069,7 +3069,7 @@ func (ec *executionContext) _Pool_positions(ctx context.Context, field graphql.C
 	}
 	res := resTmp.([]*ent.Position)
 	fc.Result = res
-	return ec.marshalNPosition2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionᚄ(ctx, field.Selections, res)
+	return ec.marshalNPosition2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Pool_positions(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -3727,7 +3727,7 @@ func (ec *executionContext) _Position_positionStatus(ctx context.Context, field 
 	}
 	res := resTmp.(model.PositionStatus)
 	fc.Result = res
-	return ec.marshalNPositionStatus2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx, field.Selections, res)
+	return ec.marshalNPositionStatus2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Position_positionStatus(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -3947,7 +3947,7 @@ func (ec *executionContext) _Position_pool(ctx context.Context, field graphql.Co
 	}
 	res := resTmp.(*ent.Pool)
 	fc.Result = res
-	return ec.marshalNPool2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPool(ctx, field.Selections, res)
+	return ec.marshalNPool2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPool(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Position_pool(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -4025,7 +4025,7 @@ func (ec *executionContext) _Position_activity(ctx context.Context, field graphq
 	}
 	res := resTmp.([]*ent.PositionActivity)
 	fc.Result = res
-	return ec.marshalNPositionActivity2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivityᚄ(ctx, field.Selections, res)
+	return ec.marshalNPositionActivity2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivityᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Position_activity(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -4131,7 +4131,7 @@ func (ec *executionContext) _PositionActivity_position(ctx context.Context, fiel
 	}
 	res := resTmp.(*ent.Position)
 	fc.Result = res
-	return ec.marshalNPosition2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPosition(ctx, field.Selections, res)
+	return ec.marshalNPosition2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPosition(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_PositionActivity_position(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -4217,7 +4217,7 @@ func (ec *executionContext) _PositionActivity_activityState(ctx context.Context,
 	}
 	res := resTmp.(model.PositionActivityState)
 	fc.Result = res
-	return ec.marshalNPositionActivityState2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx, field.Selections, res)
+	return ec.marshalNPositionActivityState2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_PositionActivity_activityState(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -4657,7 +4657,7 @@ func (ec *executionContext) _Query__meta(ctx context.Context, field graphql.Coll
 	}
 	res := resTmp.(*model.Meta)
 	fc.Result = res
-	return ec.marshalNMeta2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐMeta(ctx, field.Selections, res)
+	return ec.marshalNMeta2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐMeta(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query__meta(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -4709,7 +4709,7 @@ func (ec *executionContext) _Query_user(ctx context.Context, field graphql.Colle
 	}
 	res := resTmp.(*ent.User)
 	fc.Result = res
-	return ec.marshalNUser2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐUser(ctx, field.Selections, res)
+	return ec.marshalNUser2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐUser(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_user(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -4772,7 +4772,7 @@ func (ec *executionContext) _Query_users(ctx context.Context, field graphql.Coll
 	}
 	res := resTmp.([]*ent.User)
 	fc.Result = res
-	return ec.marshalNUser2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐUserᚄ(ctx, field.Selections, res)
+	return ec.marshalNUser2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐUserᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_users(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -4835,7 +4835,7 @@ func (ec *executionContext) _Query_pool(ctx context.Context, field graphql.Colle
 	}
 	res := resTmp.(*ent.Pool)
 	fc.Result = res
-	return ec.marshalNPool2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPool(ctx, field.Selections, res)
+	return ec.marshalNPool2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPool(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_pool(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -4924,7 +4924,7 @@ func (ec *executionContext) _Query_pools(ctx context.Context, field graphql.Coll
 	}
 	res := resTmp.([]*ent.Pool)
 	fc.Result = res
-	return ec.marshalNPool2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPoolᚄ(ctx, field.Selections, res)
+	return ec.marshalNPool2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPoolᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_pools(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -5013,7 +5013,7 @@ func (ec *executionContext) _Query_protocolStat(ctx context.Context, field graph
 	}
 	res := resTmp.(*ent.ProtocolStat)
 	fc.Result = res
-	return ec.marshalNProtocolStat2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐProtocolStat(ctx, field.Selections, res)
+	return ec.marshalNProtocolStat2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐProtocolStat(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_protocolStat(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -5078,7 +5078,7 @@ func (ec *executionContext) _Query_protocolStats(ctx context.Context, field grap
 	}
 	res := resTmp.([]*ent.ProtocolStat)
 	fc.Result = res
-	return ec.marshalNProtocolStat2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐProtocolStatᚄ(ctx, field.Selections, res)
+	return ec.marshalNProtocolStat2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐProtocolStatᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_protocolStats(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -5143,7 +5143,7 @@ func (ec *executionContext) _Query_position(ctx context.Context, field graphql.C
 	}
 	res := resTmp.(*ent.Position)
 	fc.Result = res
-	return ec.marshalNPosition2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPosition(ctx, field.Selections, res)
+	return ec.marshalNPosition2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPosition(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_position(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -5240,7 +5240,7 @@ func (ec *executionContext) _Query_positions(ctx context.Context, field graphql.
 	}
 	res := resTmp.([]*ent.Position)
 	fc.Result = res
-	return ec.marshalNPosition2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionᚄ(ctx, field.Selections, res)
+	return ec.marshalNPosition2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_positions(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -5337,7 +5337,7 @@ func (ec *executionContext) _Query_positionActivity(ctx context.Context, field g
 	}
 	res := resTmp.(*ent.PositionActivity)
 	fc.Result = res
-	return ec.marshalNPositionActivity2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivity(ctx, field.Selections, res)
+	return ec.marshalNPositionActivity2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivity(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_positionActivity(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -5410,7 +5410,7 @@ func (ec *executionContext) _Query_positionActivities(ctx context.Context, field
 	}
 	res := resTmp.([]*ent.PositionActivity)
 	fc.Result = res
-	return ec.marshalNPositionActivity2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivityᚄ(ctx, field.Selections, res)
+	return ec.marshalNPositionActivity2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivityᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_positionActivities(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -5483,7 +5483,7 @@ func (ec *executionContext) _Query_swapEvent(ctx context.Context, field graphql.
 	}
 	res := resTmp.(*ent.SwapEvent)
 	fc.Result = res
-	return ec.marshalNSwapEvent2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐSwapEvent(ctx, field.Selections, res)
+	return ec.marshalNSwapEvent2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐSwapEvent(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_swapEvent(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -5558,7 +5558,7 @@ func (ec *executionContext) _Query_swapEvents(ctx context.Context, field graphql
 	}
 	res := resTmp.([]*ent.SwapEvent)
 	fc.Result = res
-	return ec.marshalNSwapEvent2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐSwapEventᚄ(ctx, field.Selections, res)
+	return ec.marshalNSwapEvent2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐSwapEventᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_swapEvents(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -5633,7 +5633,7 @@ func (ec *executionContext) _Query_stableSwapStat(ctx context.Context, field gra
 	}
 	res := resTmp.(*ent.StableSwapStat)
 	fc.Result = res
-	return ec.marshalNStableSwapStat2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐStableSwapStat(ctx, field.Selections, res)
+	return ec.marshalNStableSwapStat2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐStableSwapStat(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_stableSwapStat(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -5702,7 +5702,7 @@ func (ec *executionContext) _Query_stableSwapStats(ctx context.Context, field gr
 	}
 	res := resTmp.([]*ent.StableSwapStat)
 	fc.Result = res
-	return ec.marshalNStableSwapStat2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐStableSwapStatᚄ(ctx, field.Selections, res)
+	return ec.marshalNStableSwapStat2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐStableSwapStatᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_stableSwapStats(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -8633,14 +8633,14 @@ func (ec *executionContext) unmarshalInputPoolOrderBy(ctx context.Context, obj a
 		switch k {
 		case "field":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
-			data, err := ec.unmarshalNPoolOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolOrderField(ctx, v)
+			data, err := ec.unmarshalNPoolOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolOrderField(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.Field = data
 		case "direction":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
-			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
+			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -9107,14 +9107,14 @@ func (ec *executionContext) unmarshalInputPositionActivityOrderBy(ctx context.Co
 		switch k {
 		case "field":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
-			data, err := ec.unmarshalNPositionActivityOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityOrderField(ctx, v)
+			data, err := ec.unmarshalNPositionActivityOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityOrderField(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.Field = data
 		case "direction":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
-			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
+			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -9132,7 +9132,7 @@ func (ec *executionContext) unmarshalInputPositionActivityWhereInput(ctx context
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"id", "id_not", "id_in", "id_not_in", "position", "position_not", "position_in", "position_not_in", "activityState", "activityState_not", "activityState_in", "activityState_not_in", "collateralAmount", "collateralAmount_not", "collateralAmount_in", "collateralAmount_not_in", "debtAmount", "debtAmount_not", "debtAmount_in", "debtAmount_not_in", "blockNumber", "blockNumber_not", "blockNumber_in", "blockNumber_not_in", "blockTimestamp", "blockTimestamp_not", "blockTimestamp_in", "blockTimestamp_not_in", "transaction", "transaction_not", "transaction_in", "transaction_not_in"}
+	fieldsInOrder := [...]string{"id", "id_not", "id_in", "id_not_in", "position", "activityState", "activityState_not", "activityState_in", "activityState_not_in", "collateralAmount", "collateralAmount_not", "collateralAmount_in", "collateralAmount_not_in", "debtAmount", "debtAmount_not", "debtAmount_in", "debtAmount_not_in", "blockNumber", "blockNumber_not", "blockNumber_in", "blockNumber_not_in", "blockTimestamp", "blockTimestamp_not", "blockTimestamp_in", "blockTimestamp_not_in", "transaction", "transaction_not", "transaction_in", "transaction_not_in"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
@@ -9169,56 +9169,35 @@ func (ec *executionContext) unmarshalInputPositionActivityWhereInput(ctx context
 			it.IDNotIn = data
 		case "position":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("position"))
-			data, err := ec.unmarshalOPositionWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInput(ctx, v)
+			data, err := ec.unmarshalOPositionWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInput(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.Position = data
-		case "position_not":
-			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("position_not"))
-			data, err := ec.unmarshalOPositionWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInput(ctx, v)
-			if err != nil {
-				return it, err
-			}
-			it.PositionNot = data
-		case "position_in":
-			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("position_in"))
-			data, err := ec.unmarshalOPositionWhereInput2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInputᚄ(ctx, v)
-			if err != nil {
-				return it, err
-			}
-			it.PositionIn = data
-		case "position_not_in":
-			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("position_not_in"))
-			data, err := ec.unmarshalOPositionWhereInput2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInputᚄ(ctx, v)
-			if err != nil {
-				return it, err
-			}
-			it.PositionNotIn = data
 		case "activityState":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("activityState"))
-			data, err := ec.unmarshalOPositionActivityState2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx, v)
+			data, err := ec.unmarshalOPositionActivityState2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.ActivityState = data
 		case "activityState_not":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("activityState_not"))
-			data, err := ec.unmarshalOPositionActivityState2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx, v)
+			data, err := ec.unmarshalOPositionActivityState2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.ActivityStateNot = data
 		case "activityState_in":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("activityState_in"))
-			data, err := ec.unmarshalOPositionActivityState2ᚕgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityStateᚄ(ctx, v)
+			data, err := ec.unmarshalOPositionActivityState2ᚕgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityStateᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.ActivityStateIn = data
 		case "activityState_not_in":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("activityState_not_in"))
-			data, err := ec.unmarshalOPositionActivityState2ᚕgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityStateᚄ(ctx, v)
+			data, err := ec.unmarshalOPositionActivityState2ᚕgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityStateᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -9385,14 +9364,14 @@ func (ec *executionContext) unmarshalInputPositionOrderBy(ctx context.Context, o
 		switch k {
 		case "field":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
-			data, err := ec.unmarshalNPositionOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionOrderField(ctx, v)
+			data, err := ec.unmarshalNPositionOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionOrderField(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.Field = data
 		case "direction":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
-			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
+			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -9410,7 +9389,7 @@ func (ec *executionContext) unmarshalInputPositionWhereInput(ctx context.Context
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"id", "id_not", "id_in", "id_not_in", "positionAddress", "positionAddress_not", "positionAddress_in", "positionAddress_not_in", "userAddress", "userAddress_not", "userAddress_in", "userAddress_not_in", "walletAddress", "walletAddress_not", "walletAddress_in", "walletAddress_not_in", "collateralPool", "collateralPool_not", "collateralPool_in", "collateralPool_not_in", "collateralPoolName", "collateralPoolName_not", "collateralPoolName_in", "collateralPoolName_not_in", "positionId", "positionId_not", "positionId_in", "positionId_not_in", "lockedCollateral", "lockedCollateral_not", "lockedCollateral_in", "lockedCollateral_not_in", "debtValue", "debtValue_not", "debtValue_in", "debtValue_not_in", "debtShare", "debtShare_not", "debtShare_in", "debtShare_not_in", "safetyBuffer", "safetyBuffer_not", "safetyBuffer_in", "safetyBuffer_not_in", "safetyBufferInPercent", "safetyBufferInPercent_not", "safetyBufferInPercent_in", "safetyBufferInPercent_not_in", "tvl", "tvl_not", "tvl_in", "tvl_not_in", "positionStatus", "positionStatus_not", "positionStatus_in", "positionStatus_not_in", "liquidationCount", "liquidationCount_not", "liquidationCount_in", "liquidationCount_not_in", "blockNumber", "blockNumber_not", "blockNumber_in", "blockNumber_not_in", "blockTimestamp", "blockTimestamp_not", "blockTimestamp_in", "blockTimestamp_not_in", "transaction", "transaction_not", "transaction_in", "transaction_not_in", "pool", "pool_not", "pool_in", "pool_not_in"}
+	fieldsInOrder := [...]string{"id", "id_not", "id_in", "id_not_in", "positionAddress", "positionAddress_not", "positionAddress_in", "positionAddress_not_in", "userAddress", "userAddress_not", "userAddress_in", "userAddress_not_in", "walletAddress", "walletAddress_not", "walletAddress_in", "walletAddress_not_in", "collateralPool", "collateralPool_not", "collateralPool_in", "collateralPool_not_in", "collateralPoolName", "collateralPoolName_not", "collateralPoolName_in", "collateralPoolName_not_in", "positionId", "positionId_not", "positionId_in", "positionId_not_in", "lockedCollateral", "lockedCollateral_not", "lockedCollateral_in", "lockedCollateral_not_in", "debtValue", "debtValue_not", "debtValue_in", "debtValue_not_in", "debtShare", "debtShare_not", "debtShare_in", "debtShare_not_in", "safetyBuffer", "safetyBuffer_not", "safetyBuffer_in", "safetyBuffer_not_in", "safetyBufferInPercent", "safetyBufferInPercent_not", "safetyBufferInPercent_in", "safetyBufferInPercent_not_in", "tvl", "tvl_not", "tvl_in", "tvl_not_in", "positionStatus", "positionStatus_not", "positionStatus_in", "positionStatus_not_in", "liquidationCount", "liquidationCount_not", "liquidationCount_in", "liquidationCount_not_in", "blockNumber", "blockNumber_not", "blockNumber_in", "blockNumber_not_in", "blockTimestamp", "blockTimestamp_not", "blockTimestamp_in", "blockTimestamp_not_in", "transaction", "transaction_not", "transaction_in", "transaction_not_in", "pool"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
@@ -9783,28 +9762,28 @@ func (ec *executionContext) unmarshalInputPositionWhereInput(ctx context.Context
 			it.TvlNotIn = data
 		case "positionStatus":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("positionStatus"))
-			data, err := ec.unmarshalOPositionStatus2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx, v)
+			data, err := ec.unmarshalOPositionStatus2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.PositionStatus = data
 		case "positionStatus_not":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("positionStatus_not"))
-			data, err := ec.unmarshalOPositionStatus2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx, v)
+			data, err := ec.unmarshalOPositionStatus2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.PositionStatusNot = data
 		case "positionStatus_in":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("positionStatus_in"))
-			data, err := ec.unmarshalOPositionStatus2ᚕgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatusᚄ(ctx, v)
+			data, err := ec.unmarshalOPositionStatus2ᚕgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatusᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.PositionStatusIn = data
 		case "positionStatus_not_in":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("positionStatus_not_in"))
-			data, err := ec.unmarshalOPositionStatus2ᚕgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatusᚄ(ctx, v)
+			data, err := ec.unmarshalOPositionStatus2ᚕgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatusᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -9923,32 +9902,11 @@ func (ec *executionContext) unmarshalInputPositionWhereInput(ctx context.Context
 			it.TransactionNotIn = data
 		case "pool":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("pool"))
-			data, err := ec.unmarshalOPoolWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInput(ctx, v)
+			data, err := ec.unmarshalOPoolWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInput(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.Pool = data
-		case "pool_not":
-			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("pool_not"))
-			data, err := ec.unmarshalOPoolWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInput(ctx, v)
-			if err != nil {
-				return it, err
-			}
-			it.PoolNot = data
-		case "pool_in":
-			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("pool_in"))
-			data, err := ec.unmarshalOPoolWhereInput2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInputᚄ(ctx, v)
-			if err != nil {
-				return it, err
-			}
-			it.PoolIn = data
-		case "pool_not_in":
-			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("pool_not_in"))
-			data, err := ec.unmarshalOPoolWhereInput2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInputᚄ(ctx, v)
-			if err != nil {
-				return it, err
-			}
-			it.PoolNotIn = data
 		}
 	}
 
@@ -9971,14 +9929,14 @@ func (ec *executionContext) unmarshalInputProtocolStatOrderBy(ctx context.Contex
 		switch k {
 		case "field":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
-			data, err := ec.unmarshalNProtocolStatOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatOrderField(ctx, v)
+			data, err := ec.unmarshalNProtocolStatOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatOrderField(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.Field = data
 		case "direction":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
-			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
+			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -10109,14 +10067,14 @@ func (ec *executionContext) unmarshalInputStableSwapStatOrderBy(ctx context.Cont
 		switch k {
 		case "field":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
-			data, err := ec.unmarshalNStableSwapStatOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatOrderField(ctx, v)
+			data, err := ec.unmarshalNStableSwapStatOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatOrderField(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.Field = data
 		case "direction":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
-			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
+			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -10331,14 +10289,14 @@ func (ec *executionContext) unmarshalInputSwapEventOrderBy(ctx context.Context, 
 		switch k {
 		case "field":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
-			data, err := ec.unmarshalNSwapEventOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventOrderField(ctx, v)
+			data, err := ec.unmarshalNSwapEventOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventOrderField(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.Field = data
 		case "direction":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
-			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
+			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -10637,14 +10595,14 @@ func (ec *executionContext) unmarshalInputUserOrderBy(ctx context.Context, obj a
 		switch k {
 		case "field":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("field"))
-			data, err := ec.unmarshalNUserOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserOrderField(ctx, v)
+			data, err := ec.unmarshalNUserOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserOrderField(ctx, v)
 			if err != nil {
 				return it, err
 			}
 			it.Field = data
 		case "direction":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("direction"))
-			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
+			data, err := ec.unmarshalNOrderDirection2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -12370,7 +12328,7 @@ func (ec *executionContext) ___Type(ctx context.Context, sel ast.SelectionSet, o
 
 // region    ***************************** type.gotpl *****************************
 
-func (ec *executionContext) marshalNBlock2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐBlock(ctx context.Context, sel ast.SelectionSet, v *model.Block) graphql.Marshaler {
+func (ec *executionContext) marshalNBlock2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐBlock(ctx context.Context, sel ast.SelectionSet, v *model.Block) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -12396,11 +12354,11 @@ func (ec *executionContext) marshalNBoolean2bool(ctx context.Context, sel ast.Se
 	return res
 }
 
-func (ec *executionContext) marshalNMeta2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐMeta(ctx context.Context, sel ast.SelectionSet, v model.Meta) graphql.Marshaler {
+func (ec *executionContext) marshalNMeta2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐMeta(ctx context.Context, sel ast.SelectionSet, v model.Meta) graphql.Marshaler {
 	return ec._Meta(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNMeta2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐMeta(ctx context.Context, sel ast.SelectionSet, v *model.Meta) graphql.Marshaler {
+func (ec *executionContext) marshalNMeta2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐMeta(ctx context.Context, sel ast.SelectionSet, v *model.Meta) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -12410,21 +12368,21 @@ func (ec *executionContext) marshalNMeta2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑi
 	return ec._Meta(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalNOrderDirection2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx context.Context, v any) (model.OrderDirection, error) {
+func (ec *executionContext) unmarshalNOrderDirection2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx context.Context, v any) (model.OrderDirection, error) {
 	var res model.OrderDirection
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNOrderDirection2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx context.Context, sel ast.SelectionSet, v model.OrderDirection) graphql.Marshaler {
+func (ec *executionContext) marshalNOrderDirection2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐOrderDirection(ctx context.Context, sel ast.SelectionSet, v model.OrderDirection) graphql.Marshaler {
 	return v
 }
 
-func (ec *executionContext) marshalNPool2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPool(ctx context.Context, sel ast.SelectionSet, v ent.Pool) graphql.Marshaler {
+func (ec *executionContext) marshalNPool2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPool(ctx context.Context, sel ast.SelectionSet, v ent.Pool) graphql.Marshaler {
 	return ec._Pool(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNPool2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPoolᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.Pool) graphql.Marshaler {
+func (ec *executionContext) marshalNPool2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPoolᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.Pool) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -12448,7 +12406,7 @@ func (ec *executionContext) marshalNPool2ᚕᚖgithubᚗcomᚋTsisarᚋstarknet�
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNPool2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPool(ctx, sel, v[i])
+			ret[i] = ec.marshalNPool2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPool(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -12468,7 +12426,7 @@ func (ec *executionContext) marshalNPool2ᚕᚖgithubᚗcomᚋTsisarᚋstarknet�
 	return ret
 }
 
-func (ec *executionContext) marshalNPool2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPool(ctx context.Context, sel ast.SelectionSet, v *ent.Pool) graphql.Marshaler {
+func (ec *executionContext) marshalNPool2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPool(ctx context.Context, sel ast.SelectionSet, v *ent.Pool) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -12478,26 +12436,21 @@ func (ec *executionContext) marshalNPool2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑi
 	return ec._Pool(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalNPoolOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolOrderField(ctx context.Context, v any) (model.PoolOrderField, error) {
+func (ec *executionContext) unmarshalNPoolOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolOrderField(ctx context.Context, v any) (model.PoolOrderField, error) {
 	var res model.PoolOrderField
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNPoolOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolOrderField(ctx context.Context, sel ast.SelectionSet, v model.PoolOrderField) graphql.Marshaler {
+func (ec *executionContext) marshalNPoolOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolOrderField(ctx context.Context, sel ast.SelectionSet, v model.PoolOrderField) graphql.Marshaler {
 	return v
 }
 
-func (ec *executionContext) unmarshalNPoolWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInput(ctx context.Context, v any) (*model.PoolWhereInput, error) {
-	res, err := ec.unmarshalInputPoolWhereInput(ctx, v)
-	return &res, graphql.ErrorOnPath(ctx, err)
-}
-
-func (ec *executionContext) marshalNPosition2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPosition(ctx context.Context, sel ast.SelectionSet, v ent.Position) graphql.Marshaler {
+func (ec *executionContext) marshalNPosition2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPosition(ctx context.Context, sel ast.SelectionSet, v ent.Position) graphql.Marshaler {
 	return ec._Position(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNPosition2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.Position) graphql.Marshaler {
+func (ec *executionContext) marshalNPosition2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.Position) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -12521,7 +12474,7 @@ func (ec *executionContext) marshalNPosition2ᚕᚖgithubᚗcomᚋTsisarᚋstark
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNPosition2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPosition(ctx, sel, v[i])
+			ret[i] = ec.marshalNPosition2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPosition(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -12541,7 +12494,7 @@ func (ec *executionContext) marshalNPosition2ᚕᚖgithubᚗcomᚋTsisarᚋstark
 	return ret
 }
 
-func (ec *executionContext) marshalNPosition2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPosition(ctx context.Context, sel ast.SelectionSet, v *ent.Position) graphql.Marshaler {
+func (ec *executionContext) marshalNPosition2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPosition(ctx context.Context, sel ast.SelectionSet, v *ent.Position) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -12551,11 +12504,11 @@ func (ec *executionContext) marshalNPosition2ᚖgithubᚗcomᚋTsisarᚋstarknet
 	return ec._Position(ctx, sel, v)
 }
 
-func (ec *executionContext) marshalNPositionActivity2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivity(ctx context.Context, sel ast.SelectionSet, v ent.PositionActivity) graphql.Marshaler {
+func (ec *executionContext) marshalNPositionActivity2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivity(ctx context.Context, sel ast.SelectionSet, v ent.PositionActivity) graphql.Marshaler {
 	return ec._PositionActivity(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNPositionActivity2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivityᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.PositionActivity) graphql.Marshaler {
+func (ec *executionContext) marshalNPositionActivity2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivityᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.PositionActivity) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -12579,7 +12532,7 @@ func (ec *executionContext) marshalNPositionActivity2ᚕᚖgithubᚗcomᚋTsisar
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNPositionActivity2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivity(ctx, sel, v[i])
+			ret[i] = ec.marshalNPositionActivity2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivity(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -12599,7 +12552,7 @@ func (ec *executionContext) marshalNPositionActivity2ᚕᚖgithubᚗcomᚋTsisar
 	return ret
 }
 
-func (ec *executionContext) marshalNPositionActivity2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivity(ctx context.Context, sel ast.SelectionSet, v *ent.PositionActivity) graphql.Marshaler {
+func (ec *executionContext) marshalNPositionActivity2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivity(ctx context.Context, sel ast.SelectionSet, v *ent.PositionActivity) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -12609,56 +12562,51 @@ func (ec *executionContext) marshalNPositionActivity2ᚖgithubᚗcomᚋTsisarᚋ
 	return ec._PositionActivity(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalNPositionActivityOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityOrderField(ctx context.Context, v any) (model.PositionActivityOrderField, error) {
+func (ec *executionContext) unmarshalNPositionActivityOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityOrderField(ctx context.Context, v any) (model.PositionActivityOrderField, error) {
 	var res model.PositionActivityOrderField
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNPositionActivityOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityOrderField(ctx context.Context, sel ast.SelectionSet, v model.PositionActivityOrderField) graphql.Marshaler {
+func (ec *executionContext) marshalNPositionActivityOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityOrderField(ctx context.Context, sel ast.SelectionSet, v model.PositionActivityOrderField) graphql.Marshaler {
 	return v
 }
 
-func (ec *executionContext) unmarshalNPositionActivityState2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx context.Context, v any) (model.PositionActivityState, error) {
+func (ec *executionContext) unmarshalNPositionActivityState2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx context.Context, v any) (model.PositionActivityState, error) {
 	var res model.PositionActivityState
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNPositionActivityState2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx context.Context, sel ast.SelectionSet, v model.PositionActivityState) graphql.Marshaler {
+func (ec *executionContext) marshalNPositionActivityState2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx context.Context, sel ast.SelectionSet, v model.PositionActivityState) graphql.Marshaler {
 	return v
 }
 
-func (ec *executionContext) unmarshalNPositionOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionOrderField(ctx context.Context, v any) (model.PositionOrderField, error) {
+func (ec *executionContext) unmarshalNPositionOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionOrderField(ctx context.Context, v any) (model.PositionOrderField, error) {
 	var res model.PositionOrderField
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNPositionOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionOrderField(ctx context.Context, sel ast.SelectionSet, v model.PositionOrderField) graphql.Marshaler {
+func (ec *executionContext) marshalNPositionOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionOrderField(ctx context.Context, sel ast.SelectionSet, v model.PositionOrderField) graphql.Marshaler {
 	return v
 }
 
-func (ec *executionContext) unmarshalNPositionStatus2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx context.Context, v any) (model.PositionStatus, error) {
+func (ec *executionContext) unmarshalNPositionStatus2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx context.Context, v any) (model.PositionStatus, error) {
 	var res model.PositionStatus
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNPositionStatus2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx context.Context, sel ast.SelectionSet, v model.PositionStatus) graphql.Marshaler {
+func (ec *executionContext) marshalNPositionStatus2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx context.Context, sel ast.SelectionSet, v model.PositionStatus) graphql.Marshaler {
 	return v
 }
 
-func (ec *executionContext) unmarshalNPositionWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInput(ctx context.Context, v any) (*model.PositionWhereInput, error) {
-	res, err := ec.unmarshalInputPositionWhereInput(ctx, v)
-	return &res, graphql.ErrorOnPath(ctx, err)
-}
-
-func (ec *executionContext) marshalNProtocolStat2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐProtocolStat(ctx context.Context, sel ast.SelectionSet, v ent.ProtocolStat) graphql.Marshaler {
+func (ec *executionContext) marshalNProtocolStat2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐProtocolStat(ctx context.Context, sel ast.SelectionSet, v ent.ProtocolStat) graphql.Marshaler {
 	return ec._ProtocolStat(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNProtocolStat2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐProtocolStatᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.ProtocolStat) graphql.Marshaler {
+func (ec *executionContext) marshalNProtocolStat2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐProtocolStatᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.ProtocolStat) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -12682,7 +12630,7 @@ func (ec *executionContext) marshalNProtocolStat2ᚕᚖgithubᚗcomᚋTsisarᚋs
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNProtocolStat2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐProtocolStat(ctx, sel, v[i])
+			ret[i] = ec.marshalNProtocolStat2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐProtocolStat(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -12702,7 +12650,7 @@ func (ec *executionContext) marshalNProtocolStat2ᚕᚖgithubᚗcomᚋTsisarᚋs
 	return ret
 }
 
-func (ec *executionContext) marshalNProtocolStat2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐProtocolStat(ctx context.Context, sel ast.SelectionSet, v *ent.ProtocolStat) graphql.Marshaler {
+func (ec *executionContext) marshalNProtocolStat2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐProtocolStat(ctx context.Context, sel ast.SelectionSet, v *ent.ProtocolStat) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -12712,21 +12660,21 @@ func (ec *executionContext) marshalNProtocolStat2ᚖgithubᚗcomᚋTsisarᚋstar
 	return ec._ProtocolStat(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalNProtocolStatOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatOrderField(ctx context.Context, v any) (model.ProtocolStatOrderField, error) {
+func (ec *executionContext) unmarshalNProtocolStatOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatOrderField(ctx context.Context, v any) (model.ProtocolStatOrderField, error) {
 	var res model.ProtocolStatOrderField
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNProtocolStatOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatOrderField(ctx context.Context, sel ast.SelectionSet, v model.ProtocolStatOrderField) graphql.Marshaler {
+func (ec *executionContext) marshalNProtocolStatOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatOrderField(ctx context.Context, sel ast.SelectionSet, v model.ProtocolStatOrderField) graphql.Marshaler {
 	return v
 }
 
-func (ec *executionContext) marshalNStableSwapStat2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐStableSwapStat(ctx context.Context, sel ast.SelectionSet, v ent.StableSwapStat) graphql.Marshaler {
+func (ec *executionContext) marshalNStableSwapStat2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐStableSwapStat(ctx context.Context, sel ast.SelectionSet, v ent.StableSwapStat) graphql.Marshaler {
 	return ec._StableSwapStat(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNStableSwapStat2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐStableSwapStatᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.StableSwapStat) graphql.Marshaler {
+func (ec *executionContext) marshalNStableSwapStat2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐStableSwapStatᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.StableSwapStat) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -12750,7 +12698,7 @@ func (ec *executionContext) marshalNStableSwapStat2ᚕᚖgithubᚗcomᚋTsisar�
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNStableSwapStat2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐStableSwapStat(ctx, sel, v[i])
+			ret[i] = ec.marshalNStableSwapStat2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐStableSwapStat(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -12770,7 +12718,7 @@ func (ec *executionContext) marshalNStableSwapStat2ᚕᚖgithubᚗcomᚋTsisar�
 	return ret
 }
 
-func (ec *executionContext) marshalNStableSwapStat2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐStableSwapStat(ctx context.Context, sel ast.SelectionSet, v *ent.StableSwapStat) graphql.Marshaler {
+func (ec *executionContext) marshalNStableSwapStat2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐStableSwapStat(ctx context.Context, sel ast.SelectionSet, v *ent.StableSwapStat) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -12780,13 +12728,13 @@ func (ec *executionContext) marshalNStableSwapStat2ᚖgithubᚗcomᚋTsisarᚋst
 	return ec._StableSwapStat(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalNStableSwapStatOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatOrderField(ctx context.Context, v any) (model.StableSwapStatOrderField, error) {
+func (ec *executionContext) unmarshalNStableSwapStatOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatOrderField(ctx context.Context, v any) (model.StableSwapStatOrderField, error) {
 	var res model.StableSwapStatOrderField
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNStableSwapStatOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatOrderField(ctx context.Context, sel ast.SelectionSet, v model.StableSwapStatOrderField) graphql.Marshaler {
+func (ec *executionContext) marshalNStableSwapStatOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatOrderField(ctx context.Context, sel ast.SelectionSet, v model.StableSwapStatOrderField) graphql.Marshaler {
 	return v
 }
 
@@ -12836,11 +12784,11 @@ func (ec *executionContext) marshalNString2ᚕstringᚄ(ctx context.Context, sel
 	return ret
 }
 
-func (ec *executionContext) marshalNSwapEvent2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐSwapEvent(ctx context.Context, sel ast.SelectionSet, v ent.SwapEvent) graphql.Marshaler {
+func (ec *executionContext) marshalNSwapEvent2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐSwapEvent(ctx context.Context, sel ast.SelectionSet, v ent.SwapEvent) graphql.Marshaler {
 	return ec._SwapEvent(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNSwapEvent2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐSwapEventᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.SwapEvent) graphql.Marshaler {
+func (ec *executionContext) marshalNSwapEvent2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐSwapEventᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.SwapEvent) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -12864,7 +12812,7 @@ func (ec *executionContext) marshalNSwapEvent2ᚕᚖgithubᚗcomᚋTsisarᚋstar
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNSwapEvent2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐSwapEvent(ctx, sel, v[i])
+			ret[i] = ec.marshalNSwapEvent2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐSwapEvent(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -12884,7 +12832,7 @@ func (ec *executionContext) marshalNSwapEvent2ᚕᚖgithubᚗcomᚋTsisarᚋstar
 	return ret
 }
 
-func (ec *executionContext) marshalNSwapEvent2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐSwapEvent(ctx context.Context, sel ast.SelectionSet, v *ent.SwapEvent) graphql.Marshaler {
+func (ec *executionContext) marshalNSwapEvent2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐSwapEvent(ctx context.Context, sel ast.SelectionSet, v *ent.SwapEvent) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -12894,21 +12842,21 @@ func (ec *executionContext) marshalNSwapEvent2ᚖgithubᚗcomᚋTsisarᚋstarkne
 	return ec._SwapEvent(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalNSwapEventOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventOrderField(ctx context.Context, v any) (model.SwapEventOrderField, error) {
+func (ec *executionContext) unmarshalNSwapEventOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventOrderField(ctx context.Context, v any) (model.SwapEventOrderField, error) {
 	var res model.SwapEventOrderField
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNSwapEventOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventOrderField(ctx context.Context, sel ast.SelectionSet, v model.SwapEventOrderField) graphql.Marshaler {
+func (ec *executionContext) marshalNSwapEventOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventOrderField(ctx context.Context, sel ast.SelectionSet, v model.SwapEventOrderField) graphql.Marshaler {
 	return v
 }
 
-func (ec *executionContext) marshalNUser2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐUser(ctx context.Context, sel ast.SelectionSet, v ent.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐUser(ctx context.Context, sel ast.SelectionSet, v ent.User) graphql.Marshaler {
 	return ec._User(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNUser2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐUserᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐUserᚄ(ctx context.Context, sel ast.SelectionSet, v []*ent.User) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -12932,7 +12880,7 @@ func (ec *executionContext) marshalNUser2ᚕᚖgithubᚗcomᚋTsisarᚋstarknet�
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNUser2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐUser(ctx, sel, v[i])
+			ret[i] = ec.marshalNUser2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐUser(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -12952,7 +12900,7 @@ func (ec *executionContext) marshalNUser2ᚕᚖgithubᚗcomᚋTsisarᚋstarknet�
 	return ret
 }
 
-func (ec *executionContext) marshalNUser2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐUser(ctx context.Context, sel ast.SelectionSet, v *ent.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐUser(ctx context.Context, sel ast.SelectionSet, v *ent.User) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -12962,13 +12910,13 @@ func (ec *executionContext) marshalNUser2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑi
 	return ec._User(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalNUserOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserOrderField(ctx context.Context, v any) (model.UserOrderField, error) {
+func (ec *executionContext) unmarshalNUserOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserOrderField(ctx context.Context, v any) (model.UserOrderField, error) {
 	var res model.UserOrderField
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNUserOrderField2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserOrderField(ctx context.Context, sel ast.SelectionSet, v model.UserOrderField) graphql.Marshaler {
+func (ec *executionContext) marshalNUserOrderField2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserOrderField(ctx context.Context, sel ast.SelectionSet, v model.UserOrderField) graphql.Marshaler {
 	return v
 }
 
@@ -13327,7 +13275,7 @@ func (ec *executionContext) marshalOInt2ᚖint32(ctx context.Context, sel ast.Se
 	return res
 }
 
-func (ec *executionContext) unmarshalOPoolOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolOrderBy(ctx context.Context, v any) (*model.PoolOrderBy, error) {
+func (ec *executionContext) unmarshalOPoolOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolOrderBy(ctx context.Context, v any) (*model.PoolOrderBy, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13335,25 +13283,7 @@ func (ec *executionContext) unmarshalOPoolOrderBy2ᚖgithubᚗcomᚋTsisarᚋsta
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalOPoolWhereInput2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInputᚄ(ctx context.Context, v any) ([]*model.PoolWhereInput, error) {
-	if v == nil {
-		return nil, nil
-	}
-	var vSlice []any
-	vSlice = graphql.CoerceList(v)
-	var err error
-	res := make([]*model.PoolWhereInput, len(vSlice))
-	for i := range vSlice {
-		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithIndex(i))
-		res[i], err = ec.unmarshalNPoolWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInput(ctx, vSlice[i])
-		if err != nil {
-			return nil, err
-		}
-	}
-	return res, nil
-}
-
-func (ec *executionContext) unmarshalOPoolWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInput(ctx context.Context, v any) (*model.PoolWhereInput, error) {
+func (ec *executionContext) unmarshalOPoolWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInput(ctx context.Context, v any) (*model.PoolWhereInput, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13361,7 +13291,7 @@ func (ec *executionContext) unmarshalOPoolWhereInput2ᚖgithubᚗcomᚋTsisarᚋ
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalOPositionActivityOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityOrderBy(ctx context.Context, v any) (*model.PositionActivityOrderBy, error) {
+func (ec *executionContext) unmarshalOPositionActivityOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityOrderBy(ctx context.Context, v any) (*model.PositionActivityOrderBy, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13369,7 +13299,7 @@ func (ec *executionContext) unmarshalOPositionActivityOrderBy2ᚖgithubᚗcomᚋ
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalOPositionActivityState2ᚕgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityStateᚄ(ctx context.Context, v any) ([]model.PositionActivityState, error) {
+func (ec *executionContext) unmarshalOPositionActivityState2ᚕgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityStateᚄ(ctx context.Context, v any) ([]model.PositionActivityState, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13379,7 +13309,7 @@ func (ec *executionContext) unmarshalOPositionActivityState2ᚕgithubᚗcomᚋTs
 	res := make([]model.PositionActivityState, len(vSlice))
 	for i := range vSlice {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithIndex(i))
-		res[i], err = ec.unmarshalNPositionActivityState2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx, vSlice[i])
+		res[i], err = ec.unmarshalNPositionActivityState2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx, vSlice[i])
 		if err != nil {
 			return nil, err
 		}
@@ -13387,7 +13317,7 @@ func (ec *executionContext) unmarshalOPositionActivityState2ᚕgithubᚗcomᚋTs
 	return res, nil
 }
 
-func (ec *executionContext) marshalOPositionActivityState2ᚕgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityStateᚄ(ctx context.Context, sel ast.SelectionSet, v []model.PositionActivityState) graphql.Marshaler {
+func (ec *executionContext) marshalOPositionActivityState2ᚕgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityStateᚄ(ctx context.Context, sel ast.SelectionSet, v []model.PositionActivityState) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
@@ -13414,7 +13344,7 @@ func (ec *executionContext) marshalOPositionActivityState2ᚕgithubᚗcomᚋTsis
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNPositionActivityState2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx, sel, v[i])
+			ret[i] = ec.marshalNPositionActivityState2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -13434,7 +13364,7 @@ func (ec *executionContext) marshalOPositionActivityState2ᚕgithubᚗcomᚋTsis
 	return ret
 }
 
-func (ec *executionContext) unmarshalOPositionActivityState2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx context.Context, v any) (*model.PositionActivityState, error) {
+func (ec *executionContext) unmarshalOPositionActivityState2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx context.Context, v any) (*model.PositionActivityState, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13443,14 +13373,14 @@ func (ec *executionContext) unmarshalOPositionActivityState2ᚖgithubᚗcomᚋTs
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalOPositionActivityState2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx context.Context, sel ast.SelectionSet, v *model.PositionActivityState) graphql.Marshaler {
+func (ec *executionContext) marshalOPositionActivityState2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx context.Context, sel ast.SelectionSet, v *model.PositionActivityState) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
 	return v
 }
 
-func (ec *executionContext) unmarshalOPositionActivityWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityWhereInput(ctx context.Context, v any) (*model.PositionActivityWhereInput, error) {
+func (ec *executionContext) unmarshalOPositionActivityWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityWhereInput(ctx context.Context, v any) (*model.PositionActivityWhereInput, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13458,7 +13388,7 @@ func (ec *executionContext) unmarshalOPositionActivityWhereInput2ᚖgithubᚗcom
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalOPositionOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionOrderBy(ctx context.Context, v any) (*model.PositionOrderBy, error) {
+func (ec *executionContext) unmarshalOPositionOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionOrderBy(ctx context.Context, v any) (*model.PositionOrderBy, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13466,7 +13396,7 @@ func (ec *executionContext) unmarshalOPositionOrderBy2ᚖgithubᚗcomᚋTsisar�
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalOPositionStatus2ᚕgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatusᚄ(ctx context.Context, v any) ([]model.PositionStatus, error) {
+func (ec *executionContext) unmarshalOPositionStatus2ᚕgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatusᚄ(ctx context.Context, v any) ([]model.PositionStatus, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13476,7 +13406,7 @@ func (ec *executionContext) unmarshalOPositionStatus2ᚕgithubᚗcomᚋTsisarᚋ
 	res := make([]model.PositionStatus, len(vSlice))
 	for i := range vSlice {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithIndex(i))
-		res[i], err = ec.unmarshalNPositionStatus2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx, vSlice[i])
+		res[i], err = ec.unmarshalNPositionStatus2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx, vSlice[i])
 		if err != nil {
 			return nil, err
 		}
@@ -13484,7 +13414,7 @@ func (ec *executionContext) unmarshalOPositionStatus2ᚕgithubᚗcomᚋTsisarᚋ
 	return res, nil
 }
 
-func (ec *executionContext) marshalOPositionStatus2ᚕgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatusᚄ(ctx context.Context, sel ast.SelectionSet, v []model.PositionStatus) graphql.Marshaler {
+func (ec *executionContext) marshalOPositionStatus2ᚕgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatusᚄ(ctx context.Context, sel ast.SelectionSet, v []model.PositionStatus) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
@@ -13511,7 +13441,7 @@ func (ec *executionContext) marshalOPositionStatus2ᚕgithubᚗcomᚋTsisarᚋst
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNPositionStatus2githubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx, sel, v[i])
+			ret[i] = ec.marshalNPositionStatus2githubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -13531,7 +13461,7 @@ func (ec *executionContext) marshalOPositionStatus2ᚕgithubᚗcomᚋTsisarᚋst
 	return ret
 }
 
-func (ec *executionContext) unmarshalOPositionStatus2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx context.Context, v any) (*model.PositionStatus, error) {
+func (ec *executionContext) unmarshalOPositionStatus2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx context.Context, v any) (*model.PositionStatus, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13540,32 +13470,14 @@ func (ec *executionContext) unmarshalOPositionStatus2ᚖgithubᚗcomᚋTsisarᚋ
 	return res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalOPositionStatus2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx context.Context, sel ast.SelectionSet, v *model.PositionStatus) graphql.Marshaler {
+func (ec *executionContext) marshalOPositionStatus2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionStatus(ctx context.Context, sel ast.SelectionSet, v *model.PositionStatus) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
 	return v
 }
 
-func (ec *executionContext) unmarshalOPositionWhereInput2ᚕᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInputᚄ(ctx context.Context, v any) ([]*model.PositionWhereInput, error) {
-	if v == nil {
-		return nil, nil
-	}
-	var vSlice []any
-	vSlice = graphql.CoerceList(v)
-	var err error
-	res := make([]*model.PositionWhereInput, len(vSlice))
-	for i := range vSlice {
-		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithIndex(i))
-		res[i], err = ec.unmarshalNPositionWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInput(ctx, vSlice[i])
-		if err != nil {
-			return nil, err
-		}
-	}
-	return res, nil
-}
-
-func (ec *executionContext) unmarshalOPositionWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInput(ctx context.Context, v any) (*model.PositionWhereInput, error) {
+func (ec *executionContext) unmarshalOPositionWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInput(ctx context.Context, v any) (*model.PositionWhereInput, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13573,7 +13485,7 @@ func (ec *executionContext) unmarshalOPositionWhereInput2ᚖgithubᚗcomᚋTsisa
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalOProtocolStatOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatOrderBy(ctx context.Context, v any) (*model.ProtocolStatOrderBy, error) {
+func (ec *executionContext) unmarshalOProtocolStatOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatOrderBy(ctx context.Context, v any) (*model.ProtocolStatOrderBy, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13581,7 +13493,7 @@ func (ec *executionContext) unmarshalOProtocolStatOrderBy2ᚖgithubᚗcomᚋTsis
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalOProtocolStatWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatWhereInput(ctx context.Context, v any) (*model.ProtocolStatWhereInput, error) {
+func (ec *executionContext) unmarshalOProtocolStatWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐProtocolStatWhereInput(ctx context.Context, v any) (*model.ProtocolStatWhereInput, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13589,7 +13501,7 @@ func (ec *executionContext) unmarshalOProtocolStatWhereInput2ᚖgithubᚗcomᚋT
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalOStableSwapStatOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatOrderBy(ctx context.Context, v any) (*model.StableSwapStatOrderBy, error) {
+func (ec *executionContext) unmarshalOStableSwapStatOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatOrderBy(ctx context.Context, v any) (*model.StableSwapStatOrderBy, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13597,7 +13509,7 @@ func (ec *executionContext) unmarshalOStableSwapStatOrderBy2ᚖgithubᚗcomᚋTs
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalOStableSwapStatWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatWhereInput(ctx context.Context, v any) (*model.StableSwapStatWhereInput, error) {
+func (ec *executionContext) unmarshalOStableSwapStatWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐStableSwapStatWhereInput(ctx context.Context, v any) (*model.StableSwapStatWhereInput, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13659,7 +13571,7 @@ func (ec *executionContext) marshalOString2ᚖstring(ctx context.Context, sel as
 	return res
 }
 
-func (ec *executionContext) unmarshalOSwapEventOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventOrderBy(ctx context.Context, v any) (*model.SwapEventOrderBy, error) {
+func (ec *executionContext) unmarshalOSwapEventOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventOrderBy(ctx context.Context, v any) (*model.SwapEventOrderBy, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13667,7 +13579,7 @@ func (ec *executionContext) unmarshalOSwapEventOrderBy2ᚖgithubᚗcomᚋTsisar�
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalOSwapEventWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventWhereInput(ctx context.Context, v any) (*model.SwapEventWhereInput, error) {
+func (ec *executionContext) unmarshalOSwapEventWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐSwapEventWhereInput(ctx context.Context, v any) (*model.SwapEventWhereInput, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13675,7 +13587,7 @@ func (ec *executionContext) unmarshalOSwapEventWhereInput2ᚖgithubᚗcomᚋTsis
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalOUserOrderBy2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserOrderBy(ctx context.Context, v any) (*model.UserOrderBy, error) {
+func (ec *executionContext) unmarshalOUserOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserOrderBy(ctx context.Context, v any) (*model.UserOrderBy, error) {
 	if v == nil {
 		return nil, nil
 	}
@@ -13683,7 +13595,7 @@ func (ec *executionContext) unmarshalOUserOrderBy2ᚖgithubᚗcomᚋTsisarᚋsta
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) unmarshalOUserWhereInput2ᚖgithubᚗcomᚋTsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserWhereInput(ctx context.Context, v any) (*model.UserWhereInput, error) {
+func (ec *executionContext) unmarshalOUserWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐUserWhereInput(ctx context.Context, v any) (*model.UserWhereInput, error) {
 	if v == nil {
 		return nil, nil
 	}

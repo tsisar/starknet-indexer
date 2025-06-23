@@ -9,16 +9,18 @@ CGO_ENABLED  ?= 0
 
 # Default component name (subgraph, indexer)
 COMPONENT := subgraph
+BIN_DIR   := bin
+BIN_PATH  := $(BIN_DIR)/$(COMPONENT)
 
 # Application name and registry
-APP       := starknet-indexer.stablecoin.$(COMPONENT)
-REGISTRY  := intothefathom
+APP       := indexer.starknet.stablecoin.$(COMPONENT)
+REGISTRY  := ghcr.io/tsisar
 VERSION   := $(shell git describe --tags --abbrev=0 2>/dev/null || echo dev)-$(shell git rev-parse --short HEAD)
 
 # ==============================
 # Phony targets
 # ==============================
-.PHONY: help format lint test get build image push clean dev release install-lint generate-filters generate-gqlgen generate-ent generate-indexer generate-mapper generate arm
+.PHONY: help format lint test get build image push clean dev release install-lint generate-filters generate-gqlgen generate-ent generate-indexer generate-mapper generate
 
 # ==============================
 # Help
@@ -100,7 +102,7 @@ dev: format get
 build: format get
 	@echo "Building production binary..."
 	@CGO_ENABLED=$(CGO_ENABLED) GOOS=$(TARGETOS) GOARCH=$(TARGETARCH) \
-		go build -v -o $(COMPONENT) -ldflags="-s -w" ./cmd/$(COMPONENT)
+		go build -v -o $(BIN_PATH) -ldflags="-s -w" ./cmd/$(COMPONENT)
 
 # ==============================
 # Docker
@@ -109,10 +111,7 @@ image:
 	@echo "Building Docker image for $(TARGETOS)/$(TARGETARCH)..."
 	@docker buildx build \
 		--platform $(TARGETOS)/$(TARGETARCH) \
-		--build-arg COMPONENT=$(COMPONENT) \
-		--build-arg TARGETOS=$(TARGETOS) \
-		--build-arg TARGETARCH=$(TARGETARCH) \
-		--build-arg CGO_ENABLED=$(CGO_ENABLED) \
+		--build-arg BIN_PATH=$(BIN_PATH) \
 		--tag $(REGISTRY)/$(APP):$(VERSION) \
 		--load .
 
@@ -121,21 +120,6 @@ push:
 	@docker push $(REGISTRY)/$(APP):$(VERSION)
 	@docker tag $(REGISTRY)/$(APP):$(VERSION) $(REGISTRY)/$(APP):latest
 	@docker push $(REGISTRY)/$(APP):latest
-
-arm:
-	@echo "Building ARM64 Docker image..."
-	@docker buildx build \
-		--platform linux/arm64 \
-		--build-arg COMPONENT=$(COMPONENT) \
-		--build-arg TARGETOS=linux \
-		--build-arg TARGETARCH=arm64 \
-		--build-arg CGO_ENABLED=$(CGO_ENABLED) \
-		--tag $(REGISTRY)/$(APP):$(VERSION)-linux-arm64 \
-		--load .
-	@docker push $(REGISTRY)/$(APP):$(VERSION)-linux-arm64
-	@docker tag $(REGISTRY)/$(APP):$(VERSION)-linux-arm64 $(REGISTRY)/$(APP):latest-linux-arm64
-	@docker push $(REGISTRY)/$(APP):latest-linux-arm64
-
 
 # ==============================
 # Utilities

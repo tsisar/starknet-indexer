@@ -5,9 +5,6 @@ input PositionActivityWhereInput {
   id_in: [String!]
   id_not_in: [String!]
   position: PositionWhereInput
-  position_not: PositionWhereInput
-  position_in: [PositionWhereInput!]
-  position_not_in: [PositionWhereInput!]
   activityState: PositionActivityState
   activityState_not: PositionActivityState
   activityState_in: [PositionActivityState!]

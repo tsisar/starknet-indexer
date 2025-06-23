@@ -1,0 +1,29 @@
+package schema
+
+import (
+	"entgo.io/ent"
+	"entgo.io/ent/schema/field"
+	{{- if .HasEdges }}
+	"entgo.io/ent/schema/edge"
+	{{- end }}
+)
+
+type {{.Name}} struct {
+	ent.Schema
+}
+
+func ({{.Name}}) Fields() []ent.Field {
+	return []ent.Field{
+		{{range .Fields}}{{.}},
+		{{end}}
+	}
+}
+
+{{ if .HasEdges }}
+func ({{.Name}}) Edges() []ent.Edge {
+	return []ent.Edge{
+		{{range .Edges}}{{.}},
+		{{end}}
+	}
+}
+{{ end }} 

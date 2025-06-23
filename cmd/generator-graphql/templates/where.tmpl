@@ -8,9 +8,6 @@ input {{.Name}}WhereInput {
   {{ .Name }}_not_in: [{{ baseType .Type }}!]
 {{- else }}
   {{ .Name }}: {{ .Type }}WhereInput
-  {{ .Name }}_not: {{ .Type }}WhereInput
-  {{ .Name }}_in: [{{ .Type }}WhereInput!]
-  {{ .Name }}_not_in: [{{ .Type }}WhereInput!]
 {{- end}}
 {{- end}}
 }
