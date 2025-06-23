@@ -17,15 +17,26 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Fetch tags
+        run: git fetch --tags --force
+
+      - name: Set tag suffix
+        run: |
+          if [ "${{ github.ref_name }}" != "master" ]; then
+            echo "TAG_SUFFIX=-dev" >> $GITHUB_ENV
+          fi
 
       - name: Login to GitHub Container Registry
         run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Release Indexer
-        run: make release COMPONENT=indexer
+        run: make release COMPONENT=indexer TAG_SUFFIX=${{ env.TAG_SUFFIX }}
 
       - name: Release Subgraph
-        run: make release COMPONENT=subgraph
+        run: make release COMPONENT=subgraph TAG_SUFFIX=${{ env.TAG_SUFFIX }}
 
       - name: Sync Argo CD and wait for completion
         run: |
