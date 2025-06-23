@@ -24,8 +24,8 @@ jobs:
       - name: Release Indexer
         run: make release COMPONENT=indexer
 
-      - name: Release Indexer
-        run: make release COMPONENT=indexer
+      - name: Release Subgraph
+        run: make release COMPONENT=subgraph
 
       - name: Sync Argo CD and wait for completion
         run: |
