@@ -2,6 +2,7 @@ package model
 
 import (
 	"context"
+	"github.com/tsisar/starknet-indexer/internal/config"
 	"github.com/tsisar/starknet-indexer/internal/storage/generic"
 	"gorm.io/gorm"
 	"time"
@@ -15,6 +16,7 @@ type Status struct {
 	Synced       bool      `gorm:"column:synced"`
 	HasError     bool      `gorm:"column:has_error"`
 	ErrorMsg     string    `gorm:"column:error_msg"`
+	Version      string    `gorm:"column:version"`
 	CreatedAt    time.Time `gorm:"column:created_at;autoCreateTime"`
 	UpdatedAt    time.Time `gorm:"column:updated_at;autoUpdateTime"`
 }
@@ -29,6 +31,7 @@ func (s *Status) Init() {
 	s.Synced = false
 	s.HasError = false
 	s.ErrorMsg = ""
+	s.Version = config.App.Version
 }
 
 func (s *Status) GetID() uint64 {

@@ -2,7 +2,6 @@ package graphql
 
 import (
 	"context"
-	"github.com/99designs/gqlgen/graphql"
 	"github.com/99designs/gqlgen/graphql/handler/transport"
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/gorilla/websocket"
@@ -51,11 +50,11 @@ func Start(_ context.Context, db *gorm.DB, client *ent.Client) error {
 	srv.Use(extension.Introspection{})
 	srv.SetQueryCache(lru.New[*ast.QueryDocument](1000))
 
-	srv.AroundOperations(func(ctx context.Context, next graphql.OperationHandler) graphql.ResponseHandler {
-		op := graphql.GetOperationContext(ctx)
-		log.Debugf("Operation: %s\nQuery:\n%s\n", op.OperationName, op.RawQuery)
-		return next(ctx)
-	})
+	//srv.AroundOperations(func(ctx context.Context, next graphql.OperationHandler) graphql.ResponseHandler {
+	//	op := graphql.GetOperationContext(ctx)
+	//	log.Debugf("Operation: %s\nQuery:\n%s\n", op.OperationName, op.RawQuery)
+	//	return next(ctx)
+	//})
 	srv.SetRecoverFunc(func(ctx context.Context, err interface{}) error {
 		log.Debugf("Panic occurred: %v", err)
 		return gqlerror.Errorf("Internal server error")

@@ -175,8 +175,8 @@ func logDecodedEvent(
 	entry := map[string]interface{}{
 		"contract_name":    contractName,
 		"contract_address": contractAddress,
-		"event_name":       eventName,
-		"event_index":      eventIndex,
+		"name":             eventName,
+		"index":            eventIndex,
 		"event":            event,
 		"block_number":     block.Number,
 		"block_timestamp":  block.Timestamp,
@@ -258,13 +258,13 @@ func saveParsedEvent(
 	id := generateId(contractAddress, block.Hash, txHash, indexStr, jsonStr)
 	e := model.Event{
 		ID:              id,
-		EventIndex:      eventIndex,
-		EventName:       eventName,
+		Index:           eventIndex,
+		Name:            eventName,
 		TxIndex:         tx.Index,
 		TxHash:          tx.Hash,
 		BlockNumber:     block.Number,
 		ContractAddress: contract.Address,
-		RawData:         datatypes.JSON(jsonBytes),
+		JsonEv:          datatypes.JSON(jsonBytes),
 		Timestamp:       block.Timestamp,
 	}
 	ok, err := e.Load(ctx, db)

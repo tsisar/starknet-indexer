@@ -19,10 +19,10 @@ func MapEvents(ctx context.Context, client *ent.Client, event model.Event) error
 		return nil
 	}
 
-	if handler, ok := r[event.EventName]; ok {
+	if handler, ok := r[event.Name]; ok {
 		return handler(ctx, client, event)
 	}
-	log.Warnf("No mapping implemented for event: %s", event.EventName)
+	log.Warnf("No mapping implemented for event: %s", event.Name)
 	return nil
 }
 
@@ -30,9 +30,9 @@ func logEvent(event model.Event) {
 	entry := map[string]interface{}{
 		"contract_name":    event.Contract.Name,
 		"contract_address": event.Contract.Address,
-		"event_name":       event.EventName,
-		"event_index":      event.EventIndex,
-		"event":            event.RawData,
+		"name":             event.Name,
+		"index":            event.Index,
+		"event":            event.JsonEv,
 		"block_number":     event.BlockNumber,
 		"block_timestamp":  event.Timestamp,
 		"block_hash":       event.Block.Hash,
@@ -41,7 +41,7 @@ func logEvent(event model.Event) {
 
 	jsonBytes, err := json.MarshalIndent(entry, "", "  ")
 	if err != nil {
-		log.Errorf("Failed to marshal decoded event %s: %v", event.EventName, err)
+		log.Errorf("Failed to marshal decoded event %s: %v", event.Name, err)
 		return
 	}
 

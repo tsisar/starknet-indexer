@@ -55,10 +55,10 @@ var RegistryMap = map[string]map[string]EventMapper{
 
 func makeMapper[T any](handler EventHandler[T]) EventMapper {
 	return func(ctx context.Context, client *ent.Client, event model.Event) error {
-		log.Debugf("[mapper] Mapping event: %s", event.EventName)
+		log.Debugf("[mapper] Mapping event: %s", event.Name)
 
 		var ev T
-		if err := json.Unmarshal(event.RawData, &ev); err != nil {
+		if err := json.Unmarshal(event.JsonEv, &ev); err != nil {
 			return fmt.Errorf("[mapping] failed to decode %T: %v", ev, err)
 		}
 
