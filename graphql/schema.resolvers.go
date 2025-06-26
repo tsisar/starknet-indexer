@@ -10,18 +10,18 @@ import (
 	"fmt"
 
 	"github.com/tsisar/starknet-indexer/generated/ent"
-	"github.com/tsisar/starknet-indexer/generated/ent/pool"
-	"github.com/tsisar/starknet-indexer/generated/ent/position"
-	"github.com/tsisar/starknet-indexer/generated/ent/positionactivity"
 	"github.com/tsisar/starknet-indexer/graphql/model"
+	"github.com/tsisar/starknet-indexer/graphql/resolvers"
 )
 
 // Positions is the resolver for the positions field.
-func (r *poolResolver) Positions(ctx context.Context, obj *ent.Pool) ([]*ent.Position, error) {
-	return r.Client.Position.
-		Query().
-		Where(position.HasPoolWith(pool.ID(obj.ID))).
-		All(ctx)
+func (r *poolResolver) Positions(ctx context.Context, obj *ent.Pool, where *model.PositionWhereInput, orderBy *model.PositionOrderBy, first *int32, skip *int32) ([]*ent.Position, error) {
+	query := obj.QueryPositions()
+	query = resolvers.ApplyPositionWhereInput(query, where)
+	query = resolvers.ApplyPositionOrderBy(query, orderBy)
+	query = resolvers.ApplyPositionLimit(query, first, skip)
+
+	return query.All(ctx)
 }
 
 // PositionStatus is the resolver for the positionStatus field.
@@ -29,22 +29,34 @@ func (r *positionResolver) PositionStatus(ctx context.Context, obj *ent.Position
 	return model.PositionStatus(obj.PositionStatus), nil
 }
 
-// Pool is the resolver for the pool field.
-func (r *positionResolver) Pool(ctx context.Context, obj *ent.Position) (*ent.Pool, error) {
-	return obj.QueryPool().Only(ctx)
+// Pools is the resolver for the pools field.
+func (r *positionResolver) Pools(ctx context.Context, obj *ent.Position, where *model.PoolWhereInput, orderBy *model.PoolOrderBy, first *int32, skip *int32) ([]*ent.Pool, error) {
+	query := obj.QueryPool()
+	query = resolvers.ApplyPoolWhereInput(query, where)
+	query = resolvers.ApplyPoolOrderBy(query, orderBy)
+	query = resolvers.ApplyPoolLimit(query, first, skip)
+
+	return query.All(ctx)
 }
 
-// Activity is the resolver for the activity field.
-func (r *positionResolver) Activity(ctx context.Context, obj *ent.Position) ([]*ent.PositionActivity, error) {
-	return r.Client.PositionActivity.
-		Query().
-		Where(positionactivity.HasPositionWith(position.ID(obj.ID))).
-		All(ctx)
+// Activities is the resolver for the activities field.
+func (r *positionResolver) Activities(ctx context.Context, obj *ent.Position, where *model.PositionActivityWhereInput, orderBy *model.PositionActivityOrderBy, first *int32, skip *int32) ([]*ent.PositionActivity, error) {
+	query := obj.QueryActivity()
+	query = resolvers.ApplyPositionActivityWhereInput(query, where)
+	query = resolvers.ApplyPositionActivityOrderBy(query, orderBy)
+	query = resolvers.ApplyPositionActivityLimit(query, first, skip)
+
+	return query.All(ctx)
 }
 
 // Position is the resolver for the position field.
-func (r *positionActivityResolver) Position(ctx context.Context, obj *ent.PositionActivity) (*ent.Position, error) {
-	return obj.QueryPosition().Only(ctx)
+func (r *positionActivityResolver) Position(ctx context.Context, obj *ent.PositionActivity, where *model.PositionWhereInput, orderBy *model.PositionOrderBy, first *int32, skip *int32) (*ent.Position, error) {
+	query := obj.QueryPosition()
+	query = resolvers.ApplyPositionWhereInput(query, where)
+	query = resolvers.ApplyPositionOrderBy(query, orderBy)
+	query = resolvers.ApplyPositionLimit(query, first, skip)
+
+	return query.Only(ctx)
 }
 
 // ActivityState is the resolver for the activityState field.

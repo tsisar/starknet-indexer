@@ -73,7 +73,7 @@ type ComplexityRoot struct {
 		LiquidationRatio      func(childComplexity int) int
 		LockedCollateral      func(childComplexity int) int
 		PoolName              func(childComplexity int) int
-		Positions             func(childComplexity int) int
+		Positions             func(childComplexity int, where *model.PositionWhereInput, orderBy *model.PositionOrderBy, first *int32, skip *int32) int
 		PriceWithSafetyMargin func(childComplexity int) int
 		RawPrice              func(childComplexity int) int
 		StabilityFeeRate      func(childComplexity int) int
@@ -84,7 +84,7 @@ type ComplexityRoot struct {
 	}
 
 	Position struct {
-		Activity              func(childComplexity int) int
+		Activities            func(childComplexity int, where *model.PositionActivityWhereInput, orderBy *model.PositionActivityOrderBy, first *int32, skip *int32) int
 		BlockNumber           func(childComplexity int) int
 		BlockTimestamp        func(childComplexity int) int
 		CollateralPool        func(childComplexity int) int
@@ -94,7 +94,7 @@ type ComplexityRoot struct {
 		ID                    func(childComplexity int) int
 		LiquidationCount      func(childComplexity int) int
 		LockedCollateral      func(childComplexity int) int
-		Pool                  func(childComplexity int) int
+		Pools                 func(childComplexity int, where *model.PoolWhereInput, orderBy *model.PoolOrderBy, first *int32, skip *int32) int
 		PositionAddress       func(childComplexity int) int
 		PositionId            func(childComplexity int) int
 		PositionStatus        func(childComplexity int) int
@@ -113,7 +113,7 @@ type ComplexityRoot struct {
 		CollateralAmount func(childComplexity int) int
 		DebtAmount       func(childComplexity int) int
 		ID               func(childComplexity int) int
-		Position         func(childComplexity int) int
+		Position         func(childComplexity int, where *model.PositionWhereInput, orderBy *model.PositionOrderBy, first *int32, skip *int32) int
 		Transaction      func(childComplexity int) int
 	}
 
@@ -171,16 +171,16 @@ type ComplexityRoot struct {
 }
 
 type PoolResolver interface {
-	Positions(ctx context.Context, obj *ent.Pool) ([]*ent.Position, error)
+	Positions(ctx context.Context, obj *ent.Pool, where *model.PositionWhereInput, orderBy *model.PositionOrderBy, first *int32, skip *int32) ([]*ent.Position, error)
 }
 type PositionResolver interface {
 	PositionStatus(ctx context.Context, obj *ent.Position) (model.PositionStatus, error)
 
-	Pool(ctx context.Context, obj *ent.Position) (*ent.Pool, error)
-	Activity(ctx context.Context, obj *ent.Position) ([]*ent.PositionActivity, error)
+	Pools(ctx context.Context, obj *ent.Position, where *model.PoolWhereInput, orderBy *model.PoolOrderBy, first *int32, skip *int32) ([]*ent.Pool, error)
+	Activities(ctx context.Context, obj *ent.Position, where *model.PositionActivityWhereInput, orderBy *model.PositionActivityOrderBy, first *int32, skip *int32) ([]*ent.PositionActivity, error)
 }
 type PositionActivityResolver interface {
-	Position(ctx context.Context, obj *ent.PositionActivity) (*ent.Position, error)
+	Position(ctx context.Context, obj *ent.PositionActivity, where *model.PositionWhereInput, orderBy *model.PositionOrderBy, first *int32, skip *int32) (*ent.Position, error)
 	ActivityState(ctx context.Context, obj *ent.PositionActivity) (model.PositionActivityState, error)
 }
 type ProtocolStatResolver interface {
@@ -333,7 +333,12 @@ func (e *executableSchema) Complexity(ctx context.Context, typeName, field strin
 			break
 		}
 
-		return e.complexity.Pool.Positions(childComplexity), true
+		args, err := ec.field_Pool_positions_args(ctx, rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.Pool.Positions(childComplexity, args["where"].(*model.PositionWhereInput), args["orderBy"].(*model.PositionOrderBy), args["first"].(*int32), args["skip"].(*int32)), true
 
 	case "Pool.priceWithSafetyMargin":
 		if e.complexity.Pool.PriceWithSafetyMargin == nil {
@@ -384,12 +389,17 @@ func (e *executableSchema) Complexity(ctx context.Context, typeName, field strin
 
 		return e.complexity.Pool.Tvl(childComplexity), true
 
-	case "Position.activity":
-		if e.complexity.Position.Activity == nil {
+	case "Position.activities":
+		if e.complexity.Position.Activities == nil {
 			break
 		}
 
-		return e.complexity.Position.Activity(childComplexity), true
+		args, err := ec.field_Position_activities_args(ctx, rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.Position.Activities(childComplexity, args["where"].(*model.PositionActivityWhereInput), args["orderBy"].(*model.PositionActivityOrderBy), args["first"].(*int32), args["skip"].(*int32)), true
 
 	case "Position.blockNumber":
 		if e.complexity.Position.BlockNumber == nil {
@@ -454,12 +464,17 @@ func (e *executableSchema) Complexity(ctx context.Context, typeName, field strin
 
 		return e.complexity.Position.LockedCollateral(childComplexity), true
 
-	case "Position.pool":
-		if e.complexity.Position.Pool == nil {
+	case "Position.pools":
+		if e.complexity.Position.Pools == nil {
 			break
 		}
 
-		return e.complexity.Position.Pool(childComplexity), true
+		args, err := ec.field_Position_pools_args(ctx, rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.Position.Pools(childComplexity, args["where"].(*model.PoolWhereInput), args["orderBy"].(*model.PoolOrderBy), args["first"].(*int32), args["skip"].(*int32)), true
 
 	case "Position.positionAddress":
 		if e.complexity.Position.PositionAddress == nil {
@@ -571,7 +586,12 @@ func (e *executableSchema) Complexity(ctx context.Context, typeName, field strin
 			break
 		}
 
-		return e.complexity.PositionActivity.Position(childComplexity), true
+		args, err := ec.field_PositionActivity_position_args(ctx, rawArgs)
+		if err != nil {
+			return 0, false
+		}
+
+		return e.complexity.PositionActivity.Position(childComplexity, args["where"].(*model.PositionWhereInput), args["orderBy"].(*model.PositionOrderBy), args["first"].(*int32), args["skip"].(*int32)), true
 
 	case "PositionActivity.transaction":
 		if e.complexity.PositionActivity.Transaction == nil {
@@ -1039,6 +1059,394 @@ var parsedSchema = gqlparser.MustLoadSchema(sources...)
 // endregion ************************** generated!.gotpl **************************
 
 // region    ***************************** args.gotpl *****************************
+
+func (ec *executionContext) field_Pool_positions_args(ctx context.Context, rawArgs map[string]any) (map[string]any, error) {
+	var err error
+	args := map[string]any{}
+	arg0, err := ec.field_Pool_positions_argsWhere(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["where"] = arg0
+	arg1, err := ec.field_Pool_positions_argsOrderBy(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["orderBy"] = arg1
+	arg2, err := ec.field_Pool_positions_argsFirst(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["first"] = arg2
+	arg3, err := ec.field_Pool_positions_argsSkip(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["skip"] = arg3
+	return args, nil
+}
+func (ec *executionContext) field_Pool_positions_argsWhere(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*model.PositionWhereInput, error) {
+	if _, ok := rawArgs["where"]; !ok {
+		var zeroVal *model.PositionWhereInput
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("where"))
+	if tmp, ok := rawArgs["where"]; ok {
+		return ec.unmarshalOPositionWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInput(ctx, tmp)
+	}
+
+	var zeroVal *model.PositionWhereInput
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_Pool_positions_argsOrderBy(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*model.PositionOrderBy, error) {
+	if _, ok := rawArgs["orderBy"]; !ok {
+		var zeroVal *model.PositionOrderBy
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("orderBy"))
+	if tmp, ok := rawArgs["orderBy"]; ok {
+		return ec.unmarshalOPositionOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionOrderBy(ctx, tmp)
+	}
+
+	var zeroVal *model.PositionOrderBy
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_Pool_positions_argsFirst(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*int32, error) {
+	if _, ok := rawArgs["first"]; !ok {
+		var zeroVal *int32
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("first"))
+	if tmp, ok := rawArgs["first"]; ok {
+		return ec.unmarshalOInt2ᚖint32(ctx, tmp)
+	}
+
+	var zeroVal *int32
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_Pool_positions_argsSkip(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*int32, error) {
+	if _, ok := rawArgs["skip"]; !ok {
+		var zeroVal *int32
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("skip"))
+	if tmp, ok := rawArgs["skip"]; ok {
+		return ec.unmarshalOInt2ᚖint32(ctx, tmp)
+	}
+
+	var zeroVal *int32
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_PositionActivity_position_args(ctx context.Context, rawArgs map[string]any) (map[string]any, error) {
+	var err error
+	args := map[string]any{}
+	arg0, err := ec.field_PositionActivity_position_argsWhere(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["where"] = arg0
+	arg1, err := ec.field_PositionActivity_position_argsOrderBy(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["orderBy"] = arg1
+	arg2, err := ec.field_PositionActivity_position_argsFirst(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["first"] = arg2
+	arg3, err := ec.field_PositionActivity_position_argsSkip(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["skip"] = arg3
+	return args, nil
+}
+func (ec *executionContext) field_PositionActivity_position_argsWhere(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*model.PositionWhereInput, error) {
+	if _, ok := rawArgs["where"]; !ok {
+		var zeroVal *model.PositionWhereInput
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("where"))
+	if tmp, ok := rawArgs["where"]; ok {
+		return ec.unmarshalOPositionWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInput(ctx, tmp)
+	}
+
+	var zeroVal *model.PositionWhereInput
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_PositionActivity_position_argsOrderBy(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*model.PositionOrderBy, error) {
+	if _, ok := rawArgs["orderBy"]; !ok {
+		var zeroVal *model.PositionOrderBy
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("orderBy"))
+	if tmp, ok := rawArgs["orderBy"]; ok {
+		return ec.unmarshalOPositionOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionOrderBy(ctx, tmp)
+	}
+
+	var zeroVal *model.PositionOrderBy
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_PositionActivity_position_argsFirst(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*int32, error) {
+	if _, ok := rawArgs["first"]; !ok {
+		var zeroVal *int32
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("first"))
+	if tmp, ok := rawArgs["first"]; ok {
+		return ec.unmarshalOInt2ᚖint32(ctx, tmp)
+	}
+
+	var zeroVal *int32
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_PositionActivity_position_argsSkip(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*int32, error) {
+	if _, ok := rawArgs["skip"]; !ok {
+		var zeroVal *int32
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("skip"))
+	if tmp, ok := rawArgs["skip"]; ok {
+		return ec.unmarshalOInt2ᚖint32(ctx, tmp)
+	}
+
+	var zeroVal *int32
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_Position_activities_args(ctx context.Context, rawArgs map[string]any) (map[string]any, error) {
+	var err error
+	args := map[string]any{}
+	arg0, err := ec.field_Position_activities_argsWhere(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["where"] = arg0
+	arg1, err := ec.field_Position_activities_argsOrderBy(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["orderBy"] = arg1
+	arg2, err := ec.field_Position_activities_argsFirst(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["first"] = arg2
+	arg3, err := ec.field_Position_activities_argsSkip(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["skip"] = arg3
+	return args, nil
+}
+func (ec *executionContext) field_Position_activities_argsWhere(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*model.PositionActivityWhereInput, error) {
+	if _, ok := rawArgs["where"]; !ok {
+		var zeroVal *model.PositionActivityWhereInput
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("where"))
+	if tmp, ok := rawArgs["where"]; ok {
+		return ec.unmarshalOPositionActivityWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityWhereInput(ctx, tmp)
+	}
+
+	var zeroVal *model.PositionActivityWhereInput
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_Position_activities_argsOrderBy(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*model.PositionActivityOrderBy, error) {
+	if _, ok := rawArgs["orderBy"]; !ok {
+		var zeroVal *model.PositionActivityOrderBy
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("orderBy"))
+	if tmp, ok := rawArgs["orderBy"]; ok {
+		return ec.unmarshalOPositionActivityOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityOrderBy(ctx, tmp)
+	}
+
+	var zeroVal *model.PositionActivityOrderBy
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_Position_activities_argsFirst(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*int32, error) {
+	if _, ok := rawArgs["first"]; !ok {
+		var zeroVal *int32
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("first"))
+	if tmp, ok := rawArgs["first"]; ok {
+		return ec.unmarshalOInt2ᚖint32(ctx, tmp)
+	}
+
+	var zeroVal *int32
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_Position_activities_argsSkip(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*int32, error) {
+	if _, ok := rawArgs["skip"]; !ok {
+		var zeroVal *int32
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("skip"))
+	if tmp, ok := rawArgs["skip"]; ok {
+		return ec.unmarshalOInt2ᚖint32(ctx, tmp)
+	}
+
+	var zeroVal *int32
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_Position_pools_args(ctx context.Context, rawArgs map[string]any) (map[string]any, error) {
+	var err error
+	args := map[string]any{}
+	arg0, err := ec.field_Position_pools_argsWhere(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["where"] = arg0
+	arg1, err := ec.field_Position_pools_argsOrderBy(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["orderBy"] = arg1
+	arg2, err := ec.field_Position_pools_argsFirst(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["first"] = arg2
+	arg3, err := ec.field_Position_pools_argsSkip(ctx, rawArgs)
+	if err != nil {
+		return nil, err
+	}
+	args["skip"] = arg3
+	return args, nil
+}
+func (ec *executionContext) field_Position_pools_argsWhere(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*model.PoolWhereInput, error) {
+	if _, ok := rawArgs["where"]; !ok {
+		var zeroVal *model.PoolWhereInput
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("where"))
+	if tmp, ok := rawArgs["where"]; ok {
+		return ec.unmarshalOPoolWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInput(ctx, tmp)
+	}
+
+	var zeroVal *model.PoolWhereInput
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_Position_pools_argsOrderBy(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*model.PoolOrderBy, error) {
+	if _, ok := rawArgs["orderBy"]; !ok {
+		var zeroVal *model.PoolOrderBy
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("orderBy"))
+	if tmp, ok := rawArgs["orderBy"]; ok {
+		return ec.unmarshalOPoolOrderBy2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolOrderBy(ctx, tmp)
+	}
+
+	var zeroVal *model.PoolOrderBy
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_Position_pools_argsFirst(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*int32, error) {
+	if _, ok := rawArgs["first"]; !ok {
+		var zeroVal *int32
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("first"))
+	if tmp, ok := rawArgs["first"]; ok {
+		return ec.unmarshalOInt2ᚖint32(ctx, tmp)
+	}
+
+	var zeroVal *int32
+	return zeroVal, nil
+}
+
+func (ec *executionContext) field_Position_pools_argsSkip(
+	ctx context.Context,
+	rawArgs map[string]any,
+) (*int32, error) {
+	if _, ok := rawArgs["skip"]; !ok {
+		var zeroVal *int32
+		return zeroVal, nil
+	}
+
+	ctx = graphql.WithPathContext(ctx, graphql.NewPathWithField("skip"))
+	if tmp, ok := rawArgs["skip"]; ok {
+		return ec.unmarshalOInt2ᚖint32(ctx, tmp)
+	}
+
+	var zeroVal *int32
+	return zeroVal, nil
+}
 
 func (ec *executionContext) field_Query___type_args(ctx context.Context, rawArgs map[string]any) (map[string]any, error) {
 	var err error
@@ -3055,7 +3463,7 @@ func (ec *executionContext) _Pool_positions(ctx context.Context, field graphql.C
 	}()
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (any, error) {
 		ctx = rctx // use context from middleware stack in children
-		return ec.resolvers.Pool().Positions(rctx, obj)
+		return ec.resolvers.Pool().Positions(rctx, obj, fc.Args["where"].(*model.PositionWhereInput), fc.Args["orderBy"].(*model.PositionOrderBy), fc.Args["first"].(*int32), fc.Args["skip"].(*int32))
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -3072,7 +3480,7 @@ func (ec *executionContext) _Pool_positions(ctx context.Context, field graphql.C
 	return ec.marshalNPosition2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionᚄ(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_Pool_positions(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_Pool_positions(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "Pool",
 		Field:      field,
@@ -3116,13 +3524,24 @@ func (ec *executionContext) fieldContext_Pool_positions(_ context.Context, field
 				return ec.fieldContext_Position_blockTimestamp(ctx, field)
 			case "transaction":
 				return ec.fieldContext_Position_transaction(ctx, field)
-			case "pool":
-				return ec.fieldContext_Position_pool(ctx, field)
-			case "activity":
-				return ec.fieldContext_Position_activity(ctx, field)
+			case "pools":
+				return ec.fieldContext_Position_pools(ctx, field)
+			case "activities":
+				return ec.fieldContext_Position_activities(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type Position", field.Name)
 		},
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_Pool_positions_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return fc, err
 	}
 	return fc, nil
 }
@@ -3919,8 +4338,8 @@ func (ec *executionContext) fieldContext_Position_transaction(_ context.Context,
 	return fc, nil
 }
 
-func (ec *executionContext) _Position_pool(ctx context.Context, field graphql.CollectedField, obj *ent.Position) (ret graphql.Marshaler) {
-	fc, err := ec.fieldContext_Position_pool(ctx, field)
+func (ec *executionContext) _Position_pools(ctx context.Context, field graphql.CollectedField, obj *ent.Position) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Position_pools(ctx, field)
 	if err != nil {
 		return graphql.Null
 	}
@@ -3933,7 +4352,7 @@ func (ec *executionContext) _Position_pool(ctx context.Context, field graphql.Co
 	}()
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (any, error) {
 		ctx = rctx // use context from middleware stack in children
-		return ec.resolvers.Position().Pool(rctx, obj)
+		return ec.resolvers.Position().Pools(rctx, obj, fc.Args["where"].(*model.PoolWhereInput), fc.Args["orderBy"].(*model.PoolOrderBy), fc.Args["first"].(*int32), fc.Args["skip"].(*int32))
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -3945,12 +4364,12 @@ func (ec *executionContext) _Position_pool(ctx context.Context, field graphql.Co
 		}
 		return graphql.Null
 	}
-	res := resTmp.(*ent.Pool)
+	res := resTmp.([]*ent.Pool)
 	fc.Result = res
-	return ec.marshalNPool2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPool(ctx, field.Selections, res)
+	return ec.marshalNPool2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPoolᚄ(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_Position_pool(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_Position_pools(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "Position",
 		Field:      field,
@@ -3994,11 +4413,22 @@ func (ec *executionContext) fieldContext_Position_pool(_ context.Context, field 
 			return nil, fmt.Errorf("no field named %q was found under type Pool", field.Name)
 		},
 	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_Position_pools_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return fc, err
+	}
 	return fc, nil
 }
 
-func (ec *executionContext) _Position_activity(ctx context.Context, field graphql.CollectedField, obj *ent.Position) (ret graphql.Marshaler) {
-	fc, err := ec.fieldContext_Position_activity(ctx, field)
+func (ec *executionContext) _Position_activities(ctx context.Context, field graphql.CollectedField, obj *ent.Position) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Position_activities(ctx, field)
 	if err != nil {
 		return graphql.Null
 	}
@@ -4011,7 +4441,7 @@ func (ec *executionContext) _Position_activity(ctx context.Context, field graphq
 	}()
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (any, error) {
 		ctx = rctx // use context from middleware stack in children
-		return ec.resolvers.Position().Activity(rctx, obj)
+		return ec.resolvers.Position().Activities(rctx, obj, fc.Args["where"].(*model.PositionActivityWhereInput), fc.Args["orderBy"].(*model.PositionActivityOrderBy), fc.Args["first"].(*int32), fc.Args["skip"].(*int32))
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -4028,7 +4458,7 @@ func (ec *executionContext) _Position_activity(ctx context.Context, field graphq
 	return ec.marshalNPositionActivity2ᚕᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPositionActivityᚄ(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_Position_activity(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_Position_activities(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "Position",
 		Field:      field,
@@ -4055,6 +4485,17 @@ func (ec *executionContext) fieldContext_Position_activity(_ context.Context, fi
 			}
 			return nil, fmt.Errorf("no field named %q was found under type PositionActivity", field.Name)
 		},
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_Position_activities_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return fc, err
 	}
 	return fc, nil
 }
@@ -4117,7 +4558,7 @@ func (ec *executionContext) _PositionActivity_position(ctx context.Context, fiel
 	}()
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (any, error) {
 		ctx = rctx // use context from middleware stack in children
-		return ec.resolvers.PositionActivity().Position(rctx, obj)
+		return ec.resolvers.PositionActivity().Position(rctx, obj, fc.Args["where"].(*model.PositionWhereInput), fc.Args["orderBy"].(*model.PositionOrderBy), fc.Args["first"].(*int32), fc.Args["skip"].(*int32))
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -4134,7 +4575,7 @@ func (ec *executionContext) _PositionActivity_position(ctx context.Context, fiel
 	return ec.marshalNPosition2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgeneratedᚋentᚐPosition(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_PositionActivity_position(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_PositionActivity_position(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "PositionActivity",
 		Field:      field,
@@ -4178,13 +4619,24 @@ func (ec *executionContext) fieldContext_PositionActivity_position(_ context.Con
 				return ec.fieldContext_Position_blockTimestamp(ctx, field)
 			case "transaction":
 				return ec.fieldContext_Position_transaction(ctx, field)
-			case "pool":
-				return ec.fieldContext_Position_pool(ctx, field)
-			case "activity":
-				return ec.fieldContext_Position_activity(ctx, field)
+			case "pools":
+				return ec.fieldContext_Position_pools(ctx, field)
+			case "activities":
+				return ec.fieldContext_Position_activities(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type Position", field.Name)
 		},
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			err = ec.Recover(ctx, r)
+			ec.Error(ctx, err)
+		}
+	}()
+	ctx = graphql.WithFieldContext(ctx, fc)
+	if fc.Args, err = ec.field_PositionActivity_position_args(ctx, field.ArgumentMap(ec.Variables)); err != nil {
+		ec.Error(ctx, err)
+		return fc, err
 	}
 	return fc, nil
 }
@@ -5190,10 +5642,10 @@ func (ec *executionContext) fieldContext_Query_position(ctx context.Context, fie
 				return ec.fieldContext_Position_blockTimestamp(ctx, field)
 			case "transaction":
 				return ec.fieldContext_Position_transaction(ctx, field)
-			case "pool":
-				return ec.fieldContext_Position_pool(ctx, field)
-			case "activity":
-				return ec.fieldContext_Position_activity(ctx, field)
+			case "pools":
+				return ec.fieldContext_Position_pools(ctx, field)
+			case "activities":
+				return ec.fieldContext_Position_activities(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type Position", field.Name)
 		},
@@ -5287,10 +5739,10 @@ func (ec *executionContext) fieldContext_Query_positions(ctx context.Context, fi
 				return ec.fieldContext_Position_blockTimestamp(ctx, field)
 			case "transaction":
 				return ec.fieldContext_Position_transaction(ctx, field)
-			case "pool":
-				return ec.fieldContext_Position_pool(ctx, field)
-			case "activity":
-				return ec.fieldContext_Position_activity(ctx, field)
+			case "pools":
+				return ec.fieldContext_Position_pools(ctx, field)
+			case "activities":
+				return ec.fieldContext_Position_activities(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type Position", field.Name)
 		},
@@ -9132,7 +9584,7 @@ func (ec *executionContext) unmarshalInputPositionActivityWhereInput(ctx context
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"id", "id_not", "id_in", "id_not_in", "position", "activityState", "activityState_not", "activityState_in", "activityState_not_in", "collateralAmount", "collateralAmount_not", "collateralAmount_in", "collateralAmount_not_in", "debtAmount", "debtAmount_not", "debtAmount_in", "debtAmount_not_in", "blockNumber", "blockNumber_not", "blockNumber_in", "blockNumber_not_in", "blockTimestamp", "blockTimestamp_not", "blockTimestamp_in", "blockTimestamp_not_in", "transaction", "transaction_not", "transaction_in", "transaction_not_in"}
+	fieldsInOrder := [...]string{"id", "id_not", "id_in", "id_not_in", "activityState", "activityState_not", "activityState_in", "activityState_not_in", "collateralAmount", "collateralAmount_not", "collateralAmount_in", "collateralAmount_not_in", "debtAmount", "debtAmount_not", "debtAmount_in", "debtAmount_not_in", "blockNumber", "blockNumber_not", "blockNumber_in", "blockNumber_not_in", "blockTimestamp", "blockTimestamp_not", "blockTimestamp_in", "blockTimestamp_not_in", "transaction", "transaction_not", "transaction_in", "transaction_not_in"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
@@ -9167,13 +9619,6 @@ func (ec *executionContext) unmarshalInputPositionActivityWhereInput(ctx context
 				return it, err
 			}
 			it.IDNotIn = data
-		case "position":
-			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("position"))
-			data, err := ec.unmarshalOPositionWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionWhereInput(ctx, v)
-			if err != nil {
-				return it, err
-			}
-			it.Position = data
 		case "activityState":
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("activityState"))
 			data, err := ec.unmarshalOPositionActivityState2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPositionActivityState(ctx, v)
@@ -9389,7 +9834,7 @@ func (ec *executionContext) unmarshalInputPositionWhereInput(ctx context.Context
 		asMap[k] = v
 	}
 
-	fieldsInOrder := [...]string{"id", "id_not", "id_in", "id_not_in", "positionAddress", "positionAddress_not", "positionAddress_in", "positionAddress_not_in", "userAddress", "userAddress_not", "userAddress_in", "userAddress_not_in", "walletAddress", "walletAddress_not", "walletAddress_in", "walletAddress_not_in", "collateralPool", "collateralPool_not", "collateralPool_in", "collateralPool_not_in", "collateralPoolName", "collateralPoolName_not", "collateralPoolName_in", "collateralPoolName_not_in", "positionId", "positionId_not", "positionId_in", "positionId_not_in", "lockedCollateral", "lockedCollateral_not", "lockedCollateral_in", "lockedCollateral_not_in", "debtValue", "debtValue_not", "debtValue_in", "debtValue_not_in", "debtShare", "debtShare_not", "debtShare_in", "debtShare_not_in", "safetyBuffer", "safetyBuffer_not", "safetyBuffer_in", "safetyBuffer_not_in", "safetyBufferInPercent", "safetyBufferInPercent_not", "safetyBufferInPercent_in", "safetyBufferInPercent_not_in", "tvl", "tvl_not", "tvl_in", "tvl_not_in", "positionStatus", "positionStatus_not", "positionStatus_in", "positionStatus_not_in", "liquidationCount", "liquidationCount_not", "liquidationCount_in", "liquidationCount_not_in", "blockNumber", "blockNumber_not", "blockNumber_in", "blockNumber_not_in", "blockTimestamp", "blockTimestamp_not", "blockTimestamp_in", "blockTimestamp_not_in", "transaction", "transaction_not", "transaction_in", "transaction_not_in", "pool"}
+	fieldsInOrder := [...]string{"id", "id_not", "id_in", "id_not_in", "positionAddress", "positionAddress_not", "positionAddress_in", "positionAddress_not_in", "userAddress", "userAddress_not", "userAddress_in", "userAddress_not_in", "walletAddress", "walletAddress_not", "walletAddress_in", "walletAddress_not_in", "collateralPool", "collateralPool_not", "collateralPool_in", "collateralPool_not_in", "collateralPoolName", "collateralPoolName_not", "collateralPoolName_in", "collateralPoolName_not_in", "positionId", "positionId_not", "positionId_in", "positionId_not_in", "lockedCollateral", "lockedCollateral_not", "lockedCollateral_in", "lockedCollateral_not_in", "debtValue", "debtValue_not", "debtValue_in", "debtValue_not_in", "debtShare", "debtShare_not", "debtShare_in", "debtShare_not_in", "safetyBuffer", "safetyBuffer_not", "safetyBuffer_in", "safetyBuffer_not_in", "safetyBufferInPercent", "safetyBufferInPercent_not", "safetyBufferInPercent_in", "safetyBufferInPercent_not_in", "tvl", "tvl_not", "tvl_in", "tvl_not_in", "positionStatus", "positionStatus_not", "positionStatus_in", "positionStatus_not_in", "liquidationCount", "liquidationCount_not", "liquidationCount_in", "liquidationCount_not_in", "blockNumber", "blockNumber_not", "blockNumber_in", "blockNumber_not_in", "blockTimestamp", "blockTimestamp_not", "blockTimestamp_in", "blockTimestamp_not_in", "transaction", "transaction_not", "transaction_in", "transaction_not_in"}
 	for _, k := range fieldsInOrder {
 		v, ok := asMap[k]
 		if !ok {
@@ -9900,13 +10345,6 @@ func (ec *executionContext) unmarshalInputPositionWhereInput(ctx context.Context
 				return it, err
 			}
 			it.TransactionNotIn = data
-		case "pool":
-			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("pool"))
-			data, err := ec.unmarshalOPoolWhereInput2ᚖgithubᚗcomᚋtsisarᚋstarknetᚑindexerᚋgraphqlᚋmodelᚐPoolWhereInput(ctx, v)
-			if err != nil {
-				return it, err
-			}
-			it.Pool = data
 		}
 	}
 
@@ -11105,7 +11543,7 @@ func (ec *executionContext) _Position(ctx context.Context, sel ast.SelectionSet,
 			if out.Values[i] == graphql.Null {
 				atomic.AddUint32(&out.Invalids, 1)
 			}
-		case "pool":
+		case "pools":
 			field := field
 
 			innerFunc := func(ctx context.Context, fs *graphql.FieldSet) (res graphql.Marshaler) {
@@ -11114,7 +11552,7 @@ func (ec *executionContext) _Position(ctx context.Context, sel ast.SelectionSet,
 						ec.Error(ctx, ec.Recover(ctx, r))
 					}
 				}()
-				res = ec._Position_pool(ctx, field, obj)
+				res = ec._Position_pools(ctx, field, obj)
 				if res == graphql.Null {
 					atomic.AddUint32(&fs.Invalids, 1)
 				}
@@ -11141,7 +11579,7 @@ func (ec *executionContext) _Position(ctx context.Context, sel ast.SelectionSet,
 			}
 
 			out.Concurrently(i, func(ctx context.Context) graphql.Marshaler { return innerFunc(ctx, out) })
-		case "activity":
+		case "activities":
 			field := field
 
 			innerFunc := func(ctx context.Context, fs *graphql.FieldSet) (res graphql.Marshaler) {
@@ -11150,7 +11588,7 @@ func (ec *executionContext) _Position(ctx context.Context, sel ast.SelectionSet,
 						ec.Error(ctx, ec.Recover(ctx, r))
 					}
 				}()
-				res = ec._Position_activity(ctx, field, obj)
+				res = ec._Position_activities(ctx, field, obj)
 				if res == graphql.Null {
 					atomic.AddUint32(&fs.Invalids, 1)
 				}

@@ -100,7 +100,6 @@ type PositionActivityWhereInput struct {
 	IDNot                 *string                 `json:"id_not,omitempty"`
 	IDIn                  []string                `json:"id_in,omitempty"`
 	IDNotIn               []string                `json:"id_not_in,omitempty"`
-	Position              *PositionWhereInput     `json:"position,omitempty"`
 	ActivityState         *PositionActivityState  `json:"activityState,omitempty"`
 	ActivityStateNot      *PositionActivityState  `json:"activityState_not,omitempty"`
 	ActivityStateIn       []PositionActivityState `json:"activityState_in,omitempty"`
@@ -205,7 +204,6 @@ type PositionWhereInput struct {
 	TransactionNot             *string          `json:"transaction_not,omitempty"`
 	TransactionIn              []string         `json:"transaction_in,omitempty"`
 	TransactionNotIn           []string         `json:"transaction_not_in,omitempty"`
-	Pool                       *PoolWhereInput  `json:"pool,omitempty"`
 }
 
 type ProtocolStatOrderBy struct {
@@ -467,7 +465,6 @@ type PositionActivityOrderField string
 
 const (
 	PositionActivityOrderFieldID               PositionActivityOrderField = "id"
-	PositionActivityOrderFieldPosition         PositionActivityOrderField = "position"
 	PositionActivityOrderFieldActivityState    PositionActivityOrderField = "activityState"
 	PositionActivityOrderFieldCollateralAmount PositionActivityOrderField = "collateralAmount"
 	PositionActivityOrderFieldDebtAmount       PositionActivityOrderField = "debtAmount"
@@ -478,7 +475,6 @@ const (
 
 var AllPositionActivityOrderField = []PositionActivityOrderField{
 	PositionActivityOrderFieldID,
-	PositionActivityOrderFieldPosition,
 	PositionActivityOrderFieldActivityState,
 	PositionActivityOrderFieldCollateralAmount,
 	PositionActivityOrderFieldDebtAmount,
@@ -489,7 +485,7 @@ var AllPositionActivityOrderField = []PositionActivityOrderField{
 
 func (e PositionActivityOrderField) IsValid() bool {
 	switch e {
-	case PositionActivityOrderFieldID, PositionActivityOrderFieldPosition, PositionActivityOrderFieldActivityState, PositionActivityOrderFieldCollateralAmount, PositionActivityOrderFieldDebtAmount, PositionActivityOrderFieldBlockNumber, PositionActivityOrderFieldBlockTimestamp, PositionActivityOrderFieldTransaction:
+	case PositionActivityOrderFieldID, PositionActivityOrderFieldActivityState, PositionActivityOrderFieldCollateralAmount, PositionActivityOrderFieldDebtAmount, PositionActivityOrderFieldBlockNumber, PositionActivityOrderFieldBlockTimestamp, PositionActivityOrderFieldTransaction:
 		return true
 	}
 	return false
@@ -612,7 +608,6 @@ const (
 	PositionOrderFieldBlockNumber           PositionOrderField = "blockNumber"
 	PositionOrderFieldBlockTimestamp        PositionOrderField = "blockTimestamp"
 	PositionOrderFieldTransaction           PositionOrderField = "transaction"
-	PositionOrderFieldPool                  PositionOrderField = "pool"
 )
 
 var AllPositionOrderField = []PositionOrderField{
@@ -634,12 +629,11 @@ var AllPositionOrderField = []PositionOrderField{
 	PositionOrderFieldBlockNumber,
 	PositionOrderFieldBlockTimestamp,
 	PositionOrderFieldTransaction,
-	PositionOrderFieldPool,
 }
 
 func (e PositionOrderField) IsValid() bool {
 	switch e {
-	case PositionOrderFieldID, PositionOrderFieldPositionAddress, PositionOrderFieldUserAddress, PositionOrderFieldWalletAddress, PositionOrderFieldCollateralPool, PositionOrderFieldCollateralPoolName, PositionOrderFieldPositionID, PositionOrderFieldLockedCollateral, PositionOrderFieldDebtValue, PositionOrderFieldDebtShare, PositionOrderFieldSafetyBuffer, PositionOrderFieldSafetyBufferInPercent, PositionOrderFieldTvl, PositionOrderFieldPositionStatus, PositionOrderFieldLiquidationCount, PositionOrderFieldBlockNumber, PositionOrderFieldBlockTimestamp, PositionOrderFieldTransaction, PositionOrderFieldPool:
+	case PositionOrderFieldID, PositionOrderFieldPositionAddress, PositionOrderFieldUserAddress, PositionOrderFieldWalletAddress, PositionOrderFieldCollateralPool, PositionOrderFieldCollateralPoolName, PositionOrderFieldPositionID, PositionOrderFieldLockedCollateral, PositionOrderFieldDebtValue, PositionOrderFieldDebtShare, PositionOrderFieldSafetyBuffer, PositionOrderFieldSafetyBufferInPercent, PositionOrderFieldTvl, PositionOrderFieldPositionStatus, PositionOrderFieldLiquidationCount, PositionOrderFieldBlockNumber, PositionOrderFieldBlockTimestamp, PositionOrderFieldTransaction:
 		return true
 	}
 	return false

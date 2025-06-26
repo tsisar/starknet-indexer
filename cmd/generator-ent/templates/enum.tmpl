@@ -1,6 +1,6 @@
 package schema
 
 import "entgo.io/ent/schema/field"
-
+ 
 var {{.Name}}Enum = field.Enum("{{.FieldName}}").
 	Values({{range $i, $v := .Values}}{{if $i}}, {{end}}"{{$v}}"{{end}}) 

@@ -4,7 +4,6 @@ input PositionActivityWhereInput {
   id_not: String
   id_in: [String!]
   id_not_in: [String!]
-  position: PositionWhereInput
   activityState: PositionActivityState
   activityState_not: PositionActivityState
   activityState_in: [PositionActivityState!]
@@ -33,7 +32,6 @@ input PositionActivityWhereInput {
 # === Enums ===
 enum PositionActivityOrderField {
   id
-  position
   activityState
   collateralAmount
   debtAmount
