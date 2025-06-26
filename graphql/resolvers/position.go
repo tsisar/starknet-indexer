@@ -548,7 +548,7 @@ func ApplyPositionOrderBy(query *ent.PositionQuery, orderBy *model.PositionOrder
 	case model.PositionOrderFieldCollateralPoolName:
 		query = query.Order(orderFunc(position.FieldCollateralPoolName))
 	case model.PositionOrderFieldPositionID:
-		query = query.Order(orderFunc(position.FieldPositionId))
+		query = query.Order(OrderByPositionIDAsBigInt(direction == model.OrderDirectionDesc))
 	case model.PositionOrderFieldLockedCollateral:
 		query = query.Order(orderFunc(position.FieldLockedCollateral))
 	case model.PositionOrderFieldDebtValue:
