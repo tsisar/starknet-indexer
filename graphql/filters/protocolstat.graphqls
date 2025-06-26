@@ -12,12 +12,17 @@ input ProtocolStatWhereInput {
   tvl_not: String
   tvl_in: [String!]
   tvl_not_in: [String!]
+  pools: String
+  pools_not: String
+  pools_in: [String!]
+  pools_not_in: [String!]
 }
 # === Enums ===
 enum ProtocolStatOrderField {
   id
   totalSupply
   tvl
+  pools
 }
 
 input ProtocolStatOrderBy {

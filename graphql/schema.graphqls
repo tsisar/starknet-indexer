@@ -82,13 +82,13 @@ type Position {
     blockNumber: String!
     blockTimestamp: String!
     transaction: String!
-    pools(where: PoolWhereInput, orderBy: PoolOrderBy, first: Int, skip: Int): [Pool!]!
+    pool: Pool!
     activities(where: PositionActivityWhereInput, orderBy: PositionActivityOrderBy, first: Int, skip: Int): [PositionActivity!]!
 }
 
 type PositionActivity {
     id: String!
-    position(where: PositionWhereInput, orderBy: PositionOrderBy, first: Int, skip: Int): Position!
+    position: Position!
     activityState: PositionActivityState!
     collateralAmount: String!
     debtAmount: String!

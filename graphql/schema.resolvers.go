@@ -29,14 +29,9 @@ func (r *positionResolver) PositionStatus(ctx context.Context, obj *ent.Position
 	return model.PositionStatus(obj.PositionStatus), nil
 }
 
-// Pools is the resolver for the pools field.
-func (r *positionResolver) Pools(ctx context.Context, obj *ent.Position, where *model.PoolWhereInput, orderBy *model.PoolOrderBy, first *int32, skip *int32) ([]*ent.Pool, error) {
-	query := obj.QueryPool()
-	query = resolvers.ApplyPoolWhereInput(query, where)
-	query = resolvers.ApplyPoolOrderBy(query, orderBy)
-	query = resolvers.ApplyPoolLimit(query, first, skip)
-
-	return query.All(ctx)
+// Pool is the resolver for the pool field.
+func (r *positionResolver) Pool(ctx context.Context, obj *ent.Position) (*ent.Pool, error) {
+	return obj.QueryPool().Only(ctx)
 }
 
 // Activities is the resolver for the activities field.
@@ -50,13 +45,8 @@ func (r *positionResolver) Activities(ctx context.Context, obj *ent.Position, wh
 }
 
 // Position is the resolver for the position field.
-func (r *positionActivityResolver) Position(ctx context.Context, obj *ent.PositionActivity, where *model.PositionWhereInput, orderBy *model.PositionOrderBy, first *int32, skip *int32) (*ent.Position, error) {
-	query := obj.QueryPosition()
-	query = resolvers.ApplyPositionWhereInput(query, where)
-	query = resolvers.ApplyPositionOrderBy(query, orderBy)
-	query = resolvers.ApplyPositionLimit(query, first, skip)
-
-	return query.Only(ctx)
+func (r *positionActivityResolver) Position(ctx context.Context, obj *ent.PositionActivity) (*ent.Position, error) {
+	return obj.QueryPosition().Only(ctx)
 }
 
 // ActivityState is the resolver for the activityState field.

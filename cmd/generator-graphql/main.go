@@ -57,7 +57,7 @@ func parseSchema(path string) ([]GraphQLType, []GraphQLEnum, error) {
 	var currentEnum *GraphQLEnum
 
 	reType := regexp.MustCompile(`^type\s+(\w+)\s*{`)
-	reField := regexp.MustCompile(`^\s*(\w+):\s+([\w!$begin:math:display$$end:math:display$]+)`)
+	reField := regexp.MustCompile(`^\s*(\w+)(?:\([^)]*\))?:\s+(.+)$`)
 	reEnum := regexp.MustCompile(`^enum\s+(\w+)\s*{`)
 
 	scanner := bufio.NewScanner(file)
@@ -82,6 +82,7 @@ func parseSchema(path string) ([]GraphQLType, []GraphQLEnum, error) {
 			}
 			if m := reField.FindStringSubmatch(line); m != nil {
 				fieldType := normalizeType(m[2])
+				fmt.Printf("Field: %s, Raw type: %s, Normalized type: %s\n", m[1], m[2], fieldType)
 				currentType.Fields = append(currentType.Fields, Field{Name: m[1], Type: fieldType})
 			}
 		}
@@ -98,11 +99,24 @@ func parseSchema(path string) ([]GraphQLType, []GraphQLEnum, error) {
 }
 
 func normalizeType(raw string) string {
+	// Handle complex field types like: positions(where: PositionWhereInput, orderBy: PositionOrderBy, first: Int, skip: Int): [Position!]!
+
+	// If it contains parameters (parentheses), extract the return type
+	if strings.Contains(raw, "(") && strings.Contains(raw, "):") {
+		// Find the return type part after "):"
+		parts := strings.Split(raw, "):")
+		if len(parts) >= 2 {
+			raw = strings.TrimSpace(parts[1])
+		}
+	}
+
+	// Remove array brackets and non-null markers
 	t := strings.TrimSuffix(raw, "!")
 	t = strings.TrimPrefix(t, "[")
 	t = strings.TrimSuffix(t, "]")
 	t = strings.TrimSuffix(t, "!")
-	return t
+
+	return strings.TrimSpace(t)
 }
 
 func baseType(t string) string {
