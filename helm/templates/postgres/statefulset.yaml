@@ -1,0 +1,81 @@
+{{- if .Values.postgres.enabled }}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name }}-postgres
+  labels:
+    {{- include "application.labels" . | nindent 4 }}
+    component: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-postgres
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-postgres
+        component: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: {{ .Values.postgres.container.image }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: {{ .Values.postgres.service.port }}
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Release.Name }}-postgres
+                  key: user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Release.Name }}-postgres
+                  key: password
+            - name: POSTGRES_DB
+              value: {{ .Values.postgres.env.db | default "indexer" }}
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+            - name: POSTGRES_INITDB_ARGS
+              value: "-E UTF8 --locale=C"
+            - name: POSTGRES_HOST_AUTH_METHOD
+              value: md5
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: storage
+          livenessProbe:
+            tcpSocket:
+              port: 5432
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 5
+          readinessProbe:
+            tcpSocket:
+              port: 5432
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 5
+          resources:
+            requests:
+              cpu: "1000m"
+              memory: "2Gi"
+            limits:
+              cpu: "2000m"
+              memory: "4Gi"
+        - name: pvc-metrics
+          image: intothefathom/pvc-metrics:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 2112
+          volumeMounts:
+            - mountPath: /data
+              name: storage
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-postgres
+{{- end }} 
