@@ -1,0 +1,63 @@
+# This file contains the configuration for the Indexer Helm chart.
+config:
+  enabled: true
+  name: "stablecoin"
+  rpc:
+    endpoint: "https://lb.drpc.org/ogrpc?network=starknet&dkey=xxx"
+    ws_endpoint: "wss://lb.drpc.org/ogws?network=starknet&dkey=xxx"
+
+# Postgres component configuration
+postgres:
+  enabled: true
+  container:
+    image: postgres:16
+
+  # Authentication configuration
+  auth:
+    username: postgres
+    password: postgres
+
+  env:
+    db: indexer
+
+  service:
+    port: 5432
+    nodePort: 30032
+
+  storage:
+    size: 10Gi
+
+
+# Indexer component configuration
+indexer:
+  enabled: true
+  image:
+    repository: ghcr.io/tsisar/indexer.starknet.stablecoin.indexer
+    tag: latest-arm64
+
+  resume_from_last_signature: false
+
+  log:
+    level: debug
+    save: true
+
+# Subgraph component configuration
+subgraph:
+  enabled: true
+  image:
+    repository: ghcr.io/tsisar/indexer.starknet.stablecoin.subgraph
+    tag: latest-arm64
+
+  log:
+    level: debug
+    save: true
+
+# Proxy component configuration
+proxy:
+  enabled: true
+  image:
+    repository: nginx
+    tag: latest
+
+  ingress:
+    host: indexer.tsisar.com.ua
