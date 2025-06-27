@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	contracts := config.App.Contracts
+	contracts := config.App.IndexerConfig.Contracts
 	rpcURL := config.App.RPCEndpoint
 
 	var contractNames []string
