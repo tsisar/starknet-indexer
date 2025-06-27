@@ -13,9 +13,8 @@ type config struct {
 	ResumeFromLastSignature bool
 	RPCEndpoint             string
 	RPCWSEndpoint           string
-	StartBlock              uint64
 	Version                 string
-	Contracts               map[string]string
+	IndexerConfig           indexerConfig
 	Postgres                postgres
 	Metrics                 metrics
 }
@@ -53,9 +52,8 @@ func loadConfig() (*config, error) {
 		ResumeFromLastSignature: getBool("RESUME_FROM_LAST_SIGNATURE", false),
 		RPCEndpoint:             getString("RPC_ENDPOINT", "https://api.mainnet-beta.solana.com"),
 		RPCWSEndpoint:           getString("RPC_WS_ENDPOINT", "wss://api.mainnet-beta.solana.com"),
-		StartBlock:              getUint64("START_BLOCK", 0),
 		Version:                 getString("VERSION", "v.unknown"),
-		Contracts:               loadContractAddressesFromEnv(),
+		IndexerConfig:           loadIndexerConfigFromEnv(),
 		Postgres: postgres{
 			User:     getString("POSTGRES_USER", "postgres"),
 			Password: getString("POSTGRES_PASSWORD", "postgres"),

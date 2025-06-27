@@ -4,11 +4,11 @@
 
 # Target platform (override via `make TARGETOS=linux`)
 TARGETOS     ?= linux
-TARGETARCH   ?= amd64
+TARGETARCH   ?= arm64
 CGO_ENABLED  ?= 0
 
 # Default component name (subgraph, indexer)
-TAG_SUFFIX   := ""
+TAG_SUFFIX   := "-arm64"
 COMPONENT := subgraph
 BIN_DIR   := bin
 BIN_PATH  := $(BIN_DIR)/$(COMPONENT)
@@ -128,7 +128,7 @@ push:
 clean:
 	@echo "Cleaning artifacts..."
 	@rm -f indexer
-	@docker rmi $(REGISTRY)/$(APP):$(VERSION) || true
+	@docker rmi $(REGISTRY)/$(APP):$(VERSION)$(TAG_SUFFIX) || true
 
 release: clean test build image push
 	@echo "Release $(VERSION) completed successfully"

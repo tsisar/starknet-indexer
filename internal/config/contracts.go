@@ -8,20 +8,19 @@ import (
 	"path/filepath"
 )
 
-type contractEntry struct {
+type ContractEntry struct {
 	Name    string `json:"name"`
 	Address string `json:"address"`
 }
 
 type indexerConfig struct {
-	Network   string                   `json:"network"`
-	Indexer   string                   `json:"indexer"`
-	Contracts map[string]contractEntry `json:"contracts"`
+	Network    string                   `json:"network"`
+	Indexer    string                   `json:"indexer"`
+	StartBlock uint64                   `json:"start_block"`
+	Contracts  map[string]ContractEntry `json:"contracts"`
 }
 
-func loadContractAddressesFromEnv() map[string]string {
-	contracts := make(map[string]string)
-
+func loadIndexerConfigFromEnv() indexerConfig {
 	indexer := getString("INDEXER_NAME", "")
 	if indexer == "" {
 		log.Fatalf("INDEXER_NAME not set")
@@ -39,8 +38,9 @@ func loadContractAddressesFromEnv() map[string]string {
 	}
 
 	for key, entry := range parsed.Contracts {
-		contracts[key] = utils.NormalizeStarkNetAddress(entry.Address)
+		entry.Address = utils.NormalizeStarkNetAddress(entry.Address)
+		parsed.Contracts[key] = entry
 	}
 
-	return contracts
+	return parsed
 }

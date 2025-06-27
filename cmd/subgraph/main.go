@@ -161,7 +161,7 @@ func processBlockQueue(ctx context.Context, db *gorm.DB, e *ent.Client) {
 
 			for _, ev := range events {
 				if err := mapper.MapEvents(ctx, e, ev); err != nil {
-					log.Errorf("Failed to map event %d in block %d: %v", ev.EventIndex, blockNumber, err)
+					log.Errorf("Failed to map event %d in block %d: %v", ev.Index, blockNumber, err)
 				}
 			}
 		}
