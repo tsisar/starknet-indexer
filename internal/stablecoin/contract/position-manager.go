@@ -11,7 +11,7 @@ import (
 func GetCollateralPools(ctx context.Context, positionID *big.Int) string {
 	log.Infof("Geting collateral pools for position ID: %d", positionID)
 
-	contractAddress := config.App.Contracts["POSITION_MANAGER"]
+	contractAddress := config.App.IndexerConfig.Contracts["POSITION_MANAGER"].Address
 	log.Debugf("Using COLLATERAL_POOL_CONFIG address: %s", contractAddress)
 
 	low, high := bigIntToFeltU256(positionID)
@@ -33,7 +33,7 @@ func GetCollateralPools(ctx context.Context, positionID *big.Int) string {
 func GetPositionAddress(ctx context.Context, positionID *big.Int) string {
 	log.Infof("Geting position address: %d", positionID)
 
-	contractAddress := config.App.Contracts["POSITION_MANAGER"]
+	contractAddress := config.App.IndexerConfig.Contracts["POSITION_MANAGER"].Address
 	log.Debugf("Using POSITION_MANAGER address: %s", contractAddress)
 
 	low, high := bigIntToFeltU256(positionID)

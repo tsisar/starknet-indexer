@@ -1,5 +1,8 @@
 # Starknet Stablecoin Indexer
 
+[![Go Version](https://img.shields.io/badge/Go-1.24.2-blue.svg)](https://golang.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A high-performance indexer for Starknet stablecoin protocol, built with Go. This project provides a GraphQL API for querying protocol data, including positions, pools, users, and swap events.
 
 ## Features

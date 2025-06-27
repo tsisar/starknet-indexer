@@ -12,7 +12,7 @@ import (
 func FetchDebtAccumulatedRate(ctx context.Context, poolId string) *big.Float {
 	log.Infof("Fetching debt accumulated rate for pool ID: %s", poolId)
 
-	contractAddress := config.App.Contracts["COLLATERAL_POOL_CONFIG"]
+	contractAddress := config.App.IndexerConfig.Contracts["COLLATERAL_POOL_CONFIG"].Address
 	log.Debugf("Using COLLATERAL_POOL_CONFIG address: %s", contractAddress)
 
 	feltPoolId, err := utils.HexToFelt(poolId)

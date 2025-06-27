@@ -16,7 +16,7 @@ type PositionResult struct {
 func GetPositionResult(ctx context.Context, poolId string, positionAddress string) PositionResult {
 	log.Infof("Getting position result for pool ID: %s, position address: %s", poolId, positionAddress)
 
-	contractAddress := config.App.Contracts["BOOKKEEPER"]
+	contractAddress := config.App.IndexerConfig.Contracts["BOOKKEEPER"].Address
 	log.Debugf("Using BOOKKEEPER address: %s", contractAddress)
 
 	feltPoolId, err := utils.HexToFelt(poolId)

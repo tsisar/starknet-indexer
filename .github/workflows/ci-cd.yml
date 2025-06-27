@@ -33,10 +33,10 @@ jobs:
         run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Release Indexer
-        run: make release COMPONENT=indexer TAG_SUFFIX=${{ env.TAG_SUFFIX }}
+        run: make release TARGETARCH=amd64 COMPONENT=indexer TAG_SUFFIX=${{ env.TAG_SUFFIX }}
 
       - name: Release Subgraph
-        run: make release COMPONENT=subgraph TAG_SUFFIX=${{ env.TAG_SUFFIX }}
+        run: make release TARGETARCH=amd64 COMPONENT=subgraph TAG_SUFFIX=${{ env.TAG_SUFFIX }}
 
       - name: Sync Argo CD and wait for completion
         run: |

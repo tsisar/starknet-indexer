@@ -1,6 +1,7 @@
 {
   "network": "starknet",
   "indexer": "stablecoin",
+  "start_block": 1417000,
   "contracts": {
     "ACCESS_CONTROL_CONFIG": {
       "name": "Access Control Config",

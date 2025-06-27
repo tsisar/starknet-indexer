@@ -1,6 +1,7 @@
 {
   "network": "starknet",
   "indexer": "vault",
+  "start_block": 1417000,
   "contracts": {
     "FACTORY": {
       "name": "Factory",

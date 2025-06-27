@@ -53,8 +53,8 @@ func main() {
 		log.Fatalf("failed to get latest block number: %v", err)
 	}
 
-	fromBlock := config.App.StartBlock
-	contracts := config.App.Contracts
+	fromBlock := config.App.IndexerConfig.StartBlock
+	contracts := config.App.IndexerConfig.Contracts
 
 	fetchEventsForAllContracts(ctx, g.DB, provider, contracts, fromBlock, latestBlockNumber)
 
@@ -67,13 +67,13 @@ func main() {
 	}
 }
 
-func fetchEventsForAllContracts(ctx context.Context, db *gorm.DB, provider *rpc.Provider, contracts map[string]string, fromBlock, toBlock uint64) {
+func fetchEventsForAllContracts(ctx context.Context, db *gorm.DB, provider *rpc.Provider, contracts map[string]config.ContractEntry, fromBlock, toBlock uint64) {
 	const maxRetries = 3
 	const retryDelay = 2 * time.Second
 
 	var wg sync.WaitGroup
 
-	for contractName, addressString := range contracts {
+	for _, contract := range contracts {
 		wg.Add(1)
 
 		go func(name, address string) {
@@ -92,7 +92,7 @@ func fetchEventsForAllContracts(ctx context.Context, db *gorm.DB, provider *rpc.
 
 			setError(ctx, db, fmt.Sprintf("Failed to fetch events for contract %s at address %s after %d attempts: %v", name, address, maxRetries, err))
 			log.Fatalf("All attempts failed for contract %s: %v", name, err)
-		}(contractName, addressString)
+		}(contract.Name, contract.Address)
 	}
 
 	wg.Wait()
