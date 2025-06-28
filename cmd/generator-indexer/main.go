@@ -16,17 +16,17 @@ func main() {
 
 	var contractNames []string
 
-	for name, addr := range contracts {
-		cleanName := strings.ToLower(name)
+	for _, contract := range contracts {
+		cleanName := strings.ToLower(contract.Name)
 		contractNames = append(contractNames, cleanName)
 
 		abiPath := filepath.Join("abi", cleanName+".json")
 
 		fmt.Println("---------------------------------")
-		log.Debugf("Fetching ABI for %s (%s)", name, addr)
-		err := abiutil.FetchAndSaveABI(cleanName, addr, rpcURL, "abi")
+		log.Debugf("Fetching ABI for %s (%s)", contract.Name, contract.Address)
+		err := abiutil.FetchAndSaveABI(cleanName, contract.Address, rpcURL, "abi")
 		if err != nil {
-			log.Warnf("Failed to fetch ABI for %s: %v", name, err)
+			log.Warnf("Failed to fetch ABI for %s: %v", contract.Name, err)
 			continue
 		}
 
