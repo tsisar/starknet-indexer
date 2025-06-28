@@ -8,5 +8,5 @@ metadata:
     component: indexer
 data:
   stablecoin.json: |
-    {{ .Files.Get "stablecoin.json" | indent 4 }}
+    {{- tpl (.Files.Get "files/stablecoin.json.tpl") . | nindent 4 }}
 {{- end }}
