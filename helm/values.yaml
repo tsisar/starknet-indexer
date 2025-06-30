@@ -61,7 +61,7 @@ proxy:
 
   # TLS configuration
   tls:
-    enabled: false
+    enabled: true
     issuer: "{{ .Release.Name }}-proxy"
 
   ingress:
