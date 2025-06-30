@@ -1,4 +1,4 @@
-{{- if .Values.proxy.enabled }}
+{{- if and .Values.proxy.enabled .Values.proxy.tls.enabled }}
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:

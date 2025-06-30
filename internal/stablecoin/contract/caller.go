@@ -21,7 +21,7 @@ func getRrcProvider() (*rpc.Provider, error) {
 	return client, nil
 }
 
-func callFunction(ctx context.Context, contractAddress, funcName string, callData ...*felt.Felt) ([]*felt.Felt, error) {
+func callFunction(ctx context.Context, blockNumber uint64, contractAddress, funcName string, callData ...*felt.Felt) ([]*felt.Felt, error) {
 	client, err := getRrcProvider()
 	if err != nil {
 		log.Errorf("failed to get RPC provider: %v", err)
@@ -40,7 +40,7 @@ func callFunction(ctx context.Context, contractAddress, funcName string, callDat
 		Calldata:           callData,
 	}
 
-	result, err := client.Call(ctx, fnCall, rpc.BlockID{Tag: "latest"})
+	result, err := client.Call(ctx, fnCall, rpc.BlockID{Number: &blockNumber})
 	if err != nil {
 		log.Errorf("failed to call contract: %v", err)
 	}

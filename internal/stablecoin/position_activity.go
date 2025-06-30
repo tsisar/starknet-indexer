@@ -17,7 +17,7 @@ func createPositionActivity(ctx context.Context, client *ent.Client, state, pool
 
 	debtAccumulatedRate := big.NewFloat(1)
 	if !utils.IsZero(debtShare) {
-		debtAccumulatedRate = contract.FetchDebtAccumulatedRate(ctx, poolId)
+		debtAccumulatedRate = contract.FetchDebtAccumulatedRate(ctx, transaction.BlockNumber, poolId)
 	}
 	debtAmount := new(big.Float).Mul(debtShare, debtAccumulatedRate)
 

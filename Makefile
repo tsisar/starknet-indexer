@@ -9,7 +9,7 @@ CGO_ENABLED  ?= 0
 
 # Default component name (subgraph, indexer)
 TAG_SUFFIX   := "-arm64"
-COMPONENT := subgraph
+COMPONENT := indexer
 BIN_DIR   := bin
 BIN_PATH  := $(BIN_DIR)/$(COMPONENT)
 

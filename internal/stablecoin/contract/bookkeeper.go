@@ -13,7 +13,7 @@ type PositionResult struct {
 	LockedCollateral *big.Int
 }
 
-func GetPositionResult(ctx context.Context, poolId string, positionAddress string) PositionResult {
+func GetPositionResult(ctx context.Context, blockNumber uint64, poolId string, positionAddress string) PositionResult {
 	log.Infof("Getting position result for pool ID: %s, position address: %s", poolId, positionAddress)
 
 	contractAddress := config.App.IndexerConfig.Contracts["BOOKKEEPER"].Address
@@ -31,7 +31,7 @@ func GetPositionResult(ctx context.Context, poolId string, positionAddress strin
 		return PositionResult{}
 	}
 
-	result, err := callFunction(ctx, contractAddress, "positions", feltPoolId, feltPositionAddress)
+	result, err := callFunction(ctx, blockNumber, contractAddress, "positions", feltPoolId, feltPositionAddress)
 	if err != nil {
 		log.Errorf("Failed to call positions function: %v", err)
 		return PositionResult{}

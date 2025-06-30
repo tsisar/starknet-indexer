@@ -73,7 +73,7 @@ func fetchEventsForAllContracts(ctx context.Context, db *gorm.DB, provider *rpc.
 
 	var wg sync.WaitGroup
 
-	for _, contract := range contracts {
+	for name, contract := range contracts {
 		wg.Add(1)
 
 		go func(name, address string) {
@@ -92,7 +92,7 @@ func fetchEventsForAllContracts(ctx context.Context, db *gorm.DB, provider *rpc.
 
 			setError(ctx, db, fmt.Sprintf("Failed to fetch events for contract %s at address %s after %d attempts: %v", name, address, maxRetries, err))
 			log.Fatalf("All attempts failed for contract %s: %v", name, err)
-		}(contract.Name, contract.Address)
+		}(name, contract.Address)
 	}
 
 	wg.Wait()

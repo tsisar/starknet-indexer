@@ -4,7 +4,9 @@ kind: Ingress
 metadata:
   name: {{ .Release.Name }}-proxy
   annotations:
+    {{- if .Values.proxy.tls.enabled }}
     cert-manager.io/issuer: {{ .Release.Name }}-proxy
+    {{- end }}
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
   labels:
@@ -23,8 +25,10 @@ spec:
                 name: {{ .Release.Name }}-proxy
                 port:
                   name: http
+  {{- if .Values.proxy.tls.enabled }}
   tls:
     - hosts:
         - {{ .Values.proxy.ingress.host }}
       secretName: {{ .Release.Name }}-proxy-letsencrypt-tls
+  {{- end }}
 {{- end }} 

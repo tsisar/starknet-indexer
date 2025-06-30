@@ -25,3 +25,14 @@ Generate PostgreSQL username
 {{- define "postgres.username" -}}
 {{- .Values.postgres.auth.username | default "postgres" -}}
 {{- end -}}
+
+{{/*
+Check if external secrets should be used
+*/}}
+{{- define "postgres.useExternalSecrets" -}}
+{{- if or .Values.postgres.externalSecret.enabled .Values.postgres.secretProviderClass.enabled -}}
+{{- true -}}
+{{- else -}}
+{{- false -}}
+{{- end -}}
+{{- end -}}

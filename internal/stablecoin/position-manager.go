@@ -18,8 +18,8 @@ func NewPositionHandler(ctx context.Context, client *ent.Client, event position_
 	userAddress := event.Key.User
 	walletAddress := event.Key.Owner
 
-	positionAddress := contract.GetPositionAddress(ctx, &positionID)
-	collateralPoolId := contract.GetCollateralPools(ctx, &positionID)
+	positionAddress := contract.GetPositionAddress(ctx, transaction.BlockNumber, &positionID)
+	collateralPoolId := contract.GetCollateralPools(ctx, transaction.BlockNumber, &positionID)
 
 	// Load collateralPool
 	collateralPool, err := client.Pool.Get(ctx, collateralPoolId)
@@ -55,7 +55,7 @@ func NewPositionHandler(ctx context.Context, client *ent.Client, event position_
 	}
 
 	// Handle Position Activity
-	positionResult := contract.GetPositionResult(ctx, collateralPoolId, position.PositionAddress)
+	positionResult := contract.GetPositionResult(ctx, transaction.BlockNumber, collateralPoolId, position.PositionAddress)
 	debtShare := utils.DivByWADToDecimal(positionResult.DebtShare)
 	collateralAmount := utils.DivByWADToDecimal(positionResult.LockedCollateral)
 

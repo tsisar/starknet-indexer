@@ -59,5 +59,10 @@ proxy:
     repository: nginx
     tag: latest
 
+  # TLS configuration
+  tls:
+    enabled: false
+    issuer: "{{ .Release.Name }}-proxy"
+
   ingress:
     host: indexer.tsisar.com.ua

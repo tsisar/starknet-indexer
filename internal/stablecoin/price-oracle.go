@@ -63,7 +63,7 @@ func PriceUpdateHandler(ctx context.Context, client *ent.Client, event price_con
 		return err
 	}
 
-	debtAccumulatedRate := contract.FetchDebtAccumulatedRate(ctx, poolId)
+	debtAccumulatedRate := contract.FetchDebtAccumulatedRate(ctx, transaction.BlockNumber, poolId)
 
 	// Update safety buffer for all positions
 	positions, err := pool.QueryPositions().All(ctx)
