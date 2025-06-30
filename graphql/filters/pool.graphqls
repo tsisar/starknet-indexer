@@ -60,6 +60,7 @@ input PoolWhereInput {
   tvl_not: String
   tvl_in: [String!]
   tvl_not_in: [String!]
+  positions: PositionWhereInput
 }
 # === Enums ===
 enum PoolOrderField {

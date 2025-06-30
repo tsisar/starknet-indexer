@@ -10,18 +10,18 @@ import (
 	"fmt"
 
 	"github.com/tsisar/starknet-indexer/generated/ent"
-	"github.com/tsisar/starknet-indexer/generated/ent/pool"
-	"github.com/tsisar/starknet-indexer/generated/ent/position"
-	"github.com/tsisar/starknet-indexer/generated/ent/positionactivity"
 	"github.com/tsisar/starknet-indexer/graphql/model"
+	"github.com/tsisar/starknet-indexer/graphql/resolvers"
 )
 
 // Positions is the resolver for the positions field.
-func (r *poolResolver) Positions(ctx context.Context, obj *ent.Pool) ([]*ent.Position, error) {
-	return r.Client.Position.
-		Query().
-		Where(position.HasPoolWith(pool.ID(obj.ID))).
-		All(ctx)
+func (r *poolResolver) Positions(ctx context.Context, obj *ent.Pool, where *model.PositionWhereInput, orderBy *model.PositionOrderBy, first *int32, skip *int32) ([]*ent.Position, error) {
+	query := obj.QueryPositions()
+	query = resolvers.ApplyPositionWhereInput(query, where)
+	query = resolvers.ApplyPositionOrderBy(query, orderBy)
+	query = resolvers.ApplyPositionLimit(query, first, skip)
+
+	return query.All(ctx)
 }
 
 // PositionStatus is the resolver for the positionStatus field.
@@ -34,12 +34,14 @@ func (r *positionResolver) Pool(ctx context.Context, obj *ent.Position) (*ent.Po
 	return obj.QueryPool().Only(ctx)
 }
 
-// Activity is the resolver for the activity field.
-func (r *positionResolver) Activity(ctx context.Context, obj *ent.Position) ([]*ent.PositionActivity, error) {
-	return r.Client.PositionActivity.
-		Query().
-		Where(positionactivity.HasPositionWith(position.ID(obj.ID))).
-		All(ctx)
+// Activities is the resolver for the activities field.
+func (r *positionResolver) Activities(ctx context.Context, obj *ent.Position, where *model.PositionActivityWhereInput, orderBy *model.PositionActivityOrderBy, first *int32, skip *int32) ([]*ent.PositionActivity, error) {
+	query := obj.QueryActivity()
+	query = resolvers.ApplyPositionActivityWhereInput(query, where)
+	query = resolvers.ApplyPositionActivityOrderBy(query, orderBy)
+	query = resolvers.ApplyPositionActivityLimit(query, first, skip)
+
+	return query.All(ctx)
 }
 
 // Position is the resolver for the position field.

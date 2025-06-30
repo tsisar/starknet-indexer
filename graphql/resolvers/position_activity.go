@@ -143,6 +143,126 @@ func ApplyPositionActivityWhereInput(query *ent.PositionActivityQuery, where *mo
 		if where.Position.UserAddressNotIn != nil {
 			query = query.Where(positionactivity.HasPositionWith(position.UserAddressNotIn(where.Position.UserAddressNotIn...)))
 		}
+		if where.Position.WalletAddress != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.WalletAddressEQ(*where.Position.WalletAddress)))
+		}
+		if where.Position.WalletAddressNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.WalletAddressNEQ(*where.Position.WalletAddressNot)))
+		}
+		if where.Position.WalletAddressIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.WalletAddressIn(where.Position.WalletAddressIn...)))
+		}
+		if where.Position.WalletAddressNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.WalletAddressNotIn(where.Position.WalletAddressNotIn...)))
+		}
+		if where.Position.CollateralPool != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.CollateralPoolEQ(*where.Position.CollateralPool)))
+		}
+		if where.Position.CollateralPoolNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.CollateralPoolNEQ(*where.Position.CollateralPoolNot)))
+		}
+		if where.Position.CollateralPoolIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.CollateralPoolIn(where.Position.CollateralPoolIn...)))
+		}
+		if where.Position.CollateralPoolNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.CollateralPoolNotIn(where.Position.CollateralPoolNotIn...)))
+		}
+		if where.Position.CollateralPoolName != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.CollateralPoolNameEQ(*where.Position.CollateralPoolName)))
+		}
+		if where.Position.CollateralPoolNameNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.CollateralPoolNameNEQ(*where.Position.CollateralPoolNameNot)))
+		}
+		if where.Position.CollateralPoolNameIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.CollateralPoolNameIn(where.Position.CollateralPoolNameIn...)))
+		}
+		if where.Position.CollateralPoolNameNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.CollateralPoolNameNotIn(where.Position.CollateralPoolNameNotIn...)))
+		}
+		if where.Position.PositionID != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.PositionIdEQ(*where.Position.PositionID)))
+		}
+		if where.Position.PositionIDNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.PositionIdNEQ(*where.Position.PositionIDNot)))
+		}
+		if where.Position.PositionIDIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.PositionIdIn(where.Position.PositionIDIn...)))
+		}
+		if where.Position.PositionIDNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.PositionIdNotIn(where.Position.PositionIDNotIn...)))
+		}
+		if where.Position.LockedCollateral != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.LockedCollateralEQ(*where.Position.LockedCollateral)))
+		}
+		if where.Position.LockedCollateralNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.LockedCollateralNEQ(*where.Position.LockedCollateralNot)))
+		}
+		if where.Position.LockedCollateralIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.LockedCollateralIn(where.Position.LockedCollateralIn...)))
+		}
+		if where.Position.LockedCollateralNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.LockedCollateralNotIn(where.Position.LockedCollateralNotIn...)))
+		}
+		if where.Position.DebtValue != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.DebtValueEQ(*where.Position.DebtValue)))
+		}
+		if where.Position.DebtValueNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.DebtValueNEQ(*where.Position.DebtValueNot)))
+		}
+		if where.Position.DebtValueIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.DebtValueIn(where.Position.DebtValueIn...)))
+		}
+		if where.Position.DebtValueNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.DebtValueNotIn(where.Position.DebtValueNotIn...)))
+		}
+		if where.Position.DebtShare != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.DebtShareEQ(*where.Position.DebtShare)))
+		}
+		if where.Position.DebtShareNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.DebtShareNEQ(*where.Position.DebtShareNot)))
+		}
+		if where.Position.DebtShareIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.DebtShareIn(where.Position.DebtShareIn...)))
+		}
+		if where.Position.DebtShareNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.DebtShareNotIn(where.Position.DebtShareNotIn...)))
+		}
+		if where.Position.SafetyBuffer != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.SafetyBufferEQ(*where.Position.SafetyBuffer)))
+		}
+		if where.Position.SafetyBufferNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.SafetyBufferNEQ(*where.Position.SafetyBufferNot)))
+		}
+		if where.Position.SafetyBufferIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.SafetyBufferIn(where.Position.SafetyBufferIn...)))
+		}
+		if where.Position.SafetyBufferNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.SafetyBufferNotIn(where.Position.SafetyBufferNotIn...)))
+		}
+		if where.Position.SafetyBufferInPercent != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.SafetyBufferInPercentEQ(*where.Position.SafetyBufferInPercent)))
+		}
+		if where.Position.SafetyBufferInPercentNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.SafetyBufferInPercentNEQ(*where.Position.SafetyBufferInPercentNot)))
+		}
+		if where.Position.SafetyBufferInPercentIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.SafetyBufferInPercentIn(where.Position.SafetyBufferInPercentIn...)))
+		}
+		if where.Position.SafetyBufferInPercentNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.SafetyBufferInPercentNotIn(where.Position.SafetyBufferInPercentNotIn...)))
+		}
+		if where.Position.Tvl != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.TvlEQ(*where.Position.Tvl)))
+		}
+		if where.Position.TvlNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.TvlNEQ(*where.Position.TvlNot)))
+		}
+		if where.Position.TvlIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.TvlIn(where.Position.TvlIn...)))
+		}
+		if where.Position.TvlNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.TvlNotIn(where.Position.TvlNotIn...)))
+		}
 		if where.Position.PositionStatus != nil {
 			query = query.Where(positionactivity.HasPositionWith(position.PositionStatusEQ(string(*where.Position.PositionStatus))))
 		}
@@ -162,6 +282,54 @@ func ApplyPositionActivityWhereInput(query *ent.PositionActivityQuery, where *mo
 				statuses[i] = string(status)
 			}
 			query = query.Where(positionactivity.HasPositionWith(position.PositionStatusNotIn(statuses...)))
+		}
+		if where.Position.LiquidationCount != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.LiquidationCountEQ(*where.Position.LiquidationCount)))
+		}
+		if where.Position.LiquidationCountNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.LiquidationCountNEQ(*where.Position.LiquidationCountNot)))
+		}
+		if where.Position.LiquidationCountIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.LiquidationCountIn(where.Position.LiquidationCountIn...)))
+		}
+		if where.Position.LiquidationCountNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.LiquidationCountNotIn(where.Position.LiquidationCountNotIn...)))
+		}
+		if where.Position.BlockNumber != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.BlockNumberEQ(*where.Position.BlockNumber)))
+		}
+		if where.Position.BlockNumberNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.BlockNumberNEQ(*where.Position.BlockNumberNot)))
+		}
+		if where.Position.BlockNumberIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.BlockNumberIn(where.Position.BlockNumberIn...)))
+		}
+		if where.Position.BlockNumberNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.BlockNumberNotIn(where.Position.BlockNumberNotIn...)))
+		}
+		if where.Position.BlockTimestamp != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.BlockTimestampEQ(*where.Position.BlockTimestamp)))
+		}
+		if where.Position.BlockTimestampNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.BlockTimestampNEQ(*where.Position.BlockTimestampNot)))
+		}
+		if where.Position.BlockTimestampIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.BlockTimestampIn(where.Position.BlockTimestampIn...)))
+		}
+		if where.Position.BlockTimestampNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.BlockTimestampNotIn(where.Position.BlockTimestampNotIn...)))
+		}
+		if where.Position.Transaction != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.TransactionEQ(*where.Position.Transaction)))
+		}
+		if where.Position.TransactionNot != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.TransactionNEQ(*where.Position.TransactionNot)))
+		}
+		if where.Position.TransactionIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.TransactionIn(where.Position.TransactionIn...)))
+		}
+		if where.Position.TransactionNotIn != nil {
+			query = query.Where(positionactivity.HasPositionWith(position.TransactionNotIn(where.Position.TransactionNotIn...)))
 		}
 	}
 

@@ -53,8 +53,8 @@ func main() {
 		log.Fatalf("failed to get latest block number: %v", err)
 	}
 
-	fromBlock := config.App.StartBlock
-	contracts := config.App.Contracts
+	fromBlock := config.App.IndexerConfig.StartBlock
+	contracts := config.App.IndexerConfig.Contracts
 
 	fetchEventsForAllContracts(ctx, g.DB, provider, contracts, fromBlock, latestBlockNumber)
 
@@ -67,13 +67,13 @@ func main() {
 	}
 }
 
-func fetchEventsForAllContracts(ctx context.Context, db *gorm.DB, provider *rpc.Provider, contracts map[string]string, fromBlock, toBlock uint64) {
+func fetchEventsForAllContracts(ctx context.Context, db *gorm.DB, provider *rpc.Provider, contracts map[string]config.ContractEntry, fromBlock, toBlock uint64) {
 	const maxRetries = 3
 	const retryDelay = 2 * time.Second
 
 	var wg sync.WaitGroup
 
-	for contractName, addressString := range contracts {
+	for name, contract := range contracts {
 		wg.Add(1)
 
 		go func(name, address string) {
@@ -92,7 +92,7 @@ func fetchEventsForAllContracts(ctx context.Context, db *gorm.DB, provider *rpc.
 
 			setError(ctx, db, fmt.Sprintf("Failed to fetch events for contract %s at address %s after %d attempts: %v", name, address, maxRetries, err))
 			log.Fatalf("All attempts failed for contract %s: %v", name, err)
-		}(contractName, addressString)
+		}(name, contract.Address)
 	}
 
 	wg.Wait()
@@ -175,8 +175,8 @@ func logDecodedEvent(
 	entry := map[string]interface{}{
 		"contract_name":    contractName,
 		"contract_address": contractAddress,
-		"event_name":       eventName,
-		"event_index":      eventIndex,
+		"name":             eventName,
+		"index":            eventIndex,
 		"event":            event,
 		"block_number":     block.Number,
 		"block_timestamp":  block.Timestamp,
@@ -258,13 +258,13 @@ func saveParsedEvent(
 	id := generateId(contractAddress, block.Hash, txHash, indexStr, jsonStr)
 	e := model.Event{
 		ID:              id,
-		EventIndex:      eventIndex,
-		EventName:       eventName,
+		Index:           eventIndex,
+		Name:            eventName,
 		TxIndex:         tx.Index,
 		TxHash:          tx.Hash,
 		BlockNumber:     block.Number,
 		ContractAddress: contract.Address,
-		RawData:         datatypes.JSON(jsonBytes),
+		JsonEv:          datatypes.JSON(jsonBytes),
 		Timestamp:       block.Timestamp,
 	}
 	ok, err := e.Load(ctx, db)

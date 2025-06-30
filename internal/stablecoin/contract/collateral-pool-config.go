@@ -9,10 +9,10 @@ import (
 	"math/big"
 )
 
-func FetchDebtAccumulatedRate(ctx context.Context, poolId string) *big.Float {
+func FetchDebtAccumulatedRate(ctx context.Context, blockNumber uint64, poolId string) *big.Float {
 	log.Infof("Fetching debt accumulated rate for pool ID: %s", poolId)
 
-	contractAddress := config.App.Contracts["COLLATERAL_POOL_CONFIG"]
+	contractAddress := config.App.IndexerConfig.Contracts["COLLATERAL_POOL_CONFIG"].Address
 	log.Debugf("Using COLLATERAL_POOL_CONFIG address: %s", contractAddress)
 
 	feltPoolId, err := utils.HexToFelt(poolId)
@@ -21,7 +21,7 @@ func FetchDebtAccumulatedRate(ctx context.Context, poolId string) *big.Float {
 		return nil
 	}
 
-	result, err := callFunction(ctx, contractAddress, "get_debt_accumulated_rate", feltPoolId)
+	result, err := callFunction(ctx, blockNumber, contractAddress, "get_debt_accumulated_rate", feltPoolId)
 	if err != nil {
 		log.Errorf("Failed to call get_debt_accumulated_rate function: %v", err)
 		return nil

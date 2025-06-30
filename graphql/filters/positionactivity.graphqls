@@ -33,7 +33,6 @@ input PositionActivityWhereInput {
 # === Enums ===
 enum PositionActivityOrderField {
   id
-  position
   activityState
   collateralAmount
   debtAmount

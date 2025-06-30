@@ -28,7 +28,7 @@ func HandleLogInitCollateralPoolId(ctx context.Context, client *ent.Client, even
 	debtCeiling := utils.DivByRAD(&event.Data.DebtCeiling)
 	liquidationRatio := utils.DivByRAYToDecimal(&event.Data.LiquidationRatio)
 	stabilityFeeRate := utils.DivByRAY(&event.Data.StabilityFeeRate)
-	debtAccumulatedRate := contract.FetchDebtAccumulatedRate(ctx, poolId)
+	debtAccumulatedRate := contract.FetchDebtAccumulatedRate(ctx, transaction.BlockNumber, poolId)
 
 	// Create new Pool
 	_, err = client.Pool.Create().

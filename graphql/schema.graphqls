@@ -53,7 +53,7 @@ type Pool {
     totalBorrowed: String!
     totalAvailable: String!
     tvl: String!
-    positions: [Position!]!
+    positions(where: PositionWhereInput, orderBy: PositionOrderBy, first: Int, skip: Int): [Position!]!
 }
 
 type ProtocolStat {
@@ -83,7 +83,7 @@ type Position {
     blockTimestamp: String!
     transaction: String!
     pool: Pool!
-    activity: [PositionActivity!]!
+    activities(where: PositionActivityWhereInput, orderBy: PositionActivityOrderBy, first: Int, skip: Int): [PositionActivity!]!
 }
 
 type PositionActivity {

@@ -73,6 +73,7 @@ input PositionWhereInput {
   transaction_in: [String!]
   transaction_not_in: [String!]
   pool: PoolWhereInput
+  activities: PositionActivityWhereInput
 }
 # === Enums ===
 enum PositionOrderField {
@@ -94,7 +95,6 @@ enum PositionOrderField {
   blockNumber
   blockTimestamp
   transaction
-  pool
 }
 
 input PositionOrderBy {

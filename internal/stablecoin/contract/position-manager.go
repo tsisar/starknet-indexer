@@ -8,15 +8,15 @@ import (
 	"math/big"
 )
 
-func GetCollateralPools(ctx context.Context, positionID *big.Int) string {
+func GetCollateralPools(ctx context.Context, blockNumber uint64, positionID *big.Int) string {
 	log.Infof("Geting collateral pools for position ID: %d", positionID)
 
-	contractAddress := config.App.Contracts["POSITION_MANAGER"]
+	contractAddress := config.App.IndexerConfig.Contracts["POSITION_MANAGER"].Address
 	log.Debugf("Using COLLATERAL_POOL_CONFIG address: %s", contractAddress)
 
 	low, high := bigIntToFeltU256(positionID)
 
-	result, err := callFunction(ctx, contractAddress, "collateral_pools", low, high)
+	result, err := callFunction(ctx, blockNumber, contractAddress, "collateral_pools", low, high)
 	if err != nil {
 		log.Errorf("Failed to call collateral_pools function: %v", err)
 		return ""
@@ -30,15 +30,15 @@ func GetCollateralPools(ctx context.Context, positionID *big.Int) string {
 	return pools
 }
 
-func GetPositionAddress(ctx context.Context, positionID *big.Int) string {
+func GetPositionAddress(ctx context.Context, blockNumber uint64, positionID *big.Int) string {
 	log.Infof("Geting position address: %d", positionID)
 
-	contractAddress := config.App.Contracts["POSITION_MANAGER"]
+	contractAddress := config.App.IndexerConfig.Contracts["POSITION_MANAGER"].Address
 	log.Debugf("Using POSITION_MANAGER address: %s", contractAddress)
 
 	low, high := bigIntToFeltU256(positionID)
 
-	result, err := callFunction(ctx, contractAddress, "positions", low, high)
+	result, err := callFunction(ctx, blockNumber, contractAddress, "positions", low, high)
 	if err != nil {
 		log.Errorf("Failed to call positions function: %v", err)
 		return ""

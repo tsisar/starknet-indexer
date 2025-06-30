@@ -11,20 +11,20 @@ import (
 )
 
 func main() {
-	contracts := config.App.Contracts
+	contracts := config.App.IndexerConfig.Contracts
 	rpcURL := config.App.RPCEndpoint
 
 	var contractNames []string
 
-	for name, addr := range contracts {
+	for name, contract := range contracts {
 		cleanName := strings.ToLower(name)
 		contractNames = append(contractNames, cleanName)
 
 		abiPath := filepath.Join("abi", cleanName+".json")
 
 		fmt.Println("---------------------------------")
-		log.Debugf("Fetching ABI for %s (%s)", name, addr)
-		err := abiutil.FetchAndSaveABI(cleanName, addr, rpcURL, "abi")
+		log.Debugf("Fetching ABI for %s (%s)", name, contract.Address)
+		err := abiutil.FetchAndSaveABI(cleanName, contract.Address, rpcURL, "abi")
 		if err != nil {
 			log.Warnf("Failed to fetch ABI for %s: %v", name, err)
 			continue

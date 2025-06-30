@@ -28,66 +28,67 @@ type PoolOrderBy struct {
 }
 
 type PoolWhereInput struct {
-	ID                         *string  `json:"id,omitempty"`
-	IDNot                      *string  `json:"id_not,omitempty"`
-	IDIn                       []string `json:"id_in,omitempty"`
-	IDNotIn                    []string `json:"id_not_in,omitempty"`
-	PoolName                   *string  `json:"poolName,omitempty"`
-	PoolNameNot                *string  `json:"poolName_not,omitempty"`
-	PoolNameIn                 []string `json:"poolName_in,omitempty"`
-	PoolNameNotIn              []string `json:"poolName_not_in,omitempty"`
-	DebtCeiling                *string  `json:"debtCeiling,omitempty"`
-	DebtCeilingNot             *string  `json:"debtCeiling_not,omitempty"`
-	DebtCeilingIn              []string `json:"debtCeiling_in,omitempty"`
-	DebtCeilingNotIn           []string `json:"debtCeiling_not_in,omitempty"`
-	LiquidationRatio           *string  `json:"liquidationRatio,omitempty"`
-	LiquidationRatioNot        *string  `json:"liquidationRatio_not,omitempty"`
-	LiquidationRatioIn         []string `json:"liquidationRatio_in,omitempty"`
-	LiquidationRatioNotIn      []string `json:"liquidationRatio_not_in,omitempty"`
-	StabilityFeeRate           *string  `json:"stabilityFeeRate,omitempty"`
-	StabilityFeeRateNot        *string  `json:"stabilityFeeRate_not,omitempty"`
-	StabilityFeeRateIn         []string `json:"stabilityFeeRate_in,omitempty"`
-	StabilityFeeRateNotIn      []string `json:"stabilityFeeRate_not_in,omitempty"`
-	TokenAdapterAddress        *string  `json:"tokenAdapterAddress,omitempty"`
-	TokenAdapterAddressNot     *string  `json:"tokenAdapterAddress_not,omitempty"`
-	TokenAdapterAddressIn      []string `json:"tokenAdapterAddress_in,omitempty"`
-	TokenAdapterAddressNotIn   []string `json:"tokenAdapterAddress_not_in,omitempty"`
-	LockedCollateral           *string  `json:"lockedCollateral,omitempty"`
-	LockedCollateralNot        *string  `json:"lockedCollateral_not,omitempty"`
-	LockedCollateralIn         []string `json:"lockedCollateral_in,omitempty"`
-	LockedCollateralNotIn      []string `json:"lockedCollateral_not_in,omitempty"`
-	CollateralPrice            *string  `json:"collateralPrice,omitempty"`
-	CollateralPriceNot         *string  `json:"collateralPrice_not,omitempty"`
-	CollateralPriceIn          []string `json:"collateralPrice_in,omitempty"`
-	CollateralPriceNotIn       []string `json:"collateralPrice_not_in,omitempty"`
-	CollateralLastPrice        *string  `json:"collateralLastPrice,omitempty"`
-	CollateralLastPriceNot     *string  `json:"collateralLastPrice_not,omitempty"`
-	CollateralLastPriceIn      []string `json:"collateralLastPrice_in,omitempty"`
-	CollateralLastPriceNotIn   []string `json:"collateralLastPrice_not_in,omitempty"`
-	PriceWithSafetyMargin      *string  `json:"priceWithSafetyMargin,omitempty"`
-	PriceWithSafetyMarginNot   *string  `json:"priceWithSafetyMargin_not,omitempty"`
-	PriceWithSafetyMarginIn    []string `json:"priceWithSafetyMargin_in,omitempty"`
-	PriceWithSafetyMarginNotIn []string `json:"priceWithSafetyMargin_not_in,omitempty"`
-	RawPrice                   *string  `json:"rawPrice,omitempty"`
-	RawPriceNot                *string  `json:"rawPrice_not,omitempty"`
-	RawPriceIn                 []string `json:"rawPrice_in,omitempty"`
-	RawPriceNotIn              []string `json:"rawPrice_not_in,omitempty"`
-	DebtAccumulatedRate        *string  `json:"debtAccumulatedRate,omitempty"`
-	DebtAccumulatedRateNot     *string  `json:"debtAccumulatedRate_not,omitempty"`
-	DebtAccumulatedRateIn      []string `json:"debtAccumulatedRate_in,omitempty"`
-	DebtAccumulatedRateNotIn   []string `json:"debtAccumulatedRate_not_in,omitempty"`
-	TotalBorrowed              *string  `json:"totalBorrowed,omitempty"`
-	TotalBorrowedNot           *string  `json:"totalBorrowed_not,omitempty"`
-	TotalBorrowedIn            []string `json:"totalBorrowed_in,omitempty"`
-	TotalBorrowedNotIn         []string `json:"totalBorrowed_not_in,omitempty"`
-	TotalAvailable             *string  `json:"totalAvailable,omitempty"`
-	TotalAvailableNot          *string  `json:"totalAvailable_not,omitempty"`
-	TotalAvailableIn           []string `json:"totalAvailable_in,omitempty"`
-	TotalAvailableNotIn        []string `json:"totalAvailable_not_in,omitempty"`
-	Tvl                        *string  `json:"tvl,omitempty"`
-	TvlNot                     *string  `json:"tvl_not,omitempty"`
-	TvlIn                      []string `json:"tvl_in,omitempty"`
-	TvlNotIn                   []string `json:"tvl_not_in,omitempty"`
+	ID                         *string             `json:"id,omitempty"`
+	IDNot                      *string             `json:"id_not,omitempty"`
+	IDIn                       []string            `json:"id_in,omitempty"`
+	IDNotIn                    []string            `json:"id_not_in,omitempty"`
+	PoolName                   *string             `json:"poolName,omitempty"`
+	PoolNameNot                *string             `json:"poolName_not,omitempty"`
+	PoolNameIn                 []string            `json:"poolName_in,omitempty"`
+	PoolNameNotIn              []string            `json:"poolName_not_in,omitempty"`
+	DebtCeiling                *string             `json:"debtCeiling,omitempty"`
+	DebtCeilingNot             *string             `json:"debtCeiling_not,omitempty"`
+	DebtCeilingIn              []string            `json:"debtCeiling_in,omitempty"`
+	DebtCeilingNotIn           []string            `json:"debtCeiling_not_in,omitempty"`
+	LiquidationRatio           *string             `json:"liquidationRatio,omitempty"`
+	LiquidationRatioNot        *string             `json:"liquidationRatio_not,omitempty"`
+	LiquidationRatioIn         []string            `json:"liquidationRatio_in,omitempty"`
+	LiquidationRatioNotIn      []string            `json:"liquidationRatio_not_in,omitempty"`
+	StabilityFeeRate           *string             `json:"stabilityFeeRate,omitempty"`
+	StabilityFeeRateNot        *string             `json:"stabilityFeeRate_not,omitempty"`
+	StabilityFeeRateIn         []string            `json:"stabilityFeeRate_in,omitempty"`
+	StabilityFeeRateNotIn      []string            `json:"stabilityFeeRate_not_in,omitempty"`
+	TokenAdapterAddress        *string             `json:"tokenAdapterAddress,omitempty"`
+	TokenAdapterAddressNot     *string             `json:"tokenAdapterAddress_not,omitempty"`
+	TokenAdapterAddressIn      []string            `json:"tokenAdapterAddress_in,omitempty"`
+	TokenAdapterAddressNotIn   []string            `json:"tokenAdapterAddress_not_in,omitempty"`
+	LockedCollateral           *string             `json:"lockedCollateral,omitempty"`
+	LockedCollateralNot        *string             `json:"lockedCollateral_not,omitempty"`
+	LockedCollateralIn         []string            `json:"lockedCollateral_in,omitempty"`
+	LockedCollateralNotIn      []string            `json:"lockedCollateral_not_in,omitempty"`
+	CollateralPrice            *string             `json:"collateralPrice,omitempty"`
+	CollateralPriceNot         *string             `json:"collateralPrice_not,omitempty"`
+	CollateralPriceIn          []string            `json:"collateralPrice_in,omitempty"`
+	CollateralPriceNotIn       []string            `json:"collateralPrice_not_in,omitempty"`
+	CollateralLastPrice        *string             `json:"collateralLastPrice,omitempty"`
+	CollateralLastPriceNot     *string             `json:"collateralLastPrice_not,omitempty"`
+	CollateralLastPriceIn      []string            `json:"collateralLastPrice_in,omitempty"`
+	CollateralLastPriceNotIn   []string            `json:"collateralLastPrice_not_in,omitempty"`
+	PriceWithSafetyMargin      *string             `json:"priceWithSafetyMargin,omitempty"`
+	PriceWithSafetyMarginNot   *string             `json:"priceWithSafetyMargin_not,omitempty"`
+	PriceWithSafetyMarginIn    []string            `json:"priceWithSafetyMargin_in,omitempty"`
+	PriceWithSafetyMarginNotIn []string            `json:"priceWithSafetyMargin_not_in,omitempty"`
+	RawPrice                   *string             `json:"rawPrice,omitempty"`
+	RawPriceNot                *string             `json:"rawPrice_not,omitempty"`
+	RawPriceIn                 []string            `json:"rawPrice_in,omitempty"`
+	RawPriceNotIn              []string            `json:"rawPrice_not_in,omitempty"`
+	DebtAccumulatedRate        *string             `json:"debtAccumulatedRate,omitempty"`
+	DebtAccumulatedRateNot     *string             `json:"debtAccumulatedRate_not,omitempty"`
+	DebtAccumulatedRateIn      []string            `json:"debtAccumulatedRate_in,omitempty"`
+	DebtAccumulatedRateNotIn   []string            `json:"debtAccumulatedRate_not_in,omitempty"`
+	TotalBorrowed              *string             `json:"totalBorrowed,omitempty"`
+	TotalBorrowedNot           *string             `json:"totalBorrowed_not,omitempty"`
+	TotalBorrowedIn            []string            `json:"totalBorrowed_in,omitempty"`
+	TotalBorrowedNotIn         []string            `json:"totalBorrowed_not_in,omitempty"`
+	TotalAvailable             *string             `json:"totalAvailable,omitempty"`
+	TotalAvailableNot          *string             `json:"totalAvailable_not,omitempty"`
+	TotalAvailableIn           []string            `json:"totalAvailable_in,omitempty"`
+	TotalAvailableNotIn        []string            `json:"totalAvailable_not_in,omitempty"`
+	Tvl                        *string             `json:"tvl,omitempty"`
+	TvlNot                     *string             `json:"tvl_not,omitempty"`
+	TvlIn                      []string            `json:"tvl_in,omitempty"`
+	TvlNotIn                   []string            `json:"tvl_not_in,omitempty"`
+	Positions                  *PositionWhereInput `json:"positions,omitempty"`
 }
 
 type PositionActivityOrderBy struct {
@@ -133,79 +134,80 @@ type PositionOrderBy struct {
 }
 
 type PositionWhereInput struct {
-	ID                         *string          `json:"id,omitempty"`
-	IDNot                      *string          `json:"id_not,omitempty"`
-	IDIn                       []string         `json:"id_in,omitempty"`
-	IDNotIn                    []string         `json:"id_not_in,omitempty"`
-	PositionAddress            *string          `json:"positionAddress,omitempty"`
-	PositionAddressNot         *string          `json:"positionAddress_not,omitempty"`
-	PositionAddressIn          []string         `json:"positionAddress_in,omitempty"`
-	PositionAddressNotIn       []string         `json:"positionAddress_not_in,omitempty"`
-	UserAddress                *string          `json:"userAddress,omitempty"`
-	UserAddressNot             *string          `json:"userAddress_not,omitempty"`
-	UserAddressIn              []string         `json:"userAddress_in,omitempty"`
-	UserAddressNotIn           []string         `json:"userAddress_not_in,omitempty"`
-	WalletAddress              *string          `json:"walletAddress,omitempty"`
-	WalletAddressNot           *string          `json:"walletAddress_not,omitempty"`
-	WalletAddressIn            []string         `json:"walletAddress_in,omitempty"`
-	WalletAddressNotIn         []string         `json:"walletAddress_not_in,omitempty"`
-	CollateralPool             *string          `json:"collateralPool,omitempty"`
-	CollateralPoolNot          *string          `json:"collateralPool_not,omitempty"`
-	CollateralPoolIn           []string         `json:"collateralPool_in,omitempty"`
-	CollateralPoolNotIn        []string         `json:"collateralPool_not_in,omitempty"`
-	CollateralPoolName         *string          `json:"collateralPoolName,omitempty"`
-	CollateralPoolNameNot      *string          `json:"collateralPoolName_not,omitempty"`
-	CollateralPoolNameIn       []string         `json:"collateralPoolName_in,omitempty"`
-	CollateralPoolNameNotIn    []string         `json:"collateralPoolName_not_in,omitempty"`
-	PositionID                 *string          `json:"positionId,omitempty"`
-	PositionIDNot              *string          `json:"positionId_not,omitempty"`
-	PositionIDIn               []string         `json:"positionId_in,omitempty"`
-	PositionIDNotIn            []string         `json:"positionId_not_in,omitempty"`
-	LockedCollateral           *string          `json:"lockedCollateral,omitempty"`
-	LockedCollateralNot        *string          `json:"lockedCollateral_not,omitempty"`
-	LockedCollateralIn         []string         `json:"lockedCollateral_in,omitempty"`
-	LockedCollateralNotIn      []string         `json:"lockedCollateral_not_in,omitempty"`
-	DebtValue                  *string          `json:"debtValue,omitempty"`
-	DebtValueNot               *string          `json:"debtValue_not,omitempty"`
-	DebtValueIn                []string         `json:"debtValue_in,omitempty"`
-	DebtValueNotIn             []string         `json:"debtValue_not_in,omitempty"`
-	DebtShare                  *string          `json:"debtShare,omitempty"`
-	DebtShareNot               *string          `json:"debtShare_not,omitempty"`
-	DebtShareIn                []string         `json:"debtShare_in,omitempty"`
-	DebtShareNotIn             []string         `json:"debtShare_not_in,omitempty"`
-	SafetyBuffer               *string          `json:"safetyBuffer,omitempty"`
-	SafetyBufferNot            *string          `json:"safetyBuffer_not,omitempty"`
-	SafetyBufferIn             []string         `json:"safetyBuffer_in,omitempty"`
-	SafetyBufferNotIn          []string         `json:"safetyBuffer_not_in,omitempty"`
-	SafetyBufferInPercent      *string          `json:"safetyBufferInPercent,omitempty"`
-	SafetyBufferInPercentNot   *string          `json:"safetyBufferInPercent_not,omitempty"`
-	SafetyBufferInPercentIn    []string         `json:"safetyBufferInPercent_in,omitempty"`
-	SafetyBufferInPercentNotIn []string         `json:"safetyBufferInPercent_not_in,omitempty"`
-	Tvl                        *string          `json:"tvl,omitempty"`
-	TvlNot                     *string          `json:"tvl_not,omitempty"`
-	TvlIn                      []string         `json:"tvl_in,omitempty"`
-	TvlNotIn                   []string         `json:"tvl_not_in,omitempty"`
-	PositionStatus             *PositionStatus  `json:"positionStatus,omitempty"`
-	PositionStatusNot          *PositionStatus  `json:"positionStatus_not,omitempty"`
-	PositionStatusIn           []PositionStatus `json:"positionStatus_in,omitempty"`
-	PositionStatusNotIn        []PositionStatus `json:"positionStatus_not_in,omitempty"`
-	LiquidationCount           *string          `json:"liquidationCount,omitempty"`
-	LiquidationCountNot        *string          `json:"liquidationCount_not,omitempty"`
-	LiquidationCountIn         []string         `json:"liquidationCount_in,omitempty"`
-	LiquidationCountNotIn      []string         `json:"liquidationCount_not_in,omitempty"`
-	BlockNumber                *string          `json:"blockNumber,omitempty"`
-	BlockNumberNot             *string          `json:"blockNumber_not,omitempty"`
-	BlockNumberIn              []string         `json:"blockNumber_in,omitempty"`
-	BlockNumberNotIn           []string         `json:"blockNumber_not_in,omitempty"`
-	BlockTimestamp             *string          `json:"blockTimestamp,omitempty"`
-	BlockTimestampNot          *string          `json:"blockTimestamp_not,omitempty"`
-	BlockTimestampIn           []string         `json:"blockTimestamp_in,omitempty"`
-	BlockTimestampNotIn        []string         `json:"blockTimestamp_not_in,omitempty"`
-	Transaction                *string          `json:"transaction,omitempty"`
-	TransactionNot             *string          `json:"transaction_not,omitempty"`
-	TransactionIn              []string         `json:"transaction_in,omitempty"`
-	TransactionNotIn           []string         `json:"transaction_not_in,omitempty"`
-	Pool                       *PoolWhereInput  `json:"pool,omitempty"`
+	ID                         *string                     `json:"id,omitempty"`
+	IDNot                      *string                     `json:"id_not,omitempty"`
+	IDIn                       []string                    `json:"id_in,omitempty"`
+	IDNotIn                    []string                    `json:"id_not_in,omitempty"`
+	PositionAddress            *string                     `json:"positionAddress,omitempty"`
+	PositionAddressNot         *string                     `json:"positionAddress_not,omitempty"`
+	PositionAddressIn          []string                    `json:"positionAddress_in,omitempty"`
+	PositionAddressNotIn       []string                    `json:"positionAddress_not_in,omitempty"`
+	UserAddress                *string                     `json:"userAddress,omitempty"`
+	UserAddressNot             *string                     `json:"userAddress_not,omitempty"`
+	UserAddressIn              []string                    `json:"userAddress_in,omitempty"`
+	UserAddressNotIn           []string                    `json:"userAddress_not_in,omitempty"`
+	WalletAddress              *string                     `json:"walletAddress,omitempty"`
+	WalletAddressNot           *string                     `json:"walletAddress_not,omitempty"`
+	WalletAddressIn            []string                    `json:"walletAddress_in,omitempty"`
+	WalletAddressNotIn         []string                    `json:"walletAddress_not_in,omitempty"`
+	CollateralPool             *string                     `json:"collateralPool,omitempty"`
+	CollateralPoolNot          *string                     `json:"collateralPool_not,omitempty"`
+	CollateralPoolIn           []string                    `json:"collateralPool_in,omitempty"`
+	CollateralPoolNotIn        []string                    `json:"collateralPool_not_in,omitempty"`
+	CollateralPoolName         *string                     `json:"collateralPoolName,omitempty"`
+	CollateralPoolNameNot      *string                     `json:"collateralPoolName_not,omitempty"`
+	CollateralPoolNameIn       []string                    `json:"collateralPoolName_in,omitempty"`
+	CollateralPoolNameNotIn    []string                    `json:"collateralPoolName_not_in,omitempty"`
+	PositionID                 *string                     `json:"positionId,omitempty"`
+	PositionIDNot              *string                     `json:"positionId_not,omitempty"`
+	PositionIDIn               []string                    `json:"positionId_in,omitempty"`
+	PositionIDNotIn            []string                    `json:"positionId_not_in,omitempty"`
+	LockedCollateral           *string                     `json:"lockedCollateral,omitempty"`
+	LockedCollateralNot        *string                     `json:"lockedCollateral_not,omitempty"`
+	LockedCollateralIn         []string                    `json:"lockedCollateral_in,omitempty"`
+	LockedCollateralNotIn      []string                    `json:"lockedCollateral_not_in,omitempty"`
+	DebtValue                  *string                     `json:"debtValue,omitempty"`
+	DebtValueNot               *string                     `json:"debtValue_not,omitempty"`
+	DebtValueIn                []string                    `json:"debtValue_in,omitempty"`
+	DebtValueNotIn             []string                    `json:"debtValue_not_in,omitempty"`
+	DebtShare                  *string                     `json:"debtShare,omitempty"`
+	DebtShareNot               *string                     `json:"debtShare_not,omitempty"`
+	DebtShareIn                []string                    `json:"debtShare_in,omitempty"`
+	DebtShareNotIn             []string                    `json:"debtShare_not_in,omitempty"`
+	SafetyBuffer               *string                     `json:"safetyBuffer,omitempty"`
+	SafetyBufferNot            *string                     `json:"safetyBuffer_not,omitempty"`
+	SafetyBufferIn             []string                    `json:"safetyBuffer_in,omitempty"`
+	SafetyBufferNotIn          []string                    `json:"safetyBuffer_not_in,omitempty"`
+	SafetyBufferInPercent      *string                     `json:"safetyBufferInPercent,omitempty"`
+	SafetyBufferInPercentNot   *string                     `json:"safetyBufferInPercent_not,omitempty"`
+	SafetyBufferInPercentIn    []string                    `json:"safetyBufferInPercent_in,omitempty"`
+	SafetyBufferInPercentNotIn []string                    `json:"safetyBufferInPercent_not_in,omitempty"`
+	Tvl                        *string                     `json:"tvl,omitempty"`
+	TvlNot                     *string                     `json:"tvl_not,omitempty"`
+	TvlIn                      []string                    `json:"tvl_in,omitempty"`
+	TvlNotIn                   []string                    `json:"tvl_not_in,omitempty"`
+	PositionStatus             *PositionStatus             `json:"positionStatus,omitempty"`
+	PositionStatusNot          *PositionStatus             `json:"positionStatus_not,omitempty"`
+	PositionStatusIn           []PositionStatus            `json:"positionStatus_in,omitempty"`
+	PositionStatusNotIn        []PositionStatus            `json:"positionStatus_not_in,omitempty"`
+	LiquidationCount           *string                     `json:"liquidationCount,omitempty"`
+	LiquidationCountNot        *string                     `json:"liquidationCount_not,omitempty"`
+	LiquidationCountIn         []string                    `json:"liquidationCount_in,omitempty"`
+	LiquidationCountNotIn      []string                    `json:"liquidationCount_not_in,omitempty"`
+	BlockNumber                *string                     `json:"blockNumber,omitempty"`
+	BlockNumberNot             *string                     `json:"blockNumber_not,omitempty"`
+	BlockNumberIn              []string                    `json:"blockNumber_in,omitempty"`
+	BlockNumberNotIn           []string                    `json:"blockNumber_not_in,omitempty"`
+	BlockTimestamp             *string                     `json:"blockTimestamp,omitempty"`
+	BlockTimestampNot          *string                     `json:"blockTimestamp_not,omitempty"`
+	BlockTimestampIn           []string                    `json:"blockTimestamp_in,omitempty"`
+	BlockTimestampNotIn        []string                    `json:"blockTimestamp_not_in,omitempty"`
+	Transaction                *string                     `json:"transaction,omitempty"`
+	TransactionNot             *string                     `json:"transaction_not,omitempty"`
+	TransactionIn              []string                    `json:"transaction_in,omitempty"`
+	TransactionNotIn           []string                    `json:"transaction_not_in,omitempty"`
+	Pool                       *PoolWhereInput             `json:"pool,omitempty"`
+	Activities                 *PositionActivityWhereInput `json:"activities,omitempty"`
 }
 
 type ProtocolStatOrderBy struct {
@@ -226,6 +228,10 @@ type ProtocolStatWhereInput struct {
 	TvlNot           *string  `json:"tvl_not,omitempty"`
 	TvlIn            []string `json:"tvl_in,omitempty"`
 	TvlNotIn         []string `json:"tvl_not_in,omitempty"`
+	Pools            *string  `json:"pools,omitempty"`
+	PoolsNot         *string  `json:"pools_not,omitempty"`
+	PoolsIn          []string `json:"pools_in,omitempty"`
+	PoolsNotIn       []string `json:"pools_not_in,omitempty"`
 }
 
 type Query struct {
@@ -467,7 +473,6 @@ type PositionActivityOrderField string
 
 const (
 	PositionActivityOrderFieldID               PositionActivityOrderField = "id"
-	PositionActivityOrderFieldPosition         PositionActivityOrderField = "position"
 	PositionActivityOrderFieldActivityState    PositionActivityOrderField = "activityState"
 	PositionActivityOrderFieldCollateralAmount PositionActivityOrderField = "collateralAmount"
 	PositionActivityOrderFieldDebtAmount       PositionActivityOrderField = "debtAmount"
@@ -478,7 +483,6 @@ const (
 
 var AllPositionActivityOrderField = []PositionActivityOrderField{
 	PositionActivityOrderFieldID,
-	PositionActivityOrderFieldPosition,
 	PositionActivityOrderFieldActivityState,
 	PositionActivityOrderFieldCollateralAmount,
 	PositionActivityOrderFieldDebtAmount,
@@ -489,7 +493,7 @@ var AllPositionActivityOrderField = []PositionActivityOrderField{
 
 func (e PositionActivityOrderField) IsValid() bool {
 	switch e {
-	case PositionActivityOrderFieldID, PositionActivityOrderFieldPosition, PositionActivityOrderFieldActivityState, PositionActivityOrderFieldCollateralAmount, PositionActivityOrderFieldDebtAmount, PositionActivityOrderFieldBlockNumber, PositionActivityOrderFieldBlockTimestamp, PositionActivityOrderFieldTransaction:
+	case PositionActivityOrderFieldID, PositionActivityOrderFieldActivityState, PositionActivityOrderFieldCollateralAmount, PositionActivityOrderFieldDebtAmount, PositionActivityOrderFieldBlockNumber, PositionActivityOrderFieldBlockTimestamp, PositionActivityOrderFieldTransaction:
 		return true
 	}
 	return false
@@ -612,7 +616,6 @@ const (
 	PositionOrderFieldBlockNumber           PositionOrderField = "blockNumber"
 	PositionOrderFieldBlockTimestamp        PositionOrderField = "blockTimestamp"
 	PositionOrderFieldTransaction           PositionOrderField = "transaction"
-	PositionOrderFieldPool                  PositionOrderField = "pool"
 )
 
 var AllPositionOrderField = []PositionOrderField{
@@ -634,12 +637,11 @@ var AllPositionOrderField = []PositionOrderField{
 	PositionOrderFieldBlockNumber,
 	PositionOrderFieldBlockTimestamp,
 	PositionOrderFieldTransaction,
-	PositionOrderFieldPool,
 }
 
 func (e PositionOrderField) IsValid() bool {
 	switch e {
-	case PositionOrderFieldID, PositionOrderFieldPositionAddress, PositionOrderFieldUserAddress, PositionOrderFieldWalletAddress, PositionOrderFieldCollateralPool, PositionOrderFieldCollateralPoolName, PositionOrderFieldPositionID, PositionOrderFieldLockedCollateral, PositionOrderFieldDebtValue, PositionOrderFieldDebtShare, PositionOrderFieldSafetyBuffer, PositionOrderFieldSafetyBufferInPercent, PositionOrderFieldTvl, PositionOrderFieldPositionStatus, PositionOrderFieldLiquidationCount, PositionOrderFieldBlockNumber, PositionOrderFieldBlockTimestamp, PositionOrderFieldTransaction, PositionOrderFieldPool:
+	case PositionOrderFieldID, PositionOrderFieldPositionAddress, PositionOrderFieldUserAddress, PositionOrderFieldWalletAddress, PositionOrderFieldCollateralPool, PositionOrderFieldCollateralPoolName, PositionOrderFieldPositionID, PositionOrderFieldLockedCollateral, PositionOrderFieldDebtValue, PositionOrderFieldDebtShare, PositionOrderFieldSafetyBuffer, PositionOrderFieldSafetyBufferInPercent, PositionOrderFieldTvl, PositionOrderFieldPositionStatus, PositionOrderFieldLiquidationCount, PositionOrderFieldBlockNumber, PositionOrderFieldBlockTimestamp, PositionOrderFieldTransaction:
 		return true
 	}
 	return false
@@ -743,17 +745,19 @@ const (
 	ProtocolStatOrderFieldID          ProtocolStatOrderField = "id"
 	ProtocolStatOrderFieldTotalSupply ProtocolStatOrderField = "totalSupply"
 	ProtocolStatOrderFieldTvl         ProtocolStatOrderField = "tvl"
+	ProtocolStatOrderFieldPools       ProtocolStatOrderField = "pools"
 )
 
 var AllProtocolStatOrderField = []ProtocolStatOrderField{
 	ProtocolStatOrderFieldID,
 	ProtocolStatOrderFieldTotalSupply,
 	ProtocolStatOrderFieldTvl,
+	ProtocolStatOrderFieldPools,
 }
 
 func (e ProtocolStatOrderField) IsValid() bool {
 	switch e {
-	case ProtocolStatOrderFieldID, ProtocolStatOrderFieldTotalSupply, ProtocolStatOrderFieldTvl:
+	case ProtocolStatOrderFieldID, ProtocolStatOrderFieldTotalSupply, ProtocolStatOrderFieldTvl, ProtocolStatOrderFieldPools:
 		return true
 	}
 	return false

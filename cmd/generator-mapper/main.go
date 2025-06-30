@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	contracts := config.App.Contracts
+	contracts := config.App.IndexerConfig.Contracts
 	subgraphDir := "generated/subgraph"
 	mapperDir := "generated/registry"
 

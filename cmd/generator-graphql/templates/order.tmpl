@@ -1,7 +1,9 @@
 # === Enums ===
 enum {{.Name}}OrderField {
 {{- range .Fields}}
-  {{.Name}}
+{{- if isScalar .Type }}
+  {{ .Name }}
+{{- end}}
 {{- end}}
 }
 
