@@ -29,10 +29,10 @@ func Start(_ context.Context, db *gorm.DB, client *ent.Client) error {
 		port = defaultPort
 	}
 
-	query := "/query"
+	prefix := ""
 	indexerName := config.App.IndexerName
 	if indexerName != "" {
-		query = fmt.Sprintf("/%s/query", indexerName)
+		prefix = fmt.Sprintf("/%s", indexerName)
 	}
 
 	schema := NewExecutableSchema(Config{Resolvers: &Resolver{
@@ -69,28 +69,28 @@ func Start(_ context.Context, db *gorm.DB, client *ent.Client) error {
 	})
 
 	// === GraphQL IDEs ===
-	http.Handle("/", playground.Handler(
+	http.Handle(prefix+"/", playground.Handler(
 		"GraphiQL Playground",
-		query,
+		prefix+"/query",
 		playground.WithGraphiqlEnablePluginExplorer(true),
 	))
-	http.Handle("/apollo", playground.ApolloSandboxHandler(
+	http.Handle(prefix+"/apollo", playground.ApolloSandboxHandler(
 		"Apollo Sandbox",
-		query,
+		prefix+"/query",
 	))
-	http.Handle("/altair", playground.AltairHandler(
+	http.Handle(prefix+"/altair", playground.AltairHandler(
 		"Altair GraphQL",
-		query,
+		prefix+"/query",
 		map[string]any{},
 	))
 
 	// === GraphQL endpoint ===
-	http.Handle(query, srv)
+	http.Handle(prefix+"/query", srv)
 
 	log.Debugf("GraphQL server ready at:\n"+
 		"- http://localhost:%s%s/		 (GraphiQL with Explorer)\n"+
 		"- http://localhost:%s%s/apollo  (Apollo Sandbox)\n"+
-		"- http://localhost:%s%s/altair  (Altair)\n", port, query, port, query, port, query)
+		"- http://localhost:%s%s/altair  (Altair)\n", port, prefix+"/query", port, prefix+"/query", port, prefix+"/query")
 
 	return http.ListenAndServe(":"+port, nil)
 }
